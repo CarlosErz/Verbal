@@ -1,0 +1,41 @@
+@import url(var.css);
+
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.label{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secundarios);
+}
+.input{
+  
+  background-color: var(--usable);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 20px;
+  opacity: 50%;
+}
+.input:focus{
+  outline: none;
+  opacity: 100%;
+  border: 2px solid var(--secundarios);
+}
+.btn{
+  background-color: var(--secundarios);
+  padding: 20px;
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: var(--secundarios);
+  opacity: 50%;
+  color: #fff;
+}

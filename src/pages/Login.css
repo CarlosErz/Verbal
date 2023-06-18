@@ -1,0 +1,16 @@
+@import url(../css/var.css);
+
+
+
+.Title{
+text-align: center;
+color:var(--secundarios) ;
+}
+.Form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+ justify-content:center ;
+
+  
+}
