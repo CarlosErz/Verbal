@@ -14,3 +14,9 @@ color:var(--secundarios) ;
 
   
 }
+.Formulario{
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+
