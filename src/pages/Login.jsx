@@ -1,44 +1,20 @@
 import { Btn } from '../components/Btn';
 import { Inputs } from '../components/Inputs';
-import { dataInputs } from '../data/dataInputs.js';
+import { Link } from 'react-router-dom';
+import { datainiciar } from '../data/datainiciar.js';
 import icon from '/src/assets/fb.svg';
-import './Login.css';
-import logo from '/src//assets/logoContorno.svg'
+import logo from '/src/assets/logoContorno.svg'
 
 export function Login() {
-  const handleFacebookLogin = () => {
-    if (!window.FB) return;
-
-      window.FB.getLoginStatus(response => {
-        if (response.status === 'connected') {
-          window.FB.api('/me', { fields: 'name, email' }, response => {
-            console.log(response);
-          });
-        } else {
-          console.log('No se pudo obtener el email');
-          window.FB.login(facebookLoginHandler, { scope: 'public_profile,email' });
-        }
-      });
-
-  };
-
-  const facebookLoginHandler = (response) => {
-    console.log(response);
-    if (response.status === 'connected') {
-      window.FB.api('/me?fields=id,name,email,picture', userData => {
-        console.log(userData);
-      });
-    } else {
-      console.log('No se pudo obtener el email');
-    }
-  };
-
+  const iniciar = () => {
+    console.log('iniciar sesion');
+  }
   return (
     <div className="Formulario">
-      <h1 className="Title">REGISTRATE</h1>
+      <h1 className="Title">INICIA SESIÓN</h1>
       <img src={logo} alt="Logo verbal+ " className="logo" />
       <form className="Form" action="POST">
-        {dataInputs.map((input, index) => (
+        {datainiciar.map((input, index) => (
           <Inputs
             key={index}
             TituloInput={input.TituloInput}
@@ -49,12 +25,13 @@ export function Login() {
         ))}
         <Btn
           TypeBtn='submit'
-          NameBtn='Registrarse'
+          NameBtn='Iniciar sesión'
         />
       </form>
-      <button className="facebook-login-button" onClick={handleFacebookLogin}>
+      <button className="facebook-login-button" onClick={iniciar}>
         <img src={icon} alt="" className="icon" />
       </button>
+      <p className="Text">¿No tienes una cuenta? <Link to="/Register" className="Link">Regístrate</Link></p>
     </div>
   );
 }

@@ -9,7 +9,7 @@
 }
 .label{
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--secundarios);
   text-transform: uppercase;
@@ -33,8 +33,9 @@
   color: white;
   border-radius: 20px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   border: none;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
 }
 .btn:hover{
