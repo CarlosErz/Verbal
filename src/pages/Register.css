@@ -1,26 +1,27 @@
 @import url(../css/var.css);
 
-
-
-.Title{
-text-align: center;
-color:var(--secundarios) ;
+.Title {
+  text-align: center;
+  color: var(--secundarios);
 }
-.Form{
+
+.Form {
   display: flex;
   flex-direction: column;
   padding: 10px;
- justify-content:center ;
+  justify-content: center;
 
-  
+
 }
-.Formulario{
+
+.Formulario {
   display: flex;
   flex-direction: column;
- align-items: center;
+  align-items: center;
 }
-.facebook-login-button{
-  width: 50px; 
+
+.facebook-login-button {
+  width: 50px;
   display: flex;
   height: 50px;
   background: var(--secundarios);
@@ -30,26 +31,29 @@ color:var(--secundarios) ;
   align-items: center;
   justify-content: center;
 }
-.facebook-login-button:hover{
+
+.facebook-login-button:hover {
   background: #3b5998;
 }
-.icon{
+
+.icon {
   filter: invert(0.9) sepia(0) hue-rotate(20deg) saturate(1000%);
   width: 35px;
 }
-.logo{
+
+.logo {
   width: 80px;
 }
 
 
-@media screen and (max-width: 281px){
+@media screen and (max-width: 281px) {
 
-.Title{
-  font-size: 1.5rem;
-}
-.inputContainer{
-  width: 100%;
-}
+  .Title {
+    font-size: 1.5rem;
+  }
+
+  .inputContainer {
+    width: 100%;
+  }
 
 }
-
