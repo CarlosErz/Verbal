@@ -3,3 +3,16 @@
   --secundarios:#5F43D3;
   --usable:#E5F1FD;
 }
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/static/Montserrat-Thin.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-ExtraLight.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-Light.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-Regular.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-Medium.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-SemiBold.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-Bold.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-ExtraBold.ttf') format('truetype'),
+       url('../fonts/static/Montserrat-Black.ttf') format('truetype');
+}
+
