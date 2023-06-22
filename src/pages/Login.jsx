@@ -6,7 +6,8 @@ import './Login.css';
 
 export function Login() {
   const handleFacebookLogin = () => {
-    if (window.FB) {
+    if (!window.FB) return;
+
       window.FB.getLoginStatus(response => {
         if (response.status === 'connected') {
           window.FB.api('/me', { fields: 'name, email' }, response => {
@@ -17,7 +18,7 @@ export function Login() {
           window.FB.login(facebookLoginHandler, { scope: 'public_profile,email' });
         }
       });
-    }
+
   };
 
   const facebookLoginHandler = (response) => {
