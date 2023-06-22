@@ -1,6 +1,6 @@
 export const dataInputs = [
   {
-    TituloInput:'Nombre'
+    TituloInput:'Usuario'
     , TipoInput:'text'
     , NombreInput:'Nombre'
     , IdInput:'Nombre'

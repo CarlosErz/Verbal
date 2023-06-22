@@ -3,20 +3,23 @@
 .inputContainer{
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 5px;
+  width: 20pc;
+  margin-bottom: 20px;
 }
 .label{
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--secundarios);
+  text-transform: uppercase;
 }
 .input{
-  
   background-color: var(--usable);
   border: none;
   border-radius: 0.5rem;
   padding: 20px;
+  height: 10px;
   opacity: 50%;
 }
 .input:focus{

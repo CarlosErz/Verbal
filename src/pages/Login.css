@@ -9,7 +9,7 @@ color:var(--secundarios) ;
 .Form{
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
  justify-content:center ;
 
   
@@ -36,6 +36,9 @@ color:var(--secundarios) ;
 .icon{
   filter: invert(0.9) sepia(0) hue-rotate(20deg) saturate(1000%);
   width: 35px;
+}
+.logo{
+  width: 80px;
 }
 
 

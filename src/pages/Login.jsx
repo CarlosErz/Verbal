@@ -3,6 +3,7 @@ import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
 import icon from '/src/assets/fb.svg';
 import './Login.css';
+import logo from '/src//assets/logoContorno.svg'
 
 export function Login() {
   const handleFacebookLogin = () => {
@@ -35,6 +36,7 @@ export function Login() {
   return (
     <div className="Formulario">
       <h1 className="Title">REGISTRATE</h1>
+      <img src={logo} alt="Logo verbal+ " className="logo" />
       <form className="Form" action="POST">
         {dataInputs.map((input, index) => (
           <Inputs
