@@ -1,30 +1,24 @@
+import image1 from '/src/assets/image1.png'
+
 export const dataTemas = [
   {
     tema: 'Marvel',
-    imagen1:'/src/assets/image1.png',
-    imagen2:'/src/assets/image1.png',
-    imagen3:'/src/assets/image1.png',
+    imagen1:{image1},
+    imagen2:{image1},
+    imagen3:{image1},
   },
   {
-    tema: 'CUltura General',
-    imagen1:'/src/assets/image1.png',
-    imagen2:'/src/assets/image1.png',
-    imagen3:'/src/assets/image1.png',
-
+    tema: 'Cultura General',
+    imagen1:{image1},
+    imagen2:{image1},
+    imagen3:{image1},
   },
   {
-    tema: 'CUltura General',
-    imagen1:'/src/assets/image1.png',
-    imagen2:'/src/assets/image1.png',
-    imagen3:'/src/assets/image1.png',
-
+    tema: 'Disney',
+    imagen1:{image1},
+    imagen2:{image1},
+    imagen3:{image1},
   },
-  {
-    tema: 'CUltura General',
-    imagen1:'/src/assets/image1.png',
-    imagen2:'/src/assets/image1.png',
-    imagen3:'/src/assets/image1.png',
-
-  },
+ 
   
 ];
