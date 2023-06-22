@@ -1,20 +1,26 @@
-
+import { Btn } from '../components/Btn';
 import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
-import { Btn } from '../components/Btn';
-import { LoginSocialFacebook } from 'reactjs-social-login';
-import MyFacebookLoginButton from '../components/MyFacebookLoginButton';
-
+import icon from '/src/assets/fb.svg';
 import './Login.css';
-
+/* global FB */
 export function Login() {
-  return (
-    <div className='Formulario'>
-      <h1 className="Title">
-        REGISTRATE
-      </h1>
+  const handleFacebookLogin = () => {
+    FB.login(function (response) {
+      if (response.authResponse) {
+        // El usuario ha iniciado sesión correctamente
+        console.log('Inicio de sesión exitoso:', response);
+      } else {
+        // El usuario ha cancelado el inicio de sesión o ha ocurrido un error
+        console.log('Inicio de sesión cancelado o error:', response);
+      }
+    }, { scope: 'email' }); // Solicitar el permiso de correo electrónico ('email')
+  };
 
-      <form className='Form' action="POST">
+  return (
+    <div className="Formulario">
+      <h1 className="Title">REGISTRATE</h1>
+      <form className="Form" action="POST">
         {dataInputs.map((input, index) => (
           <Inputs
             key={index}
@@ -28,19 +34,11 @@ export function Login() {
           TypeBtn='submit'
           NameBtn='Registrarse'
         />
+        
       </form>
-
-      <LoginSocialFacebook
-        appId='3582555598695211'
-        onReject={(response) => {
-          console.log(response);
-        }}
-        onResolve={(error) => {
-          console.log(error);
-        }}
-      >
-        <MyFacebookLoginButton />
-      </LoginSocialFacebook>
+      <button className="facebook-login-button" onClick={handleFacebookLogin}>
+        <img src={icon} alt="" className="icon" />
+      </button>
     </div>
   );
 }

@@ -6,7 +6,7 @@ const config = {
   icon: "facebook",
   iconFormat: name => `fa fa-${name}`,
   style: { background: "#3b5998" },
-  activeStyle: { background: "#293e69" }
+  activeStyle: { backgrounds: "#293e69" }
 };
 /** My Facebook login button. */
 const MyFacebookLoginButton = createButton(config);
