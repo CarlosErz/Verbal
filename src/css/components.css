@@ -1,20 +1,22 @@
 @import url(var.css);
 
-.inputContainer{
+.inputContainer {
   display: flex;
   flex-direction: column;
   padding: 5px;
   width: 20pc;
   margin-bottom: 20px;
 }
-.label{
+
+.label {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--secundarios);
   text-transform: uppercase;
 }
-.input{
+
+.input {
   background-color: var(--usable);
   border: none;
   border-radius: 0.5rem;
@@ -22,12 +24,14 @@
   height: 10px;
   opacity: 50%;
 }
-.input:focus{
+
+.input:focus {
   outline: none;
   opacity: 100%;
   border: 2px solid var(--secundarios);
 }
-.btn{
+
+.btn {
   background-color: var(--secundarios);
   padding: 20px;
   color: white;
@@ -35,11 +39,45 @@
   font-size: 16px;
   font-weight: bold;
   border: none;
-  font-family: 'Montserrat', sans-serif;
+
   cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
   background-color: var(--secundarios);
   opacity: 50%;
   color: #fff;
+}
+
+.Card-tematica {
+  background-color: var(--secundarios);
+  width: 15.625rem;
+  height: 140px;
+  border-radius: 20px;
+  background: rgba(229, 241, 253, 0.50);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  margin: 10px;
+}
+.slider{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.Tematica {
+  width: 100%;
+  height: 100%;
+  opacity:70%;
+  filter: grayscale(0.9) ;
+  border-radius: 20px;
+}
+.Tematica:hover {
+  opacity: 80%;
+  filter: grayscale(0);
+}
+.row{
+  display: flex;
+  flex-direction: row;
 }
