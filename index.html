@@ -5,13 +5,23 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="public/facebook-sdk.js"></script>
   <title>Verbal +</title>
 </head>
 
 <body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '3582555598695211',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v17.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script> 
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 </html>

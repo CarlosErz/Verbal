@@ -3,18 +3,32 @@ import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
 import icon from '/src/assets/fb.svg';
 import './Login.css';
-/* global FB */
+
 export function Login() {
   const handleFacebookLogin = () => {
-    FB.login(function (response) {
-      if (response.authResponse) {
-        // El usuario ha iniciado sesión correctamente
-        console.log('Inicio de sesión exitoso:', response);
-      } else {
-        // El usuario ha cancelado el inicio de sesión o ha ocurrido un error
-        console.log('Inicio de sesión cancelado o error:', response);
-      }
-    }, { scope: 'email' }); // Solicitar el permiso de correo electrónico ('email')
+    if (window.FB) {
+      window.FB.getLoginStatus(response => {
+        if (response.status === 'connected') {
+          window.FB.api('/me', { fields: 'name, email' }, response => {
+            console.log(response);
+          });
+        } else {
+          console.log('No se pudo obtener el email');
+          window.FB.login(facebookLoginHandler, { scope: 'public_profile,email' });
+        }
+      });
+    }
+  };
+
+  const facebookLoginHandler = (response) => {
+    console.log(response);
+    if (response.status === 'connected') {
+      window.FB.api('/me?fields=id,name,email,picture', userData => {
+        console.log(userData);
+      });
+    } else {
+      console.log('No se pudo obtener el email');
+    }
   };
 
   return (
@@ -34,7 +48,6 @@ export function Login() {
           TypeBtn='submit'
           NameBtn='Registrarse'
         />
-        
       </form>
       <button className="facebook-login-button" onClick={handleFacebookLogin}>
         <img src={icon} alt="" className="icon" />
