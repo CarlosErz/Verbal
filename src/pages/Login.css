@@ -42,3 +42,13 @@ color:var(--secundarios) ;
 }
 
 
+@media screen and (max-width: 281px){
+
+.Title{
+  font-size: 1.5rem;
+}
+.inputContainer{
+  width: 100%;
+}
+}
+
