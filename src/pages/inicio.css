@@ -1,4 +1,5 @@
 .btn_compartir {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   width: 30%;
