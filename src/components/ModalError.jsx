@@ -2,12 +2,6 @@ import PropTypes from 'prop-types';
 import '../css/components.css'
 import { Link } from 'react-router-dom';
 export function ModalError({ Title, TipoError, bt1, bt2, link1, link2 }) {
-  Title = "Error";
-  TipoError = "No se pude jugar sin una cuenta";
-  bt1 = "Registrarme";
-  bt2 = "Iniciar sesion";
-  link1 = "/Register";
-  link2 = "/Login";
   return (
     <>
       <div className="modal">

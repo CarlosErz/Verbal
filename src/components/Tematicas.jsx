@@ -33,7 +33,7 @@ export function Tematicas({ alt1 }) {
 
   return (
     <>
-      <div className="">
+      <div className="prueba">
         {dataTemas.map((tema,temas) => (
           <div key={temas} className="tema-container">
             <p className="temas">{tema.tema}</p>
