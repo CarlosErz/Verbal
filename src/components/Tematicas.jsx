@@ -1,3 +1,4 @@
+
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -5,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { dataTemas } from '../data/dataTemas.js';
 
 function Tematica({ tema, imagenes, alt1 }) {
+  alt1 = 'Imagen de Tematica';
   const settings = {
     dots: false,
     infinite: true,

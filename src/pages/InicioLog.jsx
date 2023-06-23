@@ -10,7 +10,7 @@ import './inicio.css';
           Con amigos es mas divertido!!
         </a>
       </div> */
-      
+
 import 'normalize.css';
 
 
@@ -18,7 +18,9 @@ export function InicioLog() {
   return (
     <>
       <h1 className='title'>ELIGE TU TEMA</h1>
-      <Tematicas></Tematicas>
+      <Tematicas
+      alt1='Imagen de Tematica'
+      ></Tematicas>
     </>
   );
 }
