@@ -4,6 +4,7 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import {Login} from './pages/Login'
 import '../src/css/components.css'
 import {InicioLog} from './pages/InicioLog'
+import 'normalize.css';
 export function App() {
 
   return (

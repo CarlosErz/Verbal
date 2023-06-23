@@ -1,16 +1,28 @@
 .btn_compartir {
   display: flex;
   flex-direction: row;
-  background-color: var(--secundarios);
-  width: 35%;
+  width: 30%;
   height: 75px;
+  background-color: var(--secundarios);
   align-items: center;
   border-radius: 40px;
 }
-.prueba{
+
+.prueba {
   width: 95%;
   height: 95%;
   margin: 0 auto;
+}
+
+.bg_compartir {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secundarios);
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
 }
 
 .btn_compartir:hover {
@@ -29,11 +41,10 @@
 }
 
 .compartir {
-  width: 30px;
+  width: 25px;
   padding: 20px;
-  justify-content: center;
-  align-items: center;
 }
+
 
 .temas {
   font-size: 20px;
@@ -50,10 +61,21 @@
 }
 
 .title {
-  align-items: center;
+
+  color: var(--c1);
+  font-size: 2rem;
+  font-weight: 700;
   text-align: center;
-  color: var(--secundarios);
+  text-transform: uppercase;
 }
+
+.contenido {
+  width: 93%;
+  height: 100%;
+  margin: 0 auto;
+
+}
+
 
 @media screen and (max-width: 650px) {
   .Card-tematica {
@@ -69,7 +91,7 @@
 
   img.Tematica {
     width: 90%;
-    height:90%;
+    height: 90%;
     flex-shrink: 0;
   }
 
@@ -85,20 +107,17 @@
   }
 
   .btn_compartir {
-    height: 50px;
-    width: 20%;
-    justify-content: center;
+    background-color: none;
+    width: 0;
   }
 
   .linkto {
-    display: none;
-    font-size: 1px;
+    padding: 0;
+    font-size: 0px;
+
   }
 
-  .compartir {
-    width: 25px;
-    padding: 20px;
-  }
+
 }
 
 @media screen and (max-width: 376px) {
@@ -109,8 +128,31 @@
     position: relative;
     flex-shrink: 0;
   }
-  .img{
+
+  .img {
     margin: 10px;
   }
+  .bg_compartir{
+    width: 40px;
+    height: 40px;
+  }
+  .compartir{
+    width: 20px;
+    padding: 10px;
+  }
 
+
+
+}
+
+@media screen and (max-width:750px) {
+  .btn_compartir{
+    background-color: none;
+    width: 0;
+  }
+  .linkto{
+    padding: 0;
+    font-size: 0px;
+  
+  }
 }
