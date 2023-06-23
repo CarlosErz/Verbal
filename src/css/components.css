@@ -168,7 +168,40 @@ img.Tematica {
   text-decoration: none;
   color: var(--secundarios);
 }
+.navbar{
+  width: 100%;
+  height: 20%;
+  background-color: var(--secundarios);
+}
+.navbar-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.navbar-user{
+ display: flex;
+ justify-content: center;
+ align-items: center;
 
+}
+.avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.navbar-logo>img{
+ width: 50px;
+ padding: 10px;
+ margin-left: 10px;
+}
+.name{
+  color: var(--usable);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 @media screen and (max-width: 600px) {
  .modal-container{
     width: 70%;
@@ -189,6 +222,9 @@ img.Tematica {
   margin-right: 5px; 
   margin-left: 5px;
 }
+.navbar-logo>img{
+  width: 40px;
+ }
 
 }
 @media screen and (max-width: 300px) {
@@ -210,5 +246,8 @@ img.Tematica {
     margin-right: 5px; 
     margin-left: 5px;
   }
+  .navbar-logo>img{
+    width: 30px;
+   }
  
  }
