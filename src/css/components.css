@@ -59,6 +59,10 @@ img.Tematica {
   justify-content: center;
   object-position: center;
 }
+.carousel-item {
+  margin-right: 10px; 
+}
+
 
 .Card-tematica {
   background-color: rgba(229, 241, 253, 0.50);

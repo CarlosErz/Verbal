@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -7,11 +6,12 @@ import { dataTemas } from '../data/dataTemas.js';
 
 function Tematica({ tema, imagenes, alt1 }) {
   alt1 = 'Imagen de Tematica';
+  const numSlidesToShow = Math.min(3, imagenes.length); // Limitar el número de slides a mostrar
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: numSlidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -19,14 +19,14 @@ function Tematica({ tema, imagenes, alt1 }) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: Math.min(2, imagenes.length), // Ajustar slidesToShow en la versión responsive
           slidesToScroll: 2,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: Math.min(2, imagenes.length), // Ajustar slidesToShow en la versión responsive
           slidesToScroll: 2,
         },
       },
@@ -37,12 +37,11 @@ function Tematica({ tema, imagenes, alt1 }) {
     <div className="tema-container">
       <p className="temas">{tema}</p>
       <br />
-      <Slider className='img' {...settings}>
+      <Slider className="img" {...settings}>
         {imagenes.map((imagen, imgIndex) => (
-          <div className='bt' key={imgIndex}>
-            <img className="Tematica" src={imagen} alt={alt1} />
-            <br />
-          </div>
+           <div key={imgIndex} className="carousel-item">
+           <img className="Tematica" src={imagen} alt={alt1} />
+         </div>
         ))}
       </Slider>
     </div>

@@ -6,7 +6,8 @@ export const dataTemas = [
       'https://i.postimg.cc/SNpqwBHg/image1.png',
       'https://i.postimg.cc/SNpqwBHg/image1.png',
       'https://i.postimg.cc/SNpqwBHg/image1.png',
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
+  
+
     ],
     alt1 : 'Marvel',
   },
