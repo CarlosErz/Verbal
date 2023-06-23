@@ -53,6 +53,7 @@ img.Tematica{
   height: 100%;
   border-radius: 20px;
   object-fit: cover;
+  cursor: pointer;
    align-items: center;
    justify-content: center;
   object-position: center;
