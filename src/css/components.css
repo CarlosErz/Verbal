@@ -177,8 +177,8 @@ img.Tematica {
 }
 @media screen and (max-width: 600px) {
  .modal-container{
-    width: 80%;
-    height: 50%;  
+    width: 70%;
+    height: 30%;  
  }
  .modal-text{
     font-size: 1rem;
@@ -187,15 +187,16 @@ img.Tematica {
     font-size: 1.5rem;
  }
  .modal-btn{
-    font-size: 1rem;
+    font-size: 15px;
+    padding: 5px;
 
  }
 
 }
 @media screen and (max-width: 300px) {
   .modal-container{
-     width: 80%;
-     height: 50%;  
+     width: 70%;
+     height: 20%;  
   }
   .modal-text{
       font-size: 15px;
