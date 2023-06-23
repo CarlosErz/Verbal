@@ -7,6 +7,11 @@
   align-items: center;
   border-radius: 40px;
 }
+.prueba{
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+}
 
 .btn_compartir:hover {
   background-color: var(--secundarios);
@@ -64,8 +69,8 @@
   }
 
   img.Tematica {
-    width: 173px;
-    height: 92px;
+    width: 90%;
+    height:90%;
     flex-shrink: 0;
   }
 
@@ -99,8 +104,8 @@
 
 @media screen and (max-width: 376px) {
   img.Tematica {
-    width: 120px;
-    height: 80px;
+    width: 90%;
+    height: 90%;
     margin: 0 auto;
     position: relative;
     flex-shrink: 0;

@@ -52,7 +52,7 @@
 img.Tematica {
   width: 90%;
   height: 90%;
-  border-radius: 20px;
+  border-radius: 15px;
   object-fit: cover;
   cursor: pointer;
   align-items: center;
@@ -98,14 +98,11 @@ img.Tematica {
 }
 
 .tema-container {
-  margin: 0px 0px 40px 0;
+  margin: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.img {
-  margin: 20px;
-}
 
 .modal { 
   position: fixed;
@@ -115,7 +112,6 @@ img.Tematica {
   width: 100%;
   align-items: center;
   z-index: 1;
-  backdrop-filter: blur(20px);
 }
 
 .modal-container {
