@@ -98,8 +98,9 @@ img.Tematica{
 }
 
 .img{
-  margin: 10px;
+  margin: 20px;
 }
+
 @media screen and (max-width: 876px) {
   img.Tematica {
     width: 248px;

@@ -40,7 +40,7 @@ export function Tematicas({ alt1 }) {
             <br />
             <Slider className='img' {...settings}>
               {tema.imagenes.map((imagen, imgIndex) => (
-                <div  key={imgIndex}>
+                <div className='bt'  key={imgIndex}>
                      <img className="Tematica" src={imagen} alt={alt1} />
                      <br />
                 </div>
