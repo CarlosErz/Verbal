@@ -169,9 +169,13 @@ img.Tematica {
   color: var(--secundarios);
 }
 .navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1;
   width: 100%;
   height: 20%;
   background-color: var(--secundarios);
+  
 }
 .navbar-container{
   display: flex;
