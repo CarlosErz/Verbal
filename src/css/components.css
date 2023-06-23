@@ -161,16 +161,6 @@ img.Tematica {
   color: var(--secundarios);
 }
 
-@media screen and (max-width: 876px) {
-  img.Tematica {
-    width: 248px;
-    height: 138px;
-    margin: 0 auto;
-    position: relative;
-    flex-shrink: 0;
-  }
-
-}
 @media screen and (max-width: 600px) {
  .modal-container{
     width: 70%;

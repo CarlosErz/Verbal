@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { dataTemas } from '../data/dataTemas.js';
 
-export function Tematicas({ alt1 }) {
+function Tematica({ tema, imagenes, alt1 }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -32,24 +32,39 @@ export function Tematicas({ alt1 }) {
   };
 
   return (
-    <>
-      <div className="prueba">
-        {dataTemas.map((tema,temas) => (
-          <div key={temas} className="tema-container">
-            <p className="temas">{tema.tema}</p>
+    <div className="tema-container">
+      <p className="temas">{tema}</p>
+      <br />
+      <Slider className='img' {...settings}>
+        {imagenes.map((imagen, imgIndex) => (
+          <div className='bt' key={imgIndex}>
+            <img className="Tematica" src={imagen} alt={alt1} />
             <br />
-            <Slider className='img' {...settings}>
-              {tema.imagenes.map((imagen, imgIndex) => (
-                <div className='bt'  key={imgIndex}>
-                     <img className="Tematica" src={imagen} alt={alt1} />
-                     <br />
-                </div>
-              ))}
-            </Slider>
           </div>
         ))}
-      </div>
-    </>
+      </Slider>
+    </div>
+  );
+}
+
+Tematica.propTypes = {
+  tema: PropTypes.string.isRequired,
+  imagenes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  alt1: PropTypes.string.isRequired,
+};
+
+export function Tematicas({ alt1 }) {
+  return (
+    <div className="prueba">
+      {dataTemas.map(({ tema, imagenes }, temas) => (
+        <Tematica
+          key={temas}
+          tema={tema}
+          imagenes={imagenes}
+          alt1={alt1}
+        />
+      ))}
+    </div>
   );
 }
 
