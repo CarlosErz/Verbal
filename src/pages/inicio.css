@@ -7,6 +7,11 @@
   align-items: center;
   border-radius: 40px;
 }
+.btn_compartir:hover {
+  background-color: var(--secundarios);
+  opacity: 50%;
+  color: #fff;
+}
 
 .linkto {
   font-size: 16px;
@@ -54,12 +59,13 @@
   background-color:var(--background);
 
  }
+ .img{
+  margin: 0px;
+}
 
-  .Tematica {
-    width: 120.87px;
-    height: 60px;
-    margin: 0 auto;
-    position: relative;
+  img.Tematica {
+    width: 173px;
+    height: 92px;
     flex-shrink: 0;
   }
 
@@ -89,4 +95,14 @@
     width: 25px;
     padding: 20px;
   }
+}
+@media screen and (max-width: 376px) {
+  img.Tematica {
+    width: 120px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    flex-shrink: 0;
+  }
+
 }

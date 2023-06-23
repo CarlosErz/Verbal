@@ -17,15 +17,15 @@ export function Tematicas({ alt1 }) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 2,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
     ],
@@ -34,15 +34,15 @@ export function Tematicas({ alt1 }) {
   return (
     <>
       <div className="prueba">
-        {dataTemas.map((tema, index) => (
-          <div key={index} className="tema-container">
+        {dataTemas.map((tema,temas) => (
+          <div key={temas} className="tema-container">
             <p className="temas">{tema.tema}</p>
+            <br />
             <Slider className='img' {...settings}>
               {tema.imagenes.map((imagen, imgIndex) => (
-                <div className="Card-tematica" key={imgIndex}>
+                <div  key={imgIndex}>
                      <img className="Tematica" src={imagen} alt={alt1} />
-
-      
+                     <br />
                 </div>
               ))}
             </Slider>
