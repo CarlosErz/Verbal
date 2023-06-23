@@ -1,25 +1,58 @@
 import PropTypes from 'prop-types';
-export function Tematicas({ imagen1,imagen2,imagen3, alt1, alt2, alt3 }) {
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { dataTemas } from '../data/dataTemas.js';
+
+export function Tematicas({ alt1 }) {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <div className="Card-tematica">
-        <img className='Tematica' src={imagen1} alt={alt1} />
-      </div>
-      <div className="Card-tematica">
-        <img className='Tematica' src={imagen2} alt={alt2} />
-      </div>
-      <div className="Card-tematica">
-        <img className='Tematica' src={imagen3} alt={alt3} />
+      <div className="prueba">
+        {dataTemas.map((tema, index) => (
+          <div key={index} className="tema-container">
+            <p className="temas">{tema.tema}</p>
+            <Slider className='img' {...settings}>
+              {tema.imagenes.map((imagen, imgIndex) => (
+                <div className="Card-tematica" key={imgIndex}>
+                     <img className="Tematica" src={imagen} alt={alt1} />
+
+      
+                </div>
+              ))}
+            </Slider>
+          </div>
+        ))}
       </div>
     </>
+  );
+}
 
-  )
-}
 Tematicas.propTypes = {
-  imagen1: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  imagen2: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  imagen3: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   alt1: PropTypes.string.isRequired,
-  alt2: PropTypes.string.isRequired,
-  alt3: PropTypes.string.isRequired,
-}
+};

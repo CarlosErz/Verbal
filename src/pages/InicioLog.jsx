@@ -1,27 +1,19 @@
 import { Tematicas } from '../components/Tematicas.jsx';
 import './inicio.css';
-import { dataTemas } from '../data/dataTemas.js';
+import compartir from '../assets/icon-compartir.svg';
 
 export function InicioLog() {
   return (
     <>
-      {dataTemas.map((tema, index) => (
-        <div className="base" key={index}>
-          <p className="temas">{tema.tema}</p>
-          <div className="container">
-
-          <Tematicas
-            imagen1={tema.imagen1}
-            alt1={tema.alt1}
-            imagen2={tema.imagen2}
-            alt2={tema.alt2}
-            imagen3={tema.imagen3}
-            alt3={tema.alt3}
-            imagen4={tema.imagen4}
-            alt4={tema.alt4}
-          /></div>
-        </div>
-      ))}
+      <div className='btn_compartir'>
+        <img className='compartir' src={compartir} alt="Compartir" border="0" />
+         <a href="#" className='linkto'>
+        Con amigos es mas divertido!!
+     </a>
+      </div>
+    
+      <h1 className='title'>ELIGE TU TEMA</h1>
+      <Tematicas></Tematicas>
     </>
   );
 }
