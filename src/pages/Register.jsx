@@ -37,7 +37,7 @@ export function Register() {
     // Carga el SDK de Facebook de forma asíncrona
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: 'TU_APP_ID',
+        appId: '3582555598695211',
         cookie: true,
         xfbml: true,
         version: 'v11.0'
