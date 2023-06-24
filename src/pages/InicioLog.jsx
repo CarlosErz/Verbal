@@ -20,9 +20,6 @@ export function InicioLog() {
         link1={dataModalLog[0].link1}
         link2={dataModalLog[0].link2}
       ></ModalError>
-
-
-     
       <div className="contenido">
         <div className='btn_compartir'>
           <div className="bg_compartir">

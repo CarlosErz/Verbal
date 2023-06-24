@@ -5,6 +5,7 @@ import {Login} from './pages/Login'
 import '../src/css/components.css'
 import {InicioLog} from './pages/InicioLog'
 import 'normalize.css';
+import { Navbar } from './components/Navbar.jsx';
 export function App() {
 
   return (
@@ -13,6 +14,7 @@ export function App() {
         <Route path="/*" element={<InicioLog />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Log" element={<Navbar></Navbar>} />
       </Routes>
     </BrowserRouter>
   )
