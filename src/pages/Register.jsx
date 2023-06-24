@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Btn } from '../components/Btn';
 import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
 import icon from '/src/assets/fb.svg';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import './Register.css';
 import logo from '/src/assets/logoContorno.svg';
 
 export function Register() {
-  const [loggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     window.fbAsyncInit = function () {
@@ -36,7 +36,20 @@ export function Register() {
   };
 
   const handleFacebookLogin = () => {
-    // Lógica para el inicio de sesión con Facebook
+    window.FB.login(function(response) {
+      if (response.status === 'connected') {
+        // El usuario ha iniciado sesión y ha autorizado la aplicación
+        window.FB.api('/me', { fields: 'name, picture' }, function(userData) {
+          const { name, picture } = userData;
+          console.log(name, picture.data.url);
+          setLoggedIn(true);
+          history.push('/Log');
+        });
+      } else {
+        // El usuario no ha iniciado sesión o no ha autorizado la aplicación
+        console.log('Error de inicio de sesión');
+      }
+    }, { scope: 'public_profile,email' });
   };
 
   return (
