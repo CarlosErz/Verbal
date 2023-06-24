@@ -80,7 +80,7 @@ export function Register() {
         getUserData();
       } else {
         console.log('No se pudo obtener el email');
-        window.FB.login(facebookLoginHandler, { scope: 'public_profile,email' });
+        window.FB.login(facebookLoginHandler, { scope: 'public_profile' });
       }
     });
   };
