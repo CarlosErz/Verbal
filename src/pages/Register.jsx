@@ -45,13 +45,13 @@ export function Register() {
       setLoggedIn(true);
     }
   }, []);
-
+  
   const handleRegister = () => {
     // Lógica para el registro
     setLoggedIn(false); // Restablecer el estado de inicio de sesión
     localStorage.removeItem('loggedInUser');
   };
-
+  
   const handleFacebookLogin = () => {
     window.FB.login(function(response) {
       if (response.status === 'connected') {
@@ -63,9 +63,9 @@ export function Register() {
           setUserPicture(picture.data.url);
           setLoggedIn(true);
           setShowModal(true); // Mostrar la modal de éxito
-
+  
           const user = { id, name, picture: picture.data.url };
-          localStorage.setItem(`user_${id}`, JSON.stringify(user));
+          localStorage.setItem('loggedInUser', JSON.stringify(user)); // Utiliza la clave 'loggedInUser'
         });
       } else {
         // El usuario no ha iniciado sesión o no ha autorizado la aplicación
@@ -73,7 +73,7 @@ export function Register() {
       }
     }, { scope: 'public_profile' });
   };
-
+  
   return (
     <div className="Formulario">
       <Navbar Nombre={userName} avatar={userPicture} />
