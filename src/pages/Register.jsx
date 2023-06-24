@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Btn } from '../components/Btn';
 import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
@@ -39,17 +39,17 @@ export function Register() {
     window.FB.login(function(response) {
       if (response.status === 'connected') {
         // El usuario ha iniciado sesión y ha autorizado la aplicación
-        window.FB.api('/me', { fields: 'name, picture' }, function(userData) {
+        window.FB.api('/me', { fields: 'name,picture' }, function(userData) {
           const { name, picture } = userData;
           console.log(name, picture.data.url);
           setLoggedIn(true);
-          history.push('/Log');
+          // Realiza las acciones necesarias con el nombre de usuario y la foto obtenidos
         });
       } else {
         // El usuario no ha iniciado sesión o no ha autorizado la aplicación
         console.log('Error de inicio de sesión');
       }
-    }, { scope: 'public_profile,name' });
+    }, { scope: 'public_profile' });
   };
 
   return (
@@ -77,3 +77,4 @@ export function Register() {
     </div>
   );
 }
+
