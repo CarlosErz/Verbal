@@ -123,7 +123,7 @@ img.Tematica {
 }
 
 .modal-container {
-  position: fixed;
+  position: sticky;
   background-color: var(--secundarios);
   border-radius: 20px;
   padding: 20px;
