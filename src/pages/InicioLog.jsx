@@ -11,7 +11,7 @@ import 'normalize.css';
 
 export function InicioLog() {
   return (
-    <>
+    <> <Navbar></Navbar>
         <ModalError
         Title={dataModalLog[0].Title}
         TipoError={dataModalLog[0].TipoError}
@@ -22,7 +22,7 @@ export function InicioLog() {
       ></ModalError>
 
 
-      <Navbar></Navbar>
+     
       <div className="contenido">
         <div className='btn_compartir'>
           <div className="bg_compartir">
