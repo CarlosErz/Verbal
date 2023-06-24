@@ -3,7 +3,7 @@ import { Btn } from '../components/Btn';
 import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
 import icon from '/src/assets/fb.svg';
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Register.css';
 import logo from '/src/assets/logoContorno.svg';
 
@@ -49,7 +49,7 @@ export function Register() {
         // El usuario no ha iniciado sesión o no ha autorizado la aplicación
         console.log('Error de inicio de sesión');
       }
-    }, { scope: 'public_profile,email' });
+    }, { scope: 'public_profile,name' });
   };
 
   return (
