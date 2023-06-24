@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import logo from '/src/assets/logoContorno.svg';
 
-export function Navbar({ Nombre }) {
-  const [avatar, setAvatar] = useState('');
+export function Navbar({ Nombre, avatar }) {
+  const [userName, setUserName] = useState('');
+  const [userAvatar, setUserAvatar] = useState('');
 
   useEffect(() => {
-    // Obtener los datos del usuario desde Facebook
-    window.FB.api('/me?fields=picture', response => {
-      if (response && !response.error) {
-        setAvatar(response.picture.data.url);
-      }
-    });
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      setUserName(user.name);
+      setUserAvatar(user.picture);
+    }
   }, []);
 
   return (
@@ -23,8 +24,8 @@ export function Navbar({ Nombre }) {
             <img src={logo} alt="Logo" />
           </Link>
           <div className="navbar-user">
-            <p className="name">{Nombre}</p>
-            <img className="avatar" src={avatar} alt="Avatar" />
+            <p className="name">{userName || Nombre}</p>
+            <img className="avatar" src={userAvatar || avatar} alt="Avatar" />
           </div>
         </div>
       </nav>
@@ -34,4 +35,5 @@ export function Navbar({ Nombre }) {
 
 Navbar.propTypes = {
   Nombre: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
 };

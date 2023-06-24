@@ -6,9 +6,14 @@ import icon from '/src/assets/fb.svg';
 import { Link } from 'react-router-dom';
 import './Register.css';
 import logo from '/src/assets/logoContorno.svg';
+import { Navbar } from '../components/Navbar.jsx';
+import { Modal } from '../components/Modal.jsx';
 
 export function Register() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [userPicture, setUserPicture] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     window.fbAsyncInit = function () {
@@ -31,19 +36,36 @@ export function Register() {
     }(document, 'script', 'facebook-jssdk'));
   }, []);
 
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      setUserName(user.name);
+      setUserPicture(user.picture);
+      setLoggedIn(true);
+    }
+  }, []);
+
   const handleRegister = () => {
     // Lógica para el registro
+    setLoggedIn(false); // Restablecer el estado de inicio de sesión
+    localStorage.removeItem('loggedInUser');
   };
 
   const handleFacebookLogin = () => {
     window.FB.login(function(response) {
       if (response.status === 'connected') {
         // El usuario ha iniciado sesión y ha autorizado la aplicación
-        window.FB.api('/me', { fields: 'name,picture' }, function(userData) {
-          const { name, picture } = userData;
+        window.FB.api('/me', { fields: 'id, name, picture' }, function(userData) {
+          const { id, name, picture } = userData;
           console.log(name, picture.data.url);
+          setUserName(name);
+          setUserPicture(picture.data.url);
           setLoggedIn(true);
-          // Realiza las acciones necesarias con el nombre de usuario y la foto obtenidos
+          setShowModal(true); // Mostrar la modal de éxito
+
+          const user = { id, name, picture: picture.data.url };
+          localStorage.setItem(`user_${id}`, JSON.stringify(user));
         });
       } else {
         // El usuario no ha iniciado sesión o no ha autorizado la aplicación
@@ -54,6 +76,7 @@ export function Register() {
 
   return (
     <div className="Formulario">
+      <Navbar Nombre={userName} avatar={userPicture} />
       <h1 className="Title">REGISTRATE</h1>
       <img src={logo} alt="Logo verbal+ " className="logo" />
       <form className="Form">
@@ -73,8 +96,15 @@ export function Register() {
           <img src={icon} alt="" className="icon" />
         </button>
       )}
-      <p className="Text">¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link></p>
+      <p className="Text">
+        ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>
+      </p>
+      {showModal && (
+          <Modal
+          Title="Inicio de sesión exitoso"
+          onclick={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
 }
-
