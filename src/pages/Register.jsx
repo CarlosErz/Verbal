@@ -70,7 +70,7 @@ export function Register() {
   useEffect(() => {
     initFacebookSDK();
   }, []);
-  
+
   const handleFacebookLogin = () => {
     if (!window.FB) return;
 
