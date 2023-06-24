@@ -228,6 +228,16 @@ img.Tematica {
 }
 .navbar-logo>img{
   width: 40px;
+  height: 40px;
+ }
+ .name{
+   font-size: 1rem;
+ }
+ .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
  }
 
 }
@@ -252,6 +262,10 @@ img.Tematica {
   }
   .navbar-logo>img{
     width: 30px;
+    height: 30px;
    }
+    .name{
+      font-size: 0.90rem;
+    }
  
  }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import logo from '/src/assets/logoContorno.svg';
 export function Navbar({ Avatar, Nombre }) {
   return (
-    Nombre = 'Hasbulla',
+    Nombre = 'Hasbullam ',
     Avatar = 'https://unavatar.io/HasbullaHive',
     <>
       <nav className="navbar">
@@ -14,9 +14,7 @@ export function Navbar({ Avatar, Nombre }) {
           <div className="navbar-user">
             <p className="name">{Nombre}</p>
             <img className='avatar' src={Avatar} alt="Avatar" />
-
           </div>
-
         </div>
       </nav>
     </>

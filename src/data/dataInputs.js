@@ -2,14 +2,15 @@ export const dataInputs = [
   {
     TituloInput:'Usuario'
     , TipoInput:'text'
-    , NombreInput:'Nombre'
-    , IdInput:'Nombre'
+    , NombreInput:'nombre'
+    , IdInput:'nombre',
+    value: ''
   },
   {
     TituloInput:'Contraseña'
     , TipoInput:'password'
-    , NombreInput:'Contraseña'
-    , IdInput:'Contraseña'
+    , NombreInput:'Contrasena'
+    , IdInput:'Contrasena'
   },
   {
     TituloInput:'Confirmar Contraseña'
