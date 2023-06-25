@@ -8,6 +8,7 @@ import { Navbar } from '../components/Navbar.jsx';
 import { ModalError } from '../components/ModalError.jsx';
 import { dataModalLog } from '../data/dataModalLog.js';
 import 'normalize.css';
+import {handleFacebookLogin} from '../utils/auth.js';
 
 export function InicioLog() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -21,7 +22,7 @@ export function InicioLog() {
 
   return (
     <>
-      <Navbar />
+      <Navbar  />
       {!loggedIn && (
         <ModalError
           Title={dataModalLog[0].Title}
@@ -41,7 +42,7 @@ export function InicioLog() {
             Con amigos es más divertido!!
           </a>
         </div>
-        <Juegos />
+        <Juegos alt1='Juegos'/>
       </div>
       <p className='title'>ELIGE TU TEMA</p>
       <Tematicas alt1='Imagen de Tematica' />

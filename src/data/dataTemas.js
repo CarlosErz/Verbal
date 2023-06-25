@@ -9,6 +9,13 @@ export const dataTemas = [
   
 
     ],
+    Sala:[
+      '/',
+      '/',
+      '/',
+      '/',
+    ]
+    ,
     alt1 : 'Marvel',
   },
   {
@@ -20,6 +27,12 @@ export const dataTemas = [
       'https://i.postimg.cc/SNpqwBHg/image1.png',
       'https://i.postimg.cc/SNpqwBHg/image1.png',
     ],
+    Sala:[
+      '/',
+      '/',
+      '/',
+      '/',
+    ],
     alt2: 'Disney',
   },
   {
@@ -30,5 +43,11 @@ export const dataTemas = [
       'https://i.postimg.cc/SNpqwBHg/image1.png',
       'https://i.postimg.cc/SNpqwBHg/image1.png',
     ],
+    Sala:[
+      '/',
+      '/',
+      '/',
+      '/',
+    ]
   },
 ];
