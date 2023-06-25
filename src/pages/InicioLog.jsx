@@ -54,7 +54,7 @@ export function InicioLog() {
         <Juegos alt1='Juegos'/>
       </div>
       <p className='title'>ELIGE TU TEMA</p>
-      <Tematicas alt1='Imagen de Tematica' />
+      <Tematicas onClick={handleTematicaClick} alt1='Imagen de Tematica' />
     </>
   );
 }
