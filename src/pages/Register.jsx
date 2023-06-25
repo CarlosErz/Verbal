@@ -18,6 +18,10 @@ export function Register() {
     if (loggedInUser) {
       setLoggedIn(true);
     }
+    else{
+      setLoggedIn(false);
+    }
+
   }, []);
 
   return (

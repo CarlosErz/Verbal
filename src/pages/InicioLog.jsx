@@ -22,7 +22,7 @@ export function InicioLog() {
   return (
     <>
       <Navbar />
-
+      
       <div className="contenido">
         <div className='btn_compartir'>
           <div className="bg_compartir">

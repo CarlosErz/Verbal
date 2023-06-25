@@ -247,7 +247,7 @@ img.Tematica {
  }
 
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 320px) {
   .modal-container{
      width: 70%;
      height: 20%;  
