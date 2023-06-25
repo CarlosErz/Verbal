@@ -1,11 +1,21 @@
+import { ModalError } from '../components/ModalError.jsx';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
 import { dataTemas } from '../data/dataTemas.js';
+import { dataModalLog } from '../data/dataModalLog.js';
+import { useState,useEffect} from 'react';
 
 function Tematica({ tema, imagenes, alt1, Sala }) {
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      setLoggedIn(true);
+    }
+  }, []);
   alt1 = 'Imagen de Tematica';
   const numSlidesToShow = Math.min(3, imagenes.length); // Limitar el número de slides a mostrar
   const settings = {
@@ -33,6 +43,18 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
       },
     ],
   };
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  const [showModal, setShowModal] = useState(false);
+  console.log(loggedInUser);
+
+  const handleTematicaClick = () => {
+    if (!loggedIn) {
+      setShowModal(true);
+    } else {
+      // Acción adicional para el caso en que el usuario esté registrado
+      // ...
+    }
+  };
 
   return (
     <div className="tema-container">
@@ -41,12 +63,26 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
       <Slider className="img" {...settings}>
         {imagenes.map((imagen, imgIndex) => (
           <div key={imgIndex} className="carousel-item">
-            <Link to={Sala[imgIndex]} className="carousel-link">
+            <Link
+              to={loggedIn ? Sala[imgIndex] : '#'}
+              className="carousel-link"
+              onClick={handleTematicaClick}
+            >
               <img className="Tematica" src={imagen} alt={alt1} />
             </Link>
           </div>
         ))}
       </Slider>
+      {showModal && !loggedIn && (
+        <ModalError
+          Title={dataModalLog[0].Title}
+          TipoError={dataModalLog[0].TipoError}
+          bt1={dataModalLog[0].bt1}
+          bt2={dataModalLog[0].bt2}
+          link1={dataModalLog[0].link1}
+          link2={dataModalLog[0].link2}
+        />
+      )}
     </div>
   );
 }
