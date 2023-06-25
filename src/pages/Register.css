@@ -45,6 +45,17 @@
   width: 80px;
   height: 80px;
 }
+.Text{
+  text-align: center;
+  color: var(--secundarios);
+  font-size: 1rem;
+  margin-top: 20px;
+}
+.Text>a{
+  color: #3b5998;
+  text-decoration: none;
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 320px) {
 
