@@ -4,7 +4,7 @@ import '../css/components.css';
 export function Btn({ TypeBtn, NameBtn }) {
   return (
     <>
-      <button className="btn" type={TypeBtn}>{NameBtn}
+      <button  className="btn" type={TypeBtn}>{NameBtn}
       </button>
     </>
   );

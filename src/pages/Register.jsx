@@ -11,26 +11,41 @@ import { Modal } from '../components/Modal.jsx';
 
 export function Register() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [showModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
       setLoggedIn(true);
-    }
-    else{
+    } else {
       setLoggedIn(false);
     }
-
   }, []);
+
+  const handleAcceptTerms = () => {
+    setAcceptedTerms(true);
+    setShowTermsModal(false);
+  };
+
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    if (acceptedTerms) {
+      handleRegister();
+      setShowModal(true);
+    } else {
+      setShowTermsModal(true);
+    }
+  };
 
   return (
     <div className="Formulario">
       <h1 className="Title">REGISTRATE</h1>
-      <Link to='/'>
+      <Link to="/">
         <img src={logo} alt="Logo verbal+ " className="logo" />
       </Link>
-      <form className="Form">
+      <form className="Form" onSubmit={handleRegisterSubmit}>
         {dataInputs.map((input, index) => (
           <Inputs
             key={index}
@@ -40,7 +55,18 @@ export function Register() {
             IdInput={input.IdInput}
           />
         ))}
-        <Btn onClick={handleRegister} TypeBtn='submit' NameBtn='Registrarse' />
+        <div className="privacy-policy">
+          <input
+            type="checkbox"
+            id="privacy-policy-checkbox"
+            checked={acceptedTerms}
+            onChange={handleAcceptTerms}
+          />
+          <label htmlFor="privacy-policy-checkbox">
+            Acepto las <Link to="/Privacy">políticas de privacidad</Link>
+          </label>
+        </div>
+        <Btn TypeBtn="submit" NameBtn="Registrarse" />
       </form>
       {!loggedIn && (
         <button className="facebook-login-button" onClick={handleFacebookLogin}>
@@ -51,9 +77,13 @@ export function Register() {
         ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>
       </p>
       {showModal && (
+        <Modal Title="Registrado con éxito" onclick="/InicioLog" />
+      )}
+
+      {showTermsModal && (
         <Modal
-          Title="Registrado con éxito"
-          onclick='/InicioLog'
+          Title="Debes aceptar los términos y condiciones"
+          onclick={() => setShowTermsModal(false)}
         />
       )}
     </div>
