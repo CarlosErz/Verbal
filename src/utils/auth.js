@@ -4,6 +4,7 @@ export function handleRegister() {
 }
 
 export function handleFacebookLogin() {
+  if (!window.FB) return;
   window.FB.login(function(response) {
     if (!window.FB) return;
 
