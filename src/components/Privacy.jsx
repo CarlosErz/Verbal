@@ -61,12 +61,6 @@ export function Privacy() {
             Continuar
           </Link>
         )}
-
-        {accepted && (
-          <Link className="btn-finish" to="/Register">
-            Finalizar
-          </Link>
-        )}
       </div>
     </>
   );
