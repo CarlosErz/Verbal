@@ -6,7 +6,7 @@ export const dataTemas = [
       'https://i.postimg.cc/SxVgLBvb/marvel.png',
       'https://i.postimg.cc/SxVgLBvb/marvel.png',
       'https://i.postimg.cc/SxVgLBvb/marvel.png',
-      
+
      
   
 
@@ -40,10 +40,10 @@ export const dataTemas = [
   {
     tema: 'Peliculas y series',
     imagenes: [
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
       'https://i.postimg.cc/B6x7DVNv/img2.png',
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
+      'https://i.postimg.cc/B6x7DVNv/img2.png',
+      'https://i.postimg.cc/B6x7DVNv/img2.png',
+      'https://i.postimg.cc/B6x7DVNv/img2.png',
     ],
     Sala:[
       '/',
