@@ -20,3 +20,4 @@ export function handleFacebookLogin() {
     }
   }, { scope: 'public_profile' });
 }
+

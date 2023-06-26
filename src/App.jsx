@@ -7,6 +7,7 @@ import {InicioLog} from './pages/InicioLog'
 import 'normalize.css';
 import { Navbar } from './components/Navbar.jsx';
 import { Privacy } from './components/Privacy.jsx'
+import {User} from './pages/User'
 export function App() {
 
   return (
@@ -17,6 +18,7 @@ export function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Log" element={<Navbar></Navbar>} />
         <Route path="/Privacy" element={< Privacy/>} />
+        <Route path="/User" element={<User/>} />
         
       </Routes>
     </BrowserRouter>

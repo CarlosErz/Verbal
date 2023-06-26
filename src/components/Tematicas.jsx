@@ -43,9 +43,9 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
       },
     ],
   };
-  const loggedInUser = localStorage.getItem('loggedInUser');
+
   const [showModal, setShowModal] = useState(false);
-  console.log(loggedInUser);
+
 
   const handleTematicaClick = () => {
     if (!loggedIn) {

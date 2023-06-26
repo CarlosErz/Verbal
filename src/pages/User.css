@@ -1,0 +1,86 @@
+@import url(../css/var.css);
+.User{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+
+}
+.title{
+  color: var(--secundarios);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.user-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.user-avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 10px;
+  border: 10px solid var(--secundarios);
+}
+.user-name{
+  color: var(--secundarios);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.user-btns{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.user-delete{
+  color: var(--primarios);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  border: none;
+  background-color: #FF0000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.user-logout{
+  color: var(--primarios);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  border: none;
+  background-color:var(--secundarios);
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+.user-delete:hover{
+  background-color: #c30505;
+  color: var(--primarios);
+}
+.user-logout:hover{
+  background-color: var(--c1);
+  color: var(--primarios);
+}
+@media screen and (max-width: 400px) {
+  .user-btns{
+    flex-direction: column;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  .user-avatar{
+    width: 150px;
+    height: 150px;
+  }
+  
+}
