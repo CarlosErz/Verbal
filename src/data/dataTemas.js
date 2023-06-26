@@ -2,10 +2,12 @@ export const dataTemas = [
   {
     tema: 'Marvel',
     imagenes: [
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
-      'https://i.postimg.cc/SNpqwBHg/image1.png',
+      'https://i.postimg.cc/SxVgLBvb/marvel.png',
+      'https://i.postimg.cc/SxVgLBvb/marvel.png',
+      'https://i.postimg.cc/SxVgLBvb/marvel.png',
+      'https://i.postimg.cc/SxVgLBvb/marvel.png',
+      
+     
   
 
     ],
