@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import './Userstyle.css'
 
 export function User({ Avatar, Nombre }) {
   const [userName, setUserName] = useState('');
