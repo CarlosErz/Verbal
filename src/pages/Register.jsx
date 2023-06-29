@@ -5,7 +5,7 @@ import { dataInputs } from '../data/dataInputs.js';
 import { Link } from 'react-router-dom';
 import './Register.css';
 import icon from '/src/assets/fb.svg';
-import logo from '/src/assets/logoContorno.svg';
+import logo from '/src/assets/logo.svg';
 import { handleRegister, handleFacebookLogin } from '../utils/auth';
 import { Modal } from '../components/Modal.jsx';
 

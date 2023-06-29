@@ -3,7 +3,7 @@ import { Inputs } from '../components/Inputs';
 import { Link } from 'react-router-dom';
 import { datainiciar } from '../data/datainiciar.js';
 import icon from '/src/assets/fb.svg';
-import logo from '/src/assets/logoContorno.svg';
+import logo from '/src/assets/logo.svg';
 import { handleFacebookLogin } from '../utils/auth';
 
 export function Login() {

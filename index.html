@@ -6,6 +6,9 @@
   <link rel="icon" alt="Icono" type="image/svg+xml" href="/public/logoContorno.svg" />
   <link rel="canonical" href="https://verbal-lake.vercel.app">
   <meta name="description" content="Descubre tu conocimento en verbal + aprende y gana ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#262626">
 
@@ -13,22 +16,23 @@
 </head>
 
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '3582555598695211',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v17.0'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-</script>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script> 
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '3582555598695211',
+        cookie: true,
+        xfbml: true,
+        version: 'v17.0'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 <script src="./src/utils/auth.js"></script>
+
 </html>

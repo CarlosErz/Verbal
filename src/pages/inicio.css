@@ -4,10 +4,14 @@
   display: flex;
   flex-direction: row;
   width: 30%;
-  background-color: var(--Esquematico1);
+  background-color: var(--Esquematico2);
   height: 75px;
   align-items: center;
   border-radius: 40px;
+}
+.btn_compartir:hover {
+  background-color: var(--Esquematico2);
+  opacity: 65%;
 }
 
 .prueba {
@@ -21,17 +25,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--Esquematico1);
+  background-color: var(--Esquematico2);
   width: 50px;
   height: 50px;
   border-radius: 40px;
 }
 
-.btn_compartir:hover {
-  background-color: var(--Esquematico1);
-  opacity: 50%;
-  color: #fff;
-}
+
 
 .linkto {
   font-size: 16px;

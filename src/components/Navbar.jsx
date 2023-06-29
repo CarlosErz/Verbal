@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import logo from '/src/assets/logoContorno.svg';
+import logo from '/src/assets/logo.svg';
 
 export function Navbar({ Nombre, avatar }) {
   const [userName, setUserName] = useState('');
