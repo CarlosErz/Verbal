@@ -32,7 +32,7 @@ export function InicioLog() {
 
   return (
     <>
-      <Navbar />
+      <Navbar Nombre="Nombre del usuario" avatar="URL del avatar" />
       <div className="contenido">
         <div className='btn_compartir'>
           <div className="bg_compartir">

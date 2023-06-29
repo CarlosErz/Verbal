@@ -44,7 +44,7 @@ export function User({ Avatar, Nombre }) {
 }
 
 User.propTypes = {
-  Avatar: PropTypes.string.isRequired,
-  Nombre: PropTypes.string.isRequired,
+  Avatar: PropTypes.string,
+  Nombre: PropTypes.string,
 }
 

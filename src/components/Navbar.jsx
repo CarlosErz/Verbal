@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import logo from '/src/assets/logo.svg';
 
+
 export function Navbar({ Nombre, avatar }) {
   const [userName, setUserName] = useState('');
   const [userAvatar, setUserAvatar] = useState('');
@@ -25,7 +26,8 @@ export function Navbar({ Nombre, avatar }) {
           </Link>
           <Link to='/User' className='navbar-user'>
             <p className="name">{userName || Nombre}</p>
-            <img className="avatar" src={userAvatar || avatar} alt="Avatar" /></Link>
+            <img className="avatar" src={userAvatar || avatar} alt="Avatar" />
+          </Link>
         </div>
       </nav>
     </>
@@ -33,6 +35,6 @@ export function Navbar({ Nombre, avatar }) {
 }
 
 Navbar.propTypes = {
-  Nombre: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
+  Nombre: PropTypes.string,
+  avatar: PropTypes.string,
 };
