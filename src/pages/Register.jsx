@@ -38,12 +38,12 @@ export function Register() {
       setShowTermsModal(true);
     }
   };
-  const FaceboockLogin= () => {
+  const FaceboockLogin = () => {
     if (acceptedTerms) {
       handleFacebookLogin();
       setShowModal(true);
     }
-    else{
+    else {
       setShowTermsModal(true);
     }
   }
@@ -75,14 +75,17 @@ export function Register() {
             Acepto las <Link to="/Privacy">políticas de privacidad</Link>
           </label>
         </div>
-        <Btn TypeBtn="submit" NameBtn="Registrarse" />  
-        {!loggedIn && (
-        <button className="facebook-login-button" onClick={FaceboockLogin}>
-          <img src={icon} alt="" className="icon" />
-        </button>
-      )}
+        <Btn TypeBtn="submit" NameBtn="Registrarse" />
+        <div className="btnfb">
+          {!loggedIn && (
+            <button className="facebook-login-button" onClick={FaceboockLogin}>
+              <img src={icon} alt="" className="icon" />
+            </button>
+          )}
+        </div>
+
       </form>
-    
+
       <p className="Text">
         ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>
       </p>
