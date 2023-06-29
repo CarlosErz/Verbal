@@ -4,14 +4,14 @@ import './inicio.css';
 import compartir from '../assets/icon-compartir.svg';
 import { Juegos } from '../components/Juegos.jsx';
 import { Navbar } from '../components/Navbar.jsx';
-//import Juego1 from '../assets/juego1.png';
-//import { ModalError } from '../components/ModalError.jsx';
-//import { dataModalLog } from '../data/dataModalLog.js';
-//import {Modal} from '../components/Modal.jsx';
 import 'normalize.css';
+import { ModalError } from '../components/ModalError.jsx';
+import { dataModalLog } from '../data/dataModalLog.js';
+import { Login } from './Login.jsx';
 
 export function InicioLog() {
-  const [, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser');
@@ -19,6 +19,16 @@ export function InicioLog() {
       setLoggedIn(true);
     }
   }, []);
+
+  const handleTematicaClick = () => {
+    if (!loggedIn) {
+      setLoggedIn(true);
+      setShowModal(true);
+    } else {
+      // Acción adicional para el caso en que el usuario esté registrado
+      // ...
+    }
+  };
 
   return (
     <>
@@ -32,10 +42,24 @@ export function InicioLog() {
             Con amigos es más divertido!!
           </a>
         </div>
-        <Juegos alt1='juegos'/>
+        <Juegos alt1='juegos' />
       </div>
       <p className='title'>ELIGE TU TEMA</p>
-      <Tematicas alt1='Imagen de Tematica' />
+
+      {!loggedIn && <Login />}
+
+      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedIn} Click={handleTematicaClick} />
+
+      {showModal && !loggedIn && (
+        <ModalError
+          Title={dataModalLog[0].Title}
+          TipoError={dataModalLog[0].TipoError}
+          bt1={dataModalLog[0].bt1}
+          bt2={dataModalLog[0].bt2}
+          link1={dataModalLog[0].link1}
+          link2={dataModalLog[0].link2}
+        />
+      )}
     </>
   );
 }
