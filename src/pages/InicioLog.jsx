@@ -7,7 +7,6 @@ import { Navbar } from '../components/Navbar.jsx';
 import 'normalize.css';
 import { ModalError } from '../components/ModalError.jsx';
 import { dataModalLog } from '../data/dataModalLog.js';
-import { Login } from './Login.jsx';
 
 export function InicioLog() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -46,7 +45,7 @@ export function InicioLog() {
       </div>
       <p className='title'>ELIGE TU TEMA</p>
 
-      {!loggedIn && <Login />}
+
 
       <Tematicas alt1='Imagen de Tematica' loggedIn={loggedIn} Click={handleTematicaClick} />
 
