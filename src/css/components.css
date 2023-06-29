@@ -73,17 +73,17 @@
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: var(--secundarios);
+  color: var(--primarios);
   text-transform: uppercase;
 }
 
 .input {
-  background-color: var(--usable);
+  background-color: #333333;
   border: none;
   border-radius: 0.5rem;
   padding: 20px;
   height: 10px;
-  opacity: 50%;
+  opacity: 66%;
 }
 
 .input:focus {
@@ -263,6 +263,7 @@ img.Tematica {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 
 }
 
@@ -281,9 +282,9 @@ img.Tematica {
 }
 
 .name {
-  color: var(--usable);
+  color: var(--textotitl);
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 @media screen and (max-width: 600px) {

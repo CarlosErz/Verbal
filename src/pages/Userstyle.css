@@ -7,12 +7,6 @@
   margin: 10px;
 
 }
-.title{
-  color: var(--secundarios);
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-}
 .user-container{
   display: flex;
   flex-direction: column;
@@ -23,12 +17,13 @@
 .user-avatar{
   width: 200px;
   height: 200px;
+  image-rendering: pixelated;
   border-radius: 50%;
   margin: 10px;
-  border: 10px solid var(--secundarios);
+  border: 10px solid #404040;
 }
 .user-name{
-  color: var(--secundarios);
+  color: var(--textotitl);
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -58,18 +53,18 @@
   text-align: center;
   padding: 20px;
   border: none;
-  background-color:var(--secundarios);
+  background-color:var(--Esquematico2);
   border-radius: 10px;
   margin: 10px;
   cursor: pointer;
 }
 .user-delete:hover{
   background-color: #c30505;
-  color: var(--primarios);
+  color: var(--);
 }
 .user-logout:hover{
-  background-color: var(--c1);
   color: var(--primarios);
+  opacity: 80%;
 }
 @media screen and (max-width: 400px) {
   .user-btns{

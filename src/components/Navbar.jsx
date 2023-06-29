@@ -25,7 +25,7 @@ export function Navbar({ Nombre, avatar }) {
           </Link>
           <Link to='/User' className='navbar-user'>
             <p className="name">{userName || Nombre}</p>
-            <img className="avatar" src={userAvatar || avatar} alt="Avatar"/></Link>
+            <img className="avatar" src={userAvatar || avatar} alt="Avatar" /></Link>
         </div>
       </nav>
     </>

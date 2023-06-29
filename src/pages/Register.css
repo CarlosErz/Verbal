@@ -2,7 +2,8 @@
 
 .Title {
   text-align: center;
-  color: var(--secundarios);
+  color: var( --textotitl);
+  font-weight: 800;
 }
 
 .Form {
@@ -35,6 +36,22 @@
 .facebook-login-button:hover {
   background: #3b5998;
 }
+.privacy-policy{
+  text-align: center;
+  color: var(--secundarios);
+  font-size: 1rem;
+  padding: 20px;
+}
+.privacy-policy>label{
+ padding: 20px;
+ color: var(--primarios);
+}
+.privacy-policy>label>a{
+  color:var(--secundarios);
+  text-decoration: none;
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 .icon {
   filter: invert(0.9) sepia(0) hue-rotate(20deg) saturate(1000%);
@@ -47,13 +64,14 @@
 }
 .Text{
   text-align: center;
-  color: var(--secundarios);
+  color: var(--primarios);
   font-size: 1rem;
   margin-top: 20px;
 }
 .Text>a{
-  color: #3b5998;
+  color:var(--secundarios);
   text-decoration: none;
+  font-weight: bold;
   text-decoration: underline;
 }
 

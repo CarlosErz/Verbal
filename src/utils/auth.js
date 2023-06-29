@@ -17,11 +17,12 @@ export function handleFacebookLogin() {
 }
 const facebookLoginCallback = (response) => {
   if(response.status === 'connected') {
-    window.FB.api('/me', { fields: 'id, name,email, picture' }, function(userData) {
+    window.FB.api('/me', { fields: 'id, name, email, picture.type{small, large}{url}' }, function(userData)  {
       const { id, name, picture } = userData;
       const user = { id, name, picture: picture.data.url };
       localStorage.setItem('loggedInUser', JSON.stringify(user)); // Utiliza la clave 'loggedInUser'
     });
   }
 }
+
 

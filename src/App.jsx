@@ -8,6 +8,7 @@ import 'normalize.css';
 import { Navbar } from './components/Navbar.jsx';
 import { Privacy } from './components/Privacy.jsx'
 import {User} from './pages/User'
+
 export function App() {
 
   return (
