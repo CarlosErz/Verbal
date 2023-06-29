@@ -75,13 +75,14 @@ export function Register() {
             Acepto las <Link to="/Privacy">políticas de privacidad</Link>
           </label>
         </div>
-        <Btn TypeBtn="submit" NameBtn="Registrarse" />
-      </form>
-      {!loggedIn && (
+        <Btn TypeBtn="submit" NameBtn="Registrarse" />  
+        {!loggedIn && (
         <button className="facebook-login-button" onClick={FaceboockLogin}>
           <img src={icon} alt="" className="icon" />
         </button>
       )}
+      </form>
+    
       <p className="Text">
         ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>
       </p>
