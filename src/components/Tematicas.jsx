@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
 import { dataTemas } from '../data/dataTemas.js';
 import { dataModalLog } from '../data/dataModalLog.js';
-import { useState,useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 function Tematica({ tema, imagenes, alt1, Sala }) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -57,22 +57,25 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
   };
 
   return (
-    <div className="tema-container">
-      <p className="temas">{tema}</p>
-      <br />
-      <Slider className="img" {...settings}>
-        {imagenes.map((imagen, imgIndex) => (
-          <div key={imgIndex} className="carousel-item">
-            <Link
-              to={loggedIn ? Sala[imgIndex] : '#'}
-              className="carousel-link"
-              onClick={handleTematicaClick}
-            >
-              <img className="Tematica" src={imagen} alt={alt1} />
-            </Link>
-          </div>
-        ))}
-      </Slider>
+    <>
+      <div className="tema-container">
+        <p className="temas">{tema}</p>
+        <br />
+        <Slider className="img" {...settings}>
+          {imagenes.map((imagen, imgIndex) => (
+            <div key={imgIndex} className="carousel-item">
+              <Link
+                to={loggedIn ? Sala[imgIndex] : '#'}
+                className="carousel-link"
+                onClick={handleTematicaClick}
+              >
+                <img className="Tematica" src={imagen} alt={alt1} />
+              </Link>
+            </div>
+          ))}
+        </Slider>
+
+      </div>
       {showModal && !loggedIn && (
         <ModalError
           Title={dataModalLog[0].Title}
@@ -83,7 +86,8 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
           link2={dataModalLog[0].link2}
         />
       )}
-    </div>
+
+    </>
   );
 }
 

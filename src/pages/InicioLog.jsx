@@ -7,6 +7,7 @@ import { Navbar } from '../components/Navbar.jsx';
 //import Juego1 from '../assets/juego1.png';
 //import { ModalError } from '../components/ModalError.jsx';
 //import { dataModalLog } from '../data/dataModalLog.js';
+//import {Modal} from '../components/Modal.jsx';
 import 'normalize.css';
 
 export function InicioLog() {
@@ -22,7 +23,6 @@ export function InicioLog() {
   return (
     <>
       <Navbar />
-      
       <div className="contenido">
         <div className='btn_compartir'>
           <div className="bg_compartir">
