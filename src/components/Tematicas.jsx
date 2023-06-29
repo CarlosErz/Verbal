@@ -16,7 +16,18 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
       setLoggedIn(true);
     }
   }, []);
-  alt1 = 'Imagen de Tematica';
+  
+  const [showModal, setShowModal] = useState(false);
+
+  const handleTematicaClick = () => {
+    if (!loggedIn) {
+      setShowModal(true);
+    } else {
+      // Acción adicional para el caso en que el usuario esté registrado
+      // ...
+    }
+  };
+
   const numSlidesToShow = Math.min(3, imagenes.length); // Limitar el número de slides a mostrar
   const settings = {
     dots: false,
@@ -44,18 +55,6 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
     ],
   };
 
-  const [showModal, setShowModal] = useState(false);
-
-
-  const handleTematicaClick = () => {
-    if (!loggedIn) {
-      setShowModal(true);
-    } else {
-      // Acción adicional para el caso en que el usuario esté registrado
-      // ...
-    }
-  };
-
   return (
     <>
       <div className="tema-container">
@@ -74,7 +73,6 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
             </div>
           ))}
         </Slider>
-
       </div>
       {showModal && !loggedIn && (
         <ModalError
@@ -86,7 +84,6 @@ function Tematica({ tema, imagenes, alt1, Sala }) {
           link2={dataModalLog[0].link2}
         />
       )}
-
     </>
   );
 }
