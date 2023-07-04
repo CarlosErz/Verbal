@@ -35,7 +35,7 @@
 
 .linkto {
   font-size: 16px;
-  color: var(--primarios);
+  color: var(--texto-base);
   text-decoration: none;
   font-weight: bold;
   padding: 0 0 0 20px;
@@ -51,8 +51,8 @@
 
 
 .temas {
-  font-size: 20px;
-  color: var( --textotitl);
+  font-size: var(--secun-desk);
+  color: var( --texto-titl);
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
@@ -65,8 +65,8 @@
 }
 
 .title {
-  color: var(--textotitl);
-  font-size: 2rem;
+  color: var(--texto-titl);
+  font-size: var(--titulos-desk);
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -103,7 +103,7 @@
   }
 
   .temas {
-    font-size: 16px;
+    font-size: var(--secun-tableta);
     padding: 0 0 0 0;
     margin: 0;
   }
@@ -117,6 +117,9 @@
     padding: 0;
     display: none;
 
+  }
+  .title{
+    font-size: var(--titulo-tableta);
   }
 
 
@@ -141,6 +144,12 @@
   .compartir{
     width: 20px;
     padding: 10px;
+  }
+  .title{
+    font-size: var(--titulo-movil);
+  }
+  .temas{
+    font-size: var(--secun-movil);
   }
 
 

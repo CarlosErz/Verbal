@@ -20,7 +20,7 @@ export function Login() {
   }, []);
   return (
     <div className="Formulario">
-      <h1 className="Title">INICIA SESIÓN</h1>
+      <h1 className="title">INICIA SESIÓN</h1>
       <img src={logo} alt="Logo verbal+ " className="logo" />
       <form className="Form" action="POST">
         {datainiciar.map((input, index) => (

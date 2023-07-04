@@ -1,11 +1,22 @@
 :root {
-  --background: #262626;
-  --background2: #333333;
-  --secundarios:#F54242;
-  --textotitl:#E3E3E3;
-  --primarios:#FFFFFF;
-  --Esquematico1:#2ECC71;
-  --Esquematico2:#FFC400; 
-  --Esquematico3:#4287F5;
-  
+/* Color styles */
+--background: rgba(38, 38, 38, 1);
+--texto-titl: rgba(227, 227, 227, 1);
+--background-tono: rgba(51, 51, 51, 1);
+--secundario: rgba(245, 66, 66, 1);
+--texto-base: rgba(255, 255, 255, 1);
+--Esquematico2: rgba(255, 196, 0, 1);
+--Esquematico1: rgba(95, 67, 211, 1);
+--Esquematico3: rgba(46, 204, 113, 1);
+
+/* Text-size styles */
+--titulos-desk: 32px;
+--titulo-tableta: 28px;
+--titulo-celular: 24px;
+--secun-desk: 24px;
+--secun-tableta: 20px;
+--secun-celular: 18px;
+--parra-desk: 16px;
+--parra-tableta: 14px;
+--parra-celular: 12px;
 }

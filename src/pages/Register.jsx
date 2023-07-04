@@ -50,7 +50,7 @@ export function Register() {
 
   return (
     <div className="Formulario">
-      <h1 className="Title">REGISTRATE</h1>
+      <h1 className="title">REGISTRATE</h1>
       <Link to="/">
         <img src={logo} alt="Logo verbal+ " className="logo" />
       </Link>

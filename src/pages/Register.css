@@ -1,10 +1,6 @@
 @import url(../css/var.css);
 
-.Title {
-  text-align: center;
-  color: var(--textotitl);
-  font-weight: 800;
-}
+
 
 .Form {
   display: flex;
@@ -23,7 +19,7 @@
   width: 50px;
   display: flex;
   height: 50px;
-  background: var(--secundarios);
+  background: var(--secundario);
   border: none;
   cursor: pointer;
   border-radius: 20%;
@@ -46,18 +42,18 @@
 
 .privacy-policy {
   text-align: center;
-  color: var(--secundarios);
+  color: var(--secundario);
   font-size: 1rem;
   padding: 20px;
 }
 
 .privacy-policy>label {
   padding: 20px;
-  color: var(--primarios);
+  color: var(--texto-base);
 }
 
 .privacy-policy>label>a {
-  color: var(--secundarios);
+  color: var(--secundario);
   text-decoration: none;
   font-weight: bold;
   text-decoration: underline;
@@ -75,13 +71,13 @@
 
 .Text {
   text-align: center;
-  color: var(--primarios);
+  color: var(--texto-base);
   font-size: 1rem;
   margin-top: 20px;
 }
 
 .Text>a {
-  color: var(--secundarios);
+  color: var(--secundario);
   text-decoration: none;
   font-weight: bold;
   text-decoration: underline;
