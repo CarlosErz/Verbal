@@ -177,37 +177,94 @@ img.Tematica {
   position: fixed;
   display: flex;
   justify-content: center;
-  height: 100%;
+  bottom: 40px;
   width: 100%;
+  text-align: center;
+  border-radius: 100%;
   align-items: center;
   z-index: 1;
 }
 
 .modal-container {
   position: fixed;
-  background-color: var(--secundario);
-  border-radius: 20px;
+  background-color: var(--background-tono);
+  opacity: 0.89;
+  border-radius: 5%;
   padding: 20px;
   width: 100%;
   height: 100%;
   display: flex;
+  text-transform: uppercase;
   flex-direction: column;
 
-
+  animation-name: modalAnimation;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
 }
+
+@keyframes modalAnimation {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-exit {
+  animation-name: modalExitAnimation;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes modalExitAnimation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
 
 .modal-title {
   color: var(--texto-titl);
-  font-size: 2rem;
+  font-size: var(--titulos-desk);
   font-weight: bold;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
+.close-button {
+  position: relative;
+  display: flex;
+  left: 90%;
+  border: none;
+  cursor: pointer;
+  background-color: var(--background);
+  border-radius: 50%;
+
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+
+.close-button img {
+  width: 30px;
+  height: 30px;
+}
+
 .modal-text {
-  color: var(--usable);
-  font-size: 1.5rem;
+  color: var(--texto-base);
+  font-size: var(--parra-desk);
   font-weight: bold;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .modalbtn-direccion {
@@ -218,21 +275,27 @@ img.Tematica {
 }
 
 .modal-btn {
-  background-color: var(--texto-base);
+  background-color: var(--Esquematico1);
   padding: 10px;
-  color: var(--background-tono);
+  color: var(--texto-base);
   border-radius: 10px;
-  font-size: 16px;
+  font-size: var(--parra-desk);
   font-weight: bold;
   border: none;
   cursor: pointer;
   margin: 10px;
 }
 
+.modal-btn>a {
+  text-decoration: none;
+  font-size: var(--parra-desk);
+  color: var(--texto-base);
+  text-transform: uppercase;
+}
+
 .modal-btn:hover {
-  background-color: var(--usable);
+  background-color: var(--Esquematico1);
   opacity: 50%;
-  color: var(--secundario);
 }
 
 .Link {
@@ -283,7 +346,7 @@ img.Tematica {
 
 .name {
   color: var(--texto-titl);
-  font-size:var(--parra-desk);
+  font-size: var(--parra-desk);
   font-weight: 800;
 }
 
@@ -326,8 +389,18 @@ img.Tematica {
     border-radius: 50%;
     margin: 10px;
   }
-  .btn{
+
+  .btn {
     font-size: var(--parra-tableta);
+  }
+  .close-button{
+    left: 85%;
+    width: 40px;
+    height: 40px;
+  }
+  .close-button>img{
+    width: 20px;
+    height: 20px;
   }
 
 }
@@ -336,16 +409,15 @@ img.Tematica {
 
 
   .modal-text {
-    font-size: 15px;
+    font-size: var(--parra-tableta);
   }
 
   .modal-title {
-    font-size: 15px;
+    font-size: var(--titulos-celular);
   }
 
-  .modal-btn {
-    font-size: 11px;
-
+  .modal-btn>a {
+    font-size: var(--parra-celular);
   }
 
   .carousel-item {
@@ -365,8 +437,18 @@ img.Tematica {
   .label {
     font-size: var(--parra-celular);
   }
-  .btn{
+
+  .btn {
     font-size: var(--parra-celular);
+  }
+  .close-button{
+    left: 80%;
+    width: 40px;
+    height: 40px;
+  }
+  .close-button>img{
+    width: 20px;
+    height: 20px;
   }
 
 }
