@@ -8,7 +8,7 @@ import 'normalize.css';
 import { ModalError } from '../components/ModalError.jsx';
 import { dataModalLog } from '../data/dataModalLog.js';
 
-export function SalasCon() {
+export function Type() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
