@@ -1,14 +1,15 @@
 export const datainiciar = [
   {
-    TituloInput:'Usuario'
-    , TipoInput:'text'
-    , NombreInput:'Nombre'
-    , IdInput:'Nombre'
+    TituloInput:'Correo Electronico'
+    , TipoInput:'email'
+    , NombreInput:'nombre'
+    , IdInput:'CorreoElectronico',
+    value: ''
   },
   {
     TituloInput:'Contraseña'
     , TipoInput:'password'
     , NombreInput:'Contraseña'
-    , IdInput:'Contraseña'
+    , IdInput:'Contrasena'
   },
 ]

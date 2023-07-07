@@ -8,7 +8,8 @@
   <meta name="description" content="Descubre tu conocimento en verbal + aprende y gana ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,900&display=swap"
+    rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#262626">
 
@@ -32,7 +33,32 @@
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
+      authDomain: "verbal-89593.firebaseapp.com",
+      projectId: "verbal-89593",
+      storageBucket: "verbal-89593.appspot.com",
+      messagingSenderId: "1002243186731",
+      appId: "1:1002243186731:web:0ce4b0c53670ca22408a6e",
+      measurementId: "G-N228VQJ8ZB"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
-<script src="./src/utils/auth.js"></script>
 
 </html>

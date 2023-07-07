@@ -6,7 +6,7 @@ export function Inputs({ TituloInput, TipoInput, NombreInput, IdInput }) {
     <>
       <div className="inputContainer">
         <label className="label"  htmlFor={TipoInput}>{TituloInput}</label>
-           <input className="input" type={TipoInput} name={NombreInput} id={IdInput} />
+           <input required  className="input" type={TipoInput} name={NombreInput} id={IdInput} />
        
       </div>
     </>

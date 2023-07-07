@@ -82,6 +82,9 @@
   border: none;
   border-radius: 0.5rem;
   padding: 20px;
+  color: var(--texto-base);
+  font-size: var(--parra-desk);
+  font-weight: bold;
   height: 10px;
   opacity: 66%;
 }

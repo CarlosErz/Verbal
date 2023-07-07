@@ -1,9 +1,9 @@
 export const dataInputs = [
   {
-    TituloInput:'Usuario'
-    , TipoInput:'text'
+    TituloInput:'Correo Electronico'
+    , TipoInput:'email'
     , NombreInput:'nombre'
-    , IdInput:'nombre',
+    , IdInput:'CorreoElectronico',
     value: ''
   },
   {

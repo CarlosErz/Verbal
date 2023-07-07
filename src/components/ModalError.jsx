@@ -43,8 +43,8 @@ export function ModalError({ Title, TipoError, bt1, bt2, link1, link2 }) {
 ModalError.propTypes = {
   Title: PropTypes.string.isRequired,
   TipoError: PropTypes.string.isRequired,
-  bt1: PropTypes.string.isRequired,
-  bt2: PropTypes.string.isRequired,
-  link1: PropTypes.string.isRequired,
-  link2: PropTypes.string.isRequired,
+  bt1: PropTypes.string,
+  bt2: PropTypes.string,
+  link1: PropTypes.string ,
+  link2: PropTypes.string
 };
