@@ -7,7 +7,7 @@ import './inicio.css';
 import 'normalize.css';
 //import { ModalError } from '../components/ModalError.jsx';
 //import { dataModalLog } from '../data/dataModalLog.js';
-import { Btn } from '../components/btn.jsx';
+import { ComBtn } from '../components/ComBtn';
 
 export function InicioLog() {
 
@@ -15,16 +15,12 @@ export function InicioLog() {
     <>
       <div className="contendis">
         <div className="contenbtn">
-          <Btn  NameBtn='INICIAR SESION' link='/register'>
+          <ComBtn  NameBtn='INICIAR SESION' link='/register'/>
 
-          </Btn>
+          <ComBtn  NameBtn='Register' link='/register'/>
 
-          <Btn  NameBtn='Register' link='/register'>
+          <ComBtn NameBtn='Juego rapido' link='/Salas'/>
 
-          </Btn>
-          <Btn NameBtn='Juego rapido' link='/Salas'>
-
-          </Btn>
         </div>
       </div>
 

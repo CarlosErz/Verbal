@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import '../css/components.css';
-import { Link } from 'react-router-dom';
 
-export function Btn({  NameBtn ,link }) {
+export function Btn({ TypeBtn, NameBtn }) {
   return (
     <>
-    <Link className="btn" to={link} >{NameBtn}
-      </Link>
+      <button  className="btn" type={TypeBtn}>{NameBtn}
+      </button>
     </>
   );
 }
@@ -14,5 +13,4 @@ export function Btn({  NameBtn ,link }) {
 Btn.propTypes = {
   TypeBtn: PropTypes.string.isRequired,
   NameBtn: PropTypes.string.isRequired,
-  link: PropTypes.string
 };

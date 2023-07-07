@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Btn } from '../components/Btn';
+import {Btn} from '../components/Btn.jsx';
 import { Inputs } from '../components/Inputs';
 import { dataInputs } from '../data/dataInputs.js';
 import { Link } from 'react-router-dom';
