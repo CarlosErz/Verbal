@@ -2,8 +2,8 @@
 /* Color styles */
 --background: rgba(38, 38, 38, 1);
 --texto-titl: rgba(227, 227, 227, 1);
---background-tono: rgb(188, 60, 60);
---secundario: rgba(245, 66, 66, 1);
+--background-tono: rgba(51, 51, 51, 1);
+--secundario: #f54242;
 --texto-base: rgba(255, 255, 255, 1);
 --Esquematico2: rgba(255, 196, 0, 1);
 --Esquematico1: rgba(95, 67, 211, 1);

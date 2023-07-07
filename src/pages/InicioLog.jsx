@@ -7,11 +7,29 @@ import './inicio.css';
 import 'normalize.css';
 //import { ModalError } from '../components/ModalError.jsx';
 //import { dataModalLog } from '../data/dataModalLog.js';
+import { Btn } from '../components/btn.jsx';
 
 export function InicioLog() {
 
   return (
     <>
+      <div className="contendis">
+        <div className="contenbtn">
+          <Btn TypeBtn='' NameBtn='INICIAR SESION' link='/register'>
+
+          </Btn>
+
+          <Btn TypeBtn='' NameBtn='Register' link='/register'>
+
+          </Btn>
+          <Btn TypeBtn='' NameBtn='Juego rapido' link='/register'>
+
+          </Btn>
+        </div>
+      </div>
+
+
+
       <div className="e220_17">
         <div className="e222_16 animation"></div>
         <div className="e222_5 animation"></div>

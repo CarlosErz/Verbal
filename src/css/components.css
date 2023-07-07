@@ -92,11 +92,42 @@
   border: 2px solid var(--secundario);
 }
 
+.contenbtn {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  z-index: 200000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+.contendis{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  display: flex;
+  background-color: var(--background);
+  opacity: 0.9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenbtn>.btn {
+  margin-top: 30px;
+}
+
 .btn {
   background-color: var(--secundario);
   padding: 20px;
+  text-transform: uppercase;
   color: white;
   border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
   font-size: var(--parra-desk);
   font-weight: bold;
   border: none;
@@ -104,8 +135,8 @@
 }
 
 .btn:hover {
-  background-color: var(--secundario);
-  opacity: 50%;
+  background-color: #b42a2a;
+
   color: #fff;
 }
 
@@ -393,12 +424,14 @@ img.Tematica {
   .btn {
     font-size: var(--parra-tableta);
   }
-  .close-button{
+
+  .close-button {
     left: 85%;
     width: 40px;
     height: 40px;
   }
-  .close-button>img{
+
+  .close-button>img {
     width: 20px;
     height: 20px;
   }
@@ -441,12 +474,14 @@ img.Tematica {
   .btn {
     font-size: var(--parra-celular);
   }
-  .close-button{
+
+  .close-button {
     left: 80%;
     width: 40px;
     height: 40px;
   }
-  .close-button>img{
+
+  .close-button>img {
     width: 20px;
     height: 20px;
   }
