@@ -15,14 +15,14 @@ export function InicioLog() {
     <>
       <div className="contendis">
         <div className="contenbtn">
-          <Btn TypeBtn='' NameBtn='INICIAR SESION' link='/register'>
+          <Btn  NameBtn='INICIAR SESION' link='/register'>
 
           </Btn>
 
-          <Btn TypeBtn='' NameBtn='Register' link='/register'>
+          <Btn  NameBtn='Register' link='/register'>
 
           </Btn>
-          <Btn TypeBtn='' NameBtn='Juego rapido' link='/Salas'>
+          <Btn NameBtn='Juego rapido' link='/Salas'>
 
           </Btn>
         </div>
