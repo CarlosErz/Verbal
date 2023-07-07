@@ -22,7 +22,7 @@ export function InicioLog() {
           <Btn TypeBtn='' NameBtn='Register' link='/register'>
 
           </Btn>
-          <Btn TypeBtn='' NameBtn='Juego rapido' link='/register'>
+          <Btn TypeBtn='' NameBtn='Juego rapido' link='/Salas'>
 
           </Btn>
         </div>
