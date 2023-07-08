@@ -7,6 +7,7 @@ import './inicio.css';
 import 'normalize.css';
 //import { ModalError } from '../components/ModalError.jsx';
 //import { dataModalLog } from '../data/dataModalLog.js';
+import logo from '../assets/logo.svg';
 import { ComBtn } from '../components/ComBtn';
 
 export function InicioLog() {
@@ -15,6 +16,7 @@ export function InicioLog() {
     <>
       <div className="contendis">
         <div className="contenbtn">
+          <img className='Logo' src={logo} alt="LogoGame" />
           <ComBtn  NameBtn='INICIAR SESIÓN' link='/login'/>
 
           <ComBtn  NameBtn='REGISTRATE' link='/register'/>

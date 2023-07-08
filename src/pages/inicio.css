@@ -8,12 +8,12 @@
   height: 75px;
   align-items: center;
   border-radius: 40px;
-}
-.btn_compartir:hover {
+}.btn_compartir:hover {
   background-color: var(--Esquematico2);
   opacity: 65%;
+}.btn{
+	width: 100%;
 }
-
 .prueba {
   width: 95%;
   height: 95%;
@@ -29,6 +29,54 @@
   width: 50px;
   height: 50px;
   border-radius: 40px;
+}
+.contenbtn {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  z-index: 200000;
+  display: flex;
+	align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+.contendis{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  display: flex;
+  background-color: var(--background);
+  opacity: 0.9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenbtn>.btn {
+  margin-top: 30px;
+}
+
+.btn {
+  background-color: var(--secundario);
+  padding: 20px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--parra-desk);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #b42a2a;
+
+  color: #fff;
 }
 .e220_17 { 
 	overflow:hidden;
@@ -471,6 +519,23 @@
 .animation {
   animation: moveUpDown 2s ease-in-out infinite;
 }
+.Logo {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  animation: rotate 2s infinite linear;
+	user-select: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 
 
@@ -599,6 +664,11 @@
   .title{
     font-size: var(--titulo-tableta);
   }
+	.Logo{
+		width: 150px;
+		height: 150px;
+		user-select: none;
+	}
 
 
 }
