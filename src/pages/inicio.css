@@ -32,8 +32,6 @@
 }
 .contenbtn {
   position: absolute;
-  width: 50%;
-  height: 50%;
   margin: 0 auto;
   z-index: 200000;
   display: flex;
@@ -525,6 +523,8 @@
   justify-content: center;
   animation: rotate 2s infinite linear;
 	user-select: none;
+	padding: 20px;
+	margin-bottom: 20px;
 }
 
 @keyframes rotate {
