@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../css/components.css';
+import eyeIcon from '../assets/eye.svg';
+import eyeSlashIcon from '../assets/eyeclost.svg';
 
 export function Inputs({ TituloInput, TipoInput, NombreInput, IdInput }) {
   const [mostrarContraseña, setMostrarContraseña] = useState(false);
@@ -13,7 +15,7 @@ export function Inputs({ TituloInput, TipoInput, NombreInput, IdInput }) {
     if (TipoInput === 'password') {
       return (
         <span className="icono" onClick={handleChangeMostrarContraseña}>
-          {mostrarContraseña ? '🙈' : '👁️'}
+         <img className='icono' src={mostrarContraseña ? eyeSlashIcon : eyeIcon} alt="Mostrar contraseña" />
         </span>
       );
     }

@@ -106,6 +106,7 @@
 .icono {
   position: absolute;
   top: 50%;
+  width: 20px;
   right: 10px;
   transform: translateY(-50%);
   cursor: pointer;
