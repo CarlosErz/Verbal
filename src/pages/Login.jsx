@@ -8,6 +8,7 @@ import google from '/src/assets/google.svg';
 import logo from '/src/assets/logo.svg';
 import { initializeApp } from "firebase/app";
 import { Modal } from '../components/Modal';
+import '../css/components.css'
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword , onAuthStateChanged } from "firebase/auth";
 
 
@@ -142,9 +143,10 @@ export function Login() {
         <Modal Title="Error a el inciar sesion" onclick={() => setNosepudo(false)} />
       )}
       {loggedInUser && (
-        <p className='label'>Usuario actualmente iniciado sesión: 
+        <p className='estate'>Usuario actualmente iniciado sesión como:   
+
         <span className='user'>
-          {loggedInUser.email}
+        {loggedInUser.email}
         </span>
         </p>
       )}

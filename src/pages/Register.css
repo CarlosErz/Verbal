@@ -16,10 +16,10 @@
 }
 
 .red-login-button {
-  width: 50px; 
+  width: 50px;
   height: 50px;
   display: flex;
- 
+
   background: var(--secundario);
   border: none;
   cursor: pointer;
@@ -27,14 +27,16 @@
   align-items: center;
   justify-content: center;
 }
-.user{
-  color:  var(--secundario);
+
+.user {
+  color: var(--secundario);
 }
 
 .red-login-button:hover {
   background: var(--Esquematico1);
 }
-.btnfb{
+
+.btnfb {
   margin-top: 20px;
   width: 100%;
   display: flex;
@@ -71,6 +73,7 @@
 .logo {
   width: 80px;
   height: 80px;
+  margin-bottom: 20px;
 }
 
 .Text {
@@ -78,6 +81,14 @@
   color: var(--texto-base);
   font-size: 1rem;
   margin-top: 20px;
+}
+
+.estate {
+  color: var(--texto-base);
+  font-weight: bold;
+  font-size: var(--parra-desk);
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .Text>a {
@@ -96,11 +107,16 @@
   .inputContainer {
     width: 100%;
   }
+
   .Text {
     font-size: 12px;
   }
-  .privacy-policy>label{
+
+  .privacy-policy>label {
     font-size: 12px;
+  }
+  .estate{
+    font-size: var(--parra-tableta);
   }
 }
 
@@ -112,6 +128,9 @@
 
   .inputContainer {
     width: 100%;
+  }
+  .estate{
+    font-size: var(--parra-celular);
   }
 
 }

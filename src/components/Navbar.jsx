@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import logo from '/src/assets/logo.svg';
 
 
+
 export function Navbar({ Nombre, avatar }) {
   const [userName, setUserName] = useState('');
   const [userAvatar, setUserAvatar] = useState('');
+  
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser');

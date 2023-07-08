@@ -1,11 +1,5 @@
 @import url(var.css);
 
-.inputContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  margin-bottom: 20px;
-}
 
 .Contenedor_PrivacyPolicy {
   display: flex;
@@ -67,27 +61,40 @@
   text-align: center;
   margin-top: 20px;
 }
-
-
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
 
 .label {
   font-size: var(--parra-desk);
   font-weight: bold;
   margin-bottom: 0.5rem;
-  text-align: center;
   color: var(--texto-base);
   text-transform: uppercase;
 }
+
+.inputWrapper {
+  position: relative;
+}
+
 .input {
   background-color: var(--background-tono);
   border: none;
-  border-radius: 0.5rem;
-  padding: 20px;
+  border-radius: 0.6rem;
   color: var(--texto-base);
   font-size: var(--parra-desk);
   font-weight: bold;
-  height: 10px;
-  opacity: 66%;
+  height: 50px;
+  padding: 2px;
+  width: 100%;
+  opacity: 66%; 
+}
+.inputWrapper{
+  position: relative;
 }
 
 .input:focus {
@@ -95,6 +102,15 @@
   opacity: 100%;
   border: 2px solid var(--secundario);
 }
+
+.icono {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 
 
 img.Tematica {
@@ -338,7 +354,7 @@ img.Tematica {
   font-weight: 800;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .modal-text {
     font-size: 1rem;
   }
@@ -392,6 +408,13 @@ img.Tematica {
     width: 20px;
     height: 20px;
   }
+  .estate{
+    font-size: var(--parra-tableta);
+    text-align: center;
+  }
+  .input{
+    font-size: var(--parra-tableta);
+  }
 
 }
 
@@ -413,6 +436,9 @@ img.Tematica {
   .carousel-item {
     margin-right: 5px;
     margin-left: 5px;
+  }
+  .input{
+    font-size: var(--parra-celular);
   }
 
   .navbar-logo>img {

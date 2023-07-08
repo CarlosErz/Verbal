@@ -49,7 +49,7 @@ export function Register() {
 
           const loginData = {
             provider: 'facebook',
-            accessToken: credential.accessToken,
+           // accessToken: credential.accessToken,
             // Include other relevant login data
 
           };
