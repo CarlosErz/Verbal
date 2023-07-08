@@ -92,6 +92,7 @@
   padding: 2px;
   width: 100%;
   opacity: 66%;
+  zoom: 1; /* Deshabilita el zoom en dispositivos móviles */
   touch-action: manipulation; /* Deshabilita el zoom en dispositivos móviles */
   -ms-touch-action: manipulation; /* Deshabilita el zoom en dispositivos móviles en Internet Explorer */
 }
