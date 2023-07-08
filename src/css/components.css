@@ -412,7 +412,7 @@ img.Tematica {
     text-align: center;
   }
   .input{
-    font-size: var(--parra-tableta);
+    font-size: 16px;
   }
 
 }
@@ -435,9 +435,6 @@ img.Tematica {
   .carousel-item {
     margin-right: 5px;
     margin-left: 5px;
-  }
-  .input{
-    font-size: var(--parra-celular);
   }
 
   .navbar-logo>img {
