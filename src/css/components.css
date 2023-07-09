@@ -579,9 +579,11 @@ img.Tematica {
   .rueda {
     width: 10rem;
     height: 10rem;
+    user-select: all;
   }
   .rueda li{
     font-size: 1rem;
+    user-select: all;
   }
 
   .modal-title {
