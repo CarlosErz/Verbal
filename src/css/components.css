@@ -36,7 +36,7 @@
 }
 
 .ruleta.girando {
-  animation: girar 2s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
+  animation: girar 4s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
 
 .Contenedor_PrivacyPolicy {
