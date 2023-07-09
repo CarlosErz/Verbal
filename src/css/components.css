@@ -24,7 +24,7 @@
   z-index: 10000000;
   justify-content: center;
   align-items: center;
-  animation: Caja 2s infinite;
+  animation: Caja 4s infinite;
 
 }
 
@@ -223,7 +223,7 @@
   color: var(--texto-titl);
 }
 .rotating {
-  animation: girar 10s infinite linear;
+  animation: girar 2s infinite;
 }
 .StoRulet{
   background-color: var(--secundario);

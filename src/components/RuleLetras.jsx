@@ -35,7 +35,7 @@ export function RuleLetras() {
       setTimeout(() => {
         setShowConfetti(false);
         setShowModal(false);
-      }, 2000);
+      }, 4000);
     }
     else {
       setIsStopped(false);
@@ -76,7 +76,7 @@ export function RuleLetras() {
 
       };
 
-      timeoutId = setTimeout(stopAnimation, 3000);
+      timeoutId = setTimeout(stopAnimation, 2000);
 
       startAnimation();
 
@@ -98,7 +98,7 @@ export function RuleLetras() {
     setTimeout(() => {
       setShowConfetti(false);
       setShowModal(false);
-    }, 2000);
+    }, 4000);
     return selected;
   };
 
