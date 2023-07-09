@@ -576,6 +576,13 @@ img.Tematica {
   .modal-text {
     font-size: 1rem;
   }
+  .rueda {
+    width: 10rem;
+    height: 10rem;
+  }
+  .rueda li{
+    font-size: 1rem;
+  }
 
   .modal-title {
     font-size: 1.5rem;
