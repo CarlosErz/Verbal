@@ -9,6 +9,7 @@ import logo from '/src/assets/logo.svg';
 import { initializeApp } from "firebase/app";
 import { Modal } from '../components/Modal';
 import '../css/components.css'
+import './Register.css'
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword , onAuthStateChanged } from "firebase/auth";
 
 
