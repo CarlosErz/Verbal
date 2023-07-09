@@ -6,16 +6,26 @@ import { Modal } from './Modal';
 export function RuleLetras() {
   const [rotation, setRotation] = useState(0);
   const [selectedLetter, setSelectedLetter] = useState('');
-  const [isStopped, setIsStopped] = useState(true); // Nuevo estado para controlar si la ruleta se ha detenido
+  const [isStopped, setIsStopped] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const dragAreaRef = useRef(null);
 
+  useEffect(() => {
+    const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+    setIsMobile(isMobileDevice);
+  }, []);
+
   const bind = useDrag(
-    ({ down, movement: [deltaX] }) => {
+    ({ down, movement: [deltaX], event }) => {
       if (!down) {
         setIsStopped(true);
-        setSelectedLetter(getSelectedLetter(rotation)); // Llamar a getSelectedLetter para actualizar la letra seleccionada
+        setSelectedLetter(getSelectedLetter(rotation));
       }
-      setRotation(prevRotation => prevRotation + deltaX * 0.1);
+      if (isMobile && event.type === 'touchmove') {
+        setRotation(prevRotation => prevRotation + deltaX * 0.05);
+      } else {
+        setRotation(prevRotation => prevRotation + deltaX * 0.1);
+      }
     },
     { dragArea: dragAreaRef }
   );
@@ -35,7 +45,7 @@ export function RuleLetras() {
       const stopAnimation = () => {
         cancelAnimationFrame(animationId);
         clearTimeout(timeoutId);
-        setSelectedLetter(getSelectedLetter(rotation)); // Llamar a getSelectedLetter para actualizar la letra seleccionada;
+        setSelectedLetter(getSelectedLetter(rotation));
       };
 
       timeoutId = setTimeout(stopAnimation, 3000);
@@ -59,38 +69,41 @@ export function RuleLetras() {
   };
 
   return (
-
     <div className="rueda-container" ref={dragAreaRef}>
       <Modal Title={`Letra ${selectedLetter}`} />
-      <div className={`rueda ${isStopped ? '' : 'rotating'}`} {...bind()}>
+      <div
+        ref={dragAreaRef}
+        className={`rueda ${isStopped ? '' : 'rotating'}`}
+        {...bind()}
+      >
         <div style={{ transform: `rotate(${rotation}deg)` }}>A</div>
         <div style={{ transform: `rotate(${rotation + 22.5 * 1}deg)` }}>B</div>
         <div style={{ transform: `rotate(${rotation + 22.5 * 2}deg)` }}>C</div>
         <div style={{ transform: `rotate(${rotation + 22.5 * 3}deg)` }}>D</div>
         <div style={{ transform: `rotate(${rotation + 22.5 * 4}deg)` }}>E</div>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 1}deg)` }}>B</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 2}deg)` }}>C</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 3}deg)` }}>D</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 4}deg)` }}>E</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 6}deg)` }}>F</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 7}deg)` }}>G</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 8}deg)` }}>H</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 9}deg)` }}>I</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 10}deg)` }}>J</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 11}deg)` }}>K</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 12}deg)` }}>L</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 13}deg)` }}>M</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 14}deg)` }}>N</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 15}deg)` }}>Ñ</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 16}deg)` }}>O</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 17}deg)` }}>P</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 18}deg)` }}>Q</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 19}deg)` }}>R</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 20}deg)` }}>S</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 21}deg)` }}>T</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 22}deg)` }}>V</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 23}deg)` }}>X</li>
-        <li style={{ transform: `rotate(${rotation + 22.5 * 24}deg)` }}>Y</li>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 5}deg)` }}>B</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 6}deg)` }}>C</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 7}deg)` }}>D</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 8}deg)` }}>E</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 9}deg)` }}>F</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 10}deg)` }}>G</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 11}deg)` }}>H</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 12}deg)` }}>I</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 13}deg)` }}>J</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 14}deg)` }}>K</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 15}deg)` }}>L</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 16}deg)` }}>M</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 17}deg)` }}>N</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 18}deg)` }}>Ñ</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 19}deg)` }}>O</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 20}deg)` }}>P</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 21}deg)` }}>Q</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 22}deg)` }}>R</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 23}deg)` }}>S</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 24}deg)` }}>T</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 25}deg)` }}>V</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 26}deg)` }}>X</div>
+        <div style={{ transform: `rotate(${rotation + 22.5 * 28}deg)` }}>Y</div>
         {/* Resto de las letras */}
       </div>
       <div className="btns">
