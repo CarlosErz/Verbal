@@ -11,8 +11,18 @@ export function RuleLetras() {
   const dragAreaRef = useRef(null);
 
   useEffect(() => {
-    const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
-    setIsMobile(isMobileDevice);
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      setIsMobile(windowWidth <= 768); // Establecer el tamaño de pantalla deseado
+    };
+
+    handleResize(); // Llamar a la función para establecer el estado inicial
+
+    window.addEventListener('resize', handleResize); // Escuchar los cambios de tamaño de la ventana
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Limpiar el listener al desmontar el componente
+    };
   }, []);
 
   const bind = useDrag(
@@ -22,7 +32,7 @@ export function RuleLetras() {
         setSelectedLetter(getSelectedLetter(rotation));
       }
       if (isMobile && event.type === 'touchmove') {
-        setRotation(prevRotation => prevRotation + deltaX * 0.05);
+        setRotation(prevRotation => prevRotation + deltaX * 1000);
       } else {
         setRotation(prevRotation => prevRotation + deltaX * 0.1);
       }
