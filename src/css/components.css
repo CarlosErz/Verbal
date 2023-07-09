@@ -211,8 +211,10 @@
   }
 }
 
-.ruleta.girando {
-  animation: girar 1s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
+.ruleta li.girando {
+  animation: girar 1s infinite; 
+  border-radius: 50%;
+  /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
 .ruleta-container{
   display: flex;
