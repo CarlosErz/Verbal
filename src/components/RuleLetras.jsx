@@ -24,6 +24,15 @@ export function RuleLetras() {
       window.removeEventListener('resize', handleResize); // Limpiar el listener al desmontar el componente
     };
   }, []);
+  const stopRoulette = () => {
+    if (!isStopped) {
+      setIsStopped(true);
+      setSelectedLetter(getSelectedLetter(rotation));
+    }
+    else {
+      setIsStopped(false);
+    }
+  };
 
   const bind = useDrag(
     ({ down, movement: [deltaX], event }) => {
@@ -78,6 +87,7 @@ export function RuleLetras() {
     return selected;
   };
 
+
   return (
     <div className="rueda-container" ref={dragAreaRef}>
       <Modal Title={`Letra ${selectedLetter}`} />
@@ -114,9 +124,11 @@ export function RuleLetras() {
         <div style={{ transform: `rotate(${rotation + 22.5 * 25}deg)` }}>V</div>
         <div style={{ transform: `rotate(${rotation + 22.5 * 26}deg)` }}>X</div>
         <div style={{ transform: `rotate(${rotation + 22.5 * 28}deg)` }}>Y</div>
-        {/* Resto de las letras */}
       </div>
       <div className="btns">
+        <button className='RunRulet' onClick={stopRoulette}>
+          {isStopped ? 'Girar' : 'Detener'}
+        </button>
       </div>
     </div>
   );

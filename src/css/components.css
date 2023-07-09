@@ -192,6 +192,7 @@
   font-size: 20px;
   text-align: center;
   border:  none;
+  display: none;
 }
 .btns{
   display: flex;
@@ -427,7 +428,6 @@ img.Tematica {
   animation-fill-mode: forwards;
   animation-delay: 0.3s;
 }
-
 @keyframes modalAnimation {
   from {
     transform: translateY(100%);
@@ -641,6 +641,9 @@ img.Tematica {
   }
   .input{
     font-size: 16px;
+  }
+  .RunRulet{
+    display: flex;
   }
 
 }
