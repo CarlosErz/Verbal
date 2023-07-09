@@ -15,8 +15,43 @@
   height: 200px; /* Ajusta el tamaño de la ruleta según tus necesidades */
   animation: girar 2s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
+.Letra{
+  width: 100%;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  background-color: var(--background-tono);
+  z-index: 10000000;
+  justify-content: center;
+  align-items: center;
+  animation: Caja 2s infinite;
 
+}
 
+@keyframes Caja {
+
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+  
+}
+.flex{
+  width: 90px;
+  height: 90px;
+  background-color: var(--texto-base);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+
+}
 .tacha {
   position: absolute;
   top: 50%;
@@ -24,6 +59,12 @@
   width: 125px;
   transform: translate(-80%, -50%);
   z-index: 1; /* Asegura que la tacha esté encima de la ruleta */
+}
+.letra_conten{
+ font-size: var(--titulos-desk);
+ color: var(--background-tono);
+ font-weight: 600;
+
 }
 
 .rueda div:nth-child(1) {
@@ -124,7 +165,17 @@
   background-color: var(--Esquematico1);
   
 }
+.flechita{
+  font-size: 24px;
+  background-color: var(--secundario);
+  color: var(--secundario);
+  transform: rotate(90deg);
+  position: absolute;
+  top: 40%;
 
+  z-index: 2;
+  padding: 10px;
+}
 .rueda {
   width: 20rem;
   height: 20rem;
@@ -157,8 +208,6 @@
 }
 .rueda-container {
   position: relative;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 .rotating{
