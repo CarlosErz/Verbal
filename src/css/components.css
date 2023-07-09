@@ -159,8 +159,11 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
-
+.rotating{
+  overflow: hidden;
+}
 
 
 .selected-letter {
@@ -214,10 +217,9 @@
   }
 }
 
-.ruleta.girando {
+.ruleta li.girando {
   animation: girar 1s infinite; 
   border-radius: 50%;
-  overflow: hidden;
   /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
 .ruleta-container{
