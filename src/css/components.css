@@ -149,8 +149,8 @@
   transition: transform 1s;
   color: var(--texto-titl);
   font-weight: bold;
+  align-items: center;
   user-select: none;
- 
 
   align-items: center;
   font-size: 1.5rem;
@@ -212,7 +212,7 @@
 }
 
 .ruleta.girando {
-  animation: girar 4s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
+  animation: girar 1s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
 .ruleta-container{
   display: flex;
