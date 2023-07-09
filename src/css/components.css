@@ -214,9 +214,10 @@
   }
 }
 
-.ruleta li.girando {
+.ruleta.girando {
   animation: girar 1s infinite; 
   border-radius: 50%;
+  overflow: hidden;
   /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
 .ruleta-container{
