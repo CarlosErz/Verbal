@@ -28,5 +28,5 @@ export function Modal({ Title, onclick }) {
 
 Modal.propTypes = {
   Title: PropTypes.string.isRequired,
-  onclick: PropTypes.func.isRequired,
+  onclick: PropTypes.func
 };

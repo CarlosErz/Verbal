@@ -53,15 +53,15 @@
   
 }
 .rueda li:nth-child(7) {
-  background-color: #ab006f;
+  background-color:var(--Esquematico1);
   
 }
 .rueda li:nth-child(8) {
-  background-color: #21b400;
+  background-color: var(--Esquematico2);
   
 }
 .rueda li:nth-child(9) {
-  background-color: #00b4b4;
+  background-color: var(--Esquematico3);
   
 }
 .rueda li:nth-child(10) {
@@ -93,7 +93,7 @@
   
 }
 .rueda li:nth-child(17) {
-  background-color: #007b7b;
+  background-color: #D30098;
   
 }
 .rueda li:nth-child(18) {
@@ -101,27 +101,27 @@
   
 }
 .rueda li:nth-child(19) {
-  background-color: #7b007b;
+  background-color: var(--Esquematico1);
   
 }
 .rueda li:nth-child(20) {
-  background-color: #7b7b00;
+  background-color: var(--Esquematico2);
   
 }
 .rueda li:nth-child(21) {
-  background-color: #007b00;
+  background-color: var(--Esquematico3);
   
 }
 .rueda li:nth-child(22) {
-  background-color: #007b7b;
+  background-color: var(--Esquematico4);
   
 }
 .rueda li:nth-child(23) {
-  background-color: #7b0000;
+  background-color: var(--secundario);
   
 }
 .rueda li:nth-child(24) {
-  background-color: #7b007b;
+  background-color: var(--Esquematico1);
   
 }
 
@@ -134,7 +134,8 @@
   margin: 1rem auto;
   border-radius: 50%;
   list-style: none;
-  overflow: hidden;
+  overflow: hidden; 
+  border:  5px solid var(--texto-base);
 }
 
 .rueda li {
@@ -148,16 +149,14 @@
   transition: transform 1s;
   color: var(--texto-titl);
   font-weight: bold;
+  user-select: none;
+ 
 
   align-items: center;
   font-size: 1.5rem;
 }
 .rueda-container {
   position: relative;
-}
-
-.selected-letter {
-  margin-top: 1rem;
 }
 
 
@@ -167,6 +166,7 @@
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+  color: var(--texto-titl);
 }
 .rotating {
   animation: girar 10s infinite linear;
@@ -181,7 +181,23 @@
   text-align: center;
   border:  none;
 }
-
+.RunRulet{
+  background-color: var(--Esquematico1);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--texto-titl);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border:  none;
+}
+.btns{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
 /* Animación de giro para la ruleta */
 @keyframes girar {
   from {

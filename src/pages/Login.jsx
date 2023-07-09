@@ -1,5 +1,5 @@
 import { Btn } from '../components/Btn';
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { Inputs } from '../components/Inputs';
 import { Link } from 'react-router-dom';
 import { datainiciar } from '../data/datainiciar.js';
@@ -10,7 +10,7 @@ import { initializeApp } from "firebase/app";
 import { Modal } from '../components/Modal';
 import '../css/components.css'
 import './Register.css'
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword , onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 
 
@@ -62,14 +62,13 @@ export function Login() {
         setShowModal(false);
       });
   }
-
   const FaceboockLogin = () => {
     const provider = new FacebookAuthProvider();
     signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      setShowModal(true);
-      setLoggedInUser(user);
+      .then((result) => {
+        const user = result.user;
+        setShowModal(true);
+        setLoggedInUser(user);
       })
       .catch((error) => {
         console.log(error);
@@ -104,15 +103,15 @@ export function Login() {
         setNosepudo(true);
       });
   }
-  
+
 
   return (
     <div className="Formulario">
       <h1 className="title">INICIA SESIÓN</h1>
-      <Link to= '/'>
-       <img src={logo} alt="Logo verbal+ " className="logo" />
+      <Link to='/'>
+        <img src={logo} alt="Logo verbal+ " className="logo" />
       </Link>
-     
+
       <form className="Form" onSubmit={handleLogin} >
         {datainiciar.map((input, index) => (
           <Inputs
@@ -143,15 +142,16 @@ export function Login() {
       {showModal && (
         <Modal Title="Inicio de sesion con exito" onclick={() => setShowModal(false)} />
       )}
-        {Nosepudo && (
-        <Modal Title="Error a el inciar sesion" onclick={() => setNosepudo(false)} />
+      {Nosepudo && (
+        <Modal Title="Error a el inciar sesion" onclick={() => setNosepudo(false)}
+        />
       )}
       {loggedInUser && (
-        <p className='estate'>Usuario actualmente iniciado sesión como:   
+        <p className='estate'>Usuario actualmente iniciado sesión como:
 
-        <span className='user'>
-        {loggedInUser.email}
-        </span>
+          <span className='user'>
+            {loggedInUser.email}
+          </span>
         </p>
       )}
 
