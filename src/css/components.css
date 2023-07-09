@@ -1,5 +1,43 @@
 @import url(var.css);
+.ruletaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Ajusta la altura según tus necesidades */
+}
 
+.ruletaWrapper {
+  position: relative;
+}
+
+.ruleta {
+  width: 200px; /* Ajusta el tamaño de la ruleta según tus necesidades */
+  height: 200px; /* Ajusta el tamaño de la ruleta según tus necesidades */
+  animation: girar 2s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
+}
+
+.tacha {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 125px;
+  transform: translate(-80%, -50%);
+  z-index: 1; /* Asegura que la tacha esté encima de la ruleta */
+}
+
+/* Animación de giro para la ruleta */
+@keyframes girar {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ruleta.girando {
+  animation: girar 2s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
+}
 
 .Contenedor_PrivacyPolicy {
   display: flex;
