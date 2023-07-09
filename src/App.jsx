@@ -8,6 +8,7 @@ import 'normalize.css';
 import {Type} from './pages/Type'
 import { Privacy } from './components/Privacy.jsx'
 import {User} from './pages/User'
+import { RuleLetras } from './components/RuleLetras.jsx'
 
 export function App() {
 
@@ -21,6 +22,7 @@ export function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Privacy" element={< Privacy/>} />
         <Route path="/User" element={<User/>} />
+        <Route path="/rule" element={<RuleLetras />} />
         
       </Routes>
     </BrowserRouter>

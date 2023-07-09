@@ -109,7 +109,10 @@ export function Login() {
   return (
     <div className="Formulario">
       <h1 className="title">INICIA SESIÓN</h1>
-      <img src={logo} alt="Logo verbal+ " className="logo" />
+      <Link to= '/'>
+       <img src={logo} alt="Logo verbal+ " className="logo" />
+      </Link>
+     
       <form className="Form" onSubmit={handleLogin} >
         {datainiciar.map((input, index) => (
           <Inputs

@@ -16,6 +16,7 @@
   animation: girar 2s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
 
+
 .tacha {
   position: absolute;
   top: 50%;
@@ -23,6 +24,162 @@
   width: 125px;
   transform: translate(-80%, -50%);
   z-index: 1; /* Asegura que la tacha esté encima de la ruleta */
+}
+
+.rueda li:nth-child(1) {
+  background-color: var(--Esquematico1);
+  
+}
+
+.rueda li:nth-child(2) {
+  background-color: var(--Esquematico2);
+  
+}
+.rueda li:nth-child(3) {
+  background-color: var(--Esquematico3);
+  
+}
+.rueda li:nth-child(4) {
+  background-color: var(--Esquematico4);
+  
+}
+.rueda li:nth-child(5) {
+  background-color: var(--secundario);
+  
+}
+.rueda li:nth-child(6) {
+  background-color: var(--texto-titl);
+
+  
+}
+.rueda li:nth-child(7) {
+  background-color: #ab006f;
+  
+}
+.rueda li:nth-child(8) {
+  background-color: #21b400;
+  
+}
+.rueda li:nth-child(9) {
+  background-color: #00b4b4;
+  
+}
+.rueda li:nth-child(10) {
+  background-color: #b40000;
+  
+}
+.rueda li:nth-child(11) {
+  background-color: #b400b4;
+  
+}
+.rueda li:nth-child(12) {
+  background-color: #b4b400;
+  
+}
+.rueda li:nth-child(13) {
+  background-color: #2695f6;
+  
+}
+.rueda li:nth-child(14) {
+  background-color: #4100a2;
+  
+}
+.rueda li:nth-child(15) {
+  background-color: #1b007b;
+  
+}
+.rueda li:nth-child(16) {
+  background-color: #860079;
+  
+}
+.rueda li:nth-child(17) {
+  background-color: #007b7b;
+  
+}
+.rueda li:nth-child(18) {
+  background-color: #7b0000;
+  
+}
+.rueda li:nth-child(19) {
+  background-color: #7b007b;
+  
+}
+.rueda li:nth-child(20) {
+  background-color: #7b7b00;
+  
+}
+.rueda li:nth-child(21) {
+  background-color: #007b00;
+  
+}
+.rueda li:nth-child(22) {
+  background-color: #007b7b;
+  
+}
+.rueda li:nth-child(23) {
+  background-color: #7b0000;
+  
+}
+.rueda li:nth-child(24) {
+  background-color: #7b007b;
+  
+}
+
+.rueda {
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid var(--background-tono);
+  position: relative;
+  padding: 0;
+  margin: 1rem auto;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+}
+
+.rueda li {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  transform-origin: 0% 100%;
+  transition: transform 1s;
+  color: var(--texto-titl);
+  font-weight: bold;
+
+  align-items: center;
+  font-size: 1.5rem;
+}
+.rueda-container {
+  position: relative;
+}
+
+.selected-letter {
+  margin-top: 1rem;
+}
+
+
+
+.selected-letter {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.rotating {
+  animation: girar 10s infinite linear;
+}
+.StoRulet{
+  background-color: var(--secundario);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--texto-titl);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border:  none;
 }
 
 /* Animación de giro para la ruleta */
@@ -38,7 +195,13 @@
 .ruleta.girando {
   animation: girar 4s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
-
+.ruleta-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; 
+  background-color: var(--Esquematico1);
+}
 .Contenedor_PrivacyPolicy {
   display: flex;
   flex-direction: column;
