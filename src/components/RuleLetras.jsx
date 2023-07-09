@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useDrag } from 'react-use-gesture';
+import Confetti from 'react-confetti';
 import '../css/components.css';
 import { Modal } from './Modal';
 
@@ -9,6 +10,8 @@ export function RuleLetras() {
   const [isStopped, setIsStopped] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const dragAreaRef = useRef(null);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,6 +31,12 @@ export function RuleLetras() {
     if (!isStopped) {
       setIsStopped(true);
       setSelectedLetter(getSelectedLetter(rotation));
+      setShowConfetti(true);
+      setShowModal(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+        setShowModal(false);
+      }, 3000);
     }
     else {
       setIsStopped(false);
@@ -65,6 +74,7 @@ export function RuleLetras() {
         cancelAnimationFrame(animationId);
         clearTimeout(timeoutId);
         setSelectedLetter(getSelectedLetter(rotation));
+        
       };
 
       timeoutId = setTimeout(stopAnimation, 3000);
@@ -84,13 +94,20 @@ export function RuleLetras() {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const selected = letters.charAt(letterIndex);
     console.log(selected);
+    setShowConfetti(true);
+    setShowModal(true);
+    setTimeout(() => {
+      setShowConfetti(false);
+      setShowModal(false);
+    }, 3000);
     return selected;
   };
 
 
   return (
     <div className="rueda-container" ref={dragAreaRef}>
-      <Modal Title={`Letra ${selectedLetter}`} />
+      {showConfetti && <Confetti />}
+      {showModal && <Modal Title={`Letra ${selectedLetter}`} />}
       <div
         ref={dragAreaRef}
         className={`rueda ${isStopped ? '' : 'rotating'}`}
