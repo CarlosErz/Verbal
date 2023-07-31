@@ -1,161 +1,88 @@
-import { useState, useRef, useEffect } from 'react';
-import { useDrag } from 'react-use-gesture';
+import  { useState } from 'react';
 import Confetti from 'react-confetti';
 import '../css/components.css';
+import ruletaAudio from '../assets/sounds/ruleta.mp3';
+
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const anglePerLetter = 360 / letters.length;
+
+const getSelectedLetter = rotation => {
+  const normalizedRotation = (rotation % 360 + 360) % 360;
+  const letterIndex = Math.floor(normalizedRotation / anglePerLetter);
+  return letters.charAt(letterIndex);
+};
 
 export function RuleLetras() {
   const [rotation, setRotation] = useState(0);
   const [selectedLetter, setSelectedLetter] = useState('');
-  const [isStopped, setIsStopped] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-  const dragAreaRef = useRef(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isStopped, setIsStopped] = useState(true);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const windowWidth = window.innerWidth;
-      setIsMobile(windowWidth <= 768); // Establecer el tamaño de pantalla deseado
-    };
+  const rouletteSound = new Audio(ruletaAudio);
 
-    handleResize(); // Llamar a la función para establecer el estado inicial
+  const spin = () => {
+    const vueltasCompletas = 2;
+    const rotacionTotal = 360 * vueltasCompletas + Math.random() * anglePerLetter * letters.length;
 
-    window.addEventListener('resize', handleResize); // Escuchar los cambios de tamaño de la ventana
-
-    return () => {
-      window.removeEventListener('resize', handleResize); // Limpiar el listener al desmontar el componente
-    };
-  }, []);
-  const stopRoulette = () => {
-    if (!isStopped) {
-      setIsStopped(true);
-      setSelectedLetter(getSelectedLetter(rotation));
-      setShowConfetti(true);
-      setShowModal(true);
-      setTimeout(() => {
-        setShowConfetti(false);
-        setShowModal(false);
-      }, 4000);
-    }
-    else {
-      setIsStopped(false);
-    }
-  };
-
-  const bind = useDrag(
-    ({ down, movement: [deltaX], event }) => {
-      if (!down) {
-        setIsStopped(true);
-        setSelectedLetter(getSelectedLetter(rotation));
-      }
-      if (isMobile && event.type === 'touchmove') {
-        setRotation(prevRotation => prevRotation + deltaX * 1000);
-      } else {
-        setRotation(prevRotation => prevRotation + deltaX * 0.1);
-      }
-    },
-    { dragArea: dragAreaRef }
-  );
-
-  useEffect(() => {
-    if (!isStopped) {
-      let animationId;
-      let timeoutId;
-
-      const startAnimation = () => {
-        animationId = requestAnimationFrame(() => {
-          setRotation(prevRotation => prevRotation + 22);
-          startAnimation();
-        });
-      };
-
-      const stopAnimation = () => {
-        cancelAnimationFrame(animationId);
-        clearTimeout(timeoutId);
-        setSelectedLetter(getSelectedLetter(rotation));
-
-      };
-
-      timeoutId = setTimeout(stopAnimation, 2000);
-
-      startAnimation();
-
-      return () => {
-        clearTimeout(timeoutId);
-        cancelAnimationFrame(animationId);
-      };
-    }
-  }, [isStopped, rotation]);
-
-  const getSelectedLetter = rotation => {
-    const normalizedRotation = (rotation % 360 + 360) % 360;
-    const letterIndex = Math.floor(normalizedRotation / 22.5);
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const selected = letters.charAt(letterIndex);
-    console.log(selected);
-    setShowConfetti(true);
+    setRotation(rotation + rotacionTotal);
+    setSelectedLetter(getSelectedLetter(rotation + rotacionTotal));
     setShowModal(true);
+    setShowConfetti(true);
+    setIsStopped(false);
+    rouletteSound.play(); // Reproduce el sonido de la ruleta al iniciar el giro
+
     setTimeout(() => {
       setShowConfetti(false);
       setShowModal(false);
-    }, 4000);
-    return selected;
+      
+      setIsStopped(true);
+      rouletteSound.pause(); // Detiene el sonido de la ruleta después de 4 segundos
+      rouletteSound.currentTime = 0; // Reinicia el audio para que esté listo para reproducirse nuevamente
+    }, 7000); 
   };
-
 
   return (
     <>
-
-
-      {showModal && <div className="Letra">
-        <div className="flex">
-          <p className="letra_conten">
-            {selectedLetter}
-          </p>
+      {showModal && (
+        <div className="Letra">
+          <div className="flex">
+            <p className="letra_conten">{selectedLetter}</p>
+          </div>
         </div>
-      </div>}
-      <div className="rueda-container" ref={dragAreaRef}>
-
-        <div
-          ref={dragAreaRef}
-          className={`rueda ${isStopped ? '' : 'rotating'}`}
-          {...bind()}
-        >
+      )}
+      <div className="rueda-container">
+        <div className="Spin" onClick={spin}>
+          <h1 className="title">Gira</h1>
+        </div>
+        <div className={`rueda ${isStopped ? 'stopped' : ''}`}>
           {showConfetti && <Confetti />}
           <div style={{ transform: `rotate(${rotation}deg)` }}>A</div>
 
-          <div style={{ transform: `rotate(${rotation + 22.5 * 1}deg)` }}>B</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 2}deg)` }}>C</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 3}deg)` }}>D</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 4}deg)` }}>E</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 5}deg)` }}>B</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 6}deg)` }}>C</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 7}deg)` }}>D</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 8}deg)` }}>E</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 9}deg)` }}>F</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 10}deg)` }}>G</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 11}deg)` }}>H</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 12}deg)` }}>I</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 13}deg)` }}>J</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 14}deg)` }}>K</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 15}deg)` }}>L</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 16}deg)` }}>M</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 17}deg)` }}>N</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 18}deg)` }}>Ñ</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 19}deg)` }}>O</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 20}deg)` }}>P</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 21}deg)` }}>Q</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 22}deg)` }}>R</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 23}deg)` }}>S</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 24}deg)` }}>T</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 25}deg)` }}>V</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 26}deg)` }}>X</div>
-          <div style={{ transform: `rotate(${rotation + 22.5 * 28}deg)` }}>Y</div>
-        </div>
-        <div className="btns">
-          <button className='RunRulet' onClick={stopRoulette}>
-            {isStopped ? 'Girar' : 'Detener'}
-          </button>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 1}deg)` }}>B</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 2}deg)` }}>C</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 3}deg)` }}>D</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 4}deg)` }}>E</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 5}deg)` }}>F</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 6}deg)` }}>G</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 7}deg)` }}>H</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 8}deg)` }}>I</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 9}deg)` }}>J</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 10}deg)` }}>K</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 11}deg)` }}>L</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 12}deg)` }}>M</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 13}deg)` }}>N</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 14}deg)` }}>Ñ</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 15}deg)` }}>O</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 16}deg)` }}>P</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 17}deg)` }}>Q</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 18}deg)` }}>R</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 19}deg)` }}>S</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 20}deg)` }}>T</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 21}deg)` }}>V</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 22}deg)` }}>X</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 23}deg)` }}>W</div>
+          <div style={{ transform: `rotate(${rotation + 14.2 * 24}deg)` }}>Y</div>
         </div>
       </div>
     </>

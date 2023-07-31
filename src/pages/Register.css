@@ -2,6 +2,7 @@
 
 
 
+
 .Form {
   display: flex;
   flex-direction: column;
@@ -117,7 +118,8 @@
   .privacy-policy>label {
     font-size: 12px;
   }
-  .estate{
+
+  .estate {
     font-size: var(--parra-tableta);
   }
 }
@@ -131,7 +133,8 @@
   .inputContainer {
     width: 100%;
   }
-  .estate{
+
+  .estate {
     font-size: var(--parra-celular);
   }
 

@@ -1,9 +1,11 @@
 @import url(var.css);
+
 .ruletaContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px; /* Ajusta la altura según tus necesidades */
+  height: 200px;
+  /* Ajusta la altura según tus necesidades */
 }
 
 .ruletaWrapper {
@@ -11,11 +13,15 @@
 }
 
 .ruleta {
-  width: 200px; /* Ajusta el tamaño de la ruleta según tus necesidades */
-  height: 200px; /* Ajusta el tamaño de la ruleta según tus necesidades */
-  animation: girar 2s infinite; /* Ajusta la duración y las propiedades de la animación según tus necesidades */
+  width: 200px;
+  /* Ajusta el tamaño de la ruleta según tus necesidades */
+  height: 200px;
+  /* Ajusta el tamaño de la ruleta según tus necesidades */
+  animation: girar 2s infinite;
+  /* Ajusta la duración y las propiedades de la animación según tus necesidades */
 }
-.Letra{
+
+.Letra {
   width: 100%;
   display: flex;
   height: 100%;
@@ -33,15 +39,18 @@
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(0);
   }
-  
+
 }
-.flex{
+
+.flex {
   width: 90px;
   height: 90px;
   background-color: var(--texto-base);
@@ -52,130 +61,196 @@
   border-radius: 10%;
 
 }
+
 .tacha {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 125px;
   transform: translate(-80%, -50%);
-  z-index: 1; /* Asegura que la tacha esté encima de la ruleta */
+  z-index: 1;
+  /* Asegura que la tacha esté encima de la ruleta */
 }
-.letra_conten{
- font-size: var(--titulos-desk);
- color: var(--background-tono);
- font-weight: 600;
+
+.letra_conten {
+  font-size: var(--titulos-desk);
+  color: var(--background-tono);
+  font-weight: 600;
 
 }
 
 .rueda div:nth-child(1) {
   background-color: var(--Esquematico1);
-  
+
 }
 
 .rueda div:nth-child(2) {
   background-color: var(--Esquematico2);
-  
+
 }
+
 .rueda div:nth-child(3) {
   background-color: var(--Esquematico3);
-  
+
 }
+
 .rueda div:nth-child(4) {
   background-color: var(--Esquematico4);
-  
+
 }
+
 .rueda div:nth-child(5) {
   background-color: var(--secundario);
-  
-}
-.rueda div:nth-child(6) {
-  background-color: var(--texto-titl);
 
-  
 }
+
+.rueda div:nth-child(6) {
+  background-color: #1b007b;
+
+
+}
+
 .rueda div:nth-child(7) {
-  background-color:var(--Esquematico1);
-  
+  background-color: var(--Esquematico1);
+
 }
+
 .rueda div:nth-child(8) {
   background-color: var(--Esquematico2);
-  
+
 }
+
 .rueda div:nth-child(9) {
   background-color: var(--Esquematico3);
-  
+
 }
+
 .rueda div:nth-child(10) {
   background-color: #b40000;
-  
+
 }
+
 .rueda div:nth-child(11) {
   background-color: #b400b4;
-  
+
 }
+
 .rueda div:nth-child(12) {
   background-color: #b4b400;
-  
+
 }
+
 .rueda div:nth-child(13) {
   background-color: #2695f6;
-  
+
 }
+
 .rueda div:nth-child(14) {
   background-color: #4100a2;
-  
+
 }
+
 .rueda div:nth-child(15) {
   background-color: #1b007b;
-  
+
 }
+
 .rueda div:nth-child(16) {
   background-color: #860079;
-  
+
 }
+
 .rueda div:nth-child(17) {
   background-color: #D30098;
-  
+
 }
+
 .rueda div:nth-child(18) {
   background-color: #7b0000;
-  
+
 }
+
 .rueda div:nth-child(19) {
   background-color: var(--Esquematico1);
-  
+
 }
+
 .rueda div:nth-child(20) {
   background-color: var(--Esquematico2);
-  
+
 }
+
 .rueda div:nth-child(21) {
   background-color: var(--Esquematico3);
-  
+
 }
+
 .rueda div:nth-child(22) {
   background-color: var(--Esquematico4);
-  
+
 }
+
 .rueda div:nth-child(23) {
   background-color: var(--secundario);
-  
+
 }
+
 .rueda div:nth-child(24) {
   background-color: var(--Esquematico1);
-  
+
 }
-.flechita{
+
+.rueda div:nth-child(25) {
+  background-color: #b40000;
+
+}
+
+.rueda div:nth-child(26) {
+  background-color: #b400b4;
+
+}
+
+.rueda div:nth-child(27) {
+  background-color: var(--Esquematico1);
+}
+
+.rueda div:nth-child(28) {
+  background-color: var(--Esquematico2);
+
+
+
+}
+
+.flechita {
   font-size: 24px;
   background-color: var(--secundario);
   color: var(--secundario);
   transform: rotate(90deg);
   position: absolute;
   top: 40%;
-
   z-index: 2;
   padding: 10px;
 }
+
+.Spin {
+  background-color: #b40000;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  top: 240px;
+  width: 100px;
+  left: 34%;
+  cursor: pointer;
+  height: 100px;
+  align-items: center;
+  border: 5px solid var(--texto-titl);
+
+  justify-content: center;
+  border-radius: 100%;
+  color: var(--texto-titl);
+
+}
+
 .rueda {
   width: 20rem;
   height: 20rem;
@@ -185,17 +260,19 @@
   margin: 1rem auto;
   border-radius: 50%;
   list-style: none;
-  overflow: hidden; 
-  border:  5px solid var(--texto-base);
+  overflow: hidden;
+  border: 5px solid var(--texto-base);
 }
 
 .rueda div {
   overflow: hidden;
   position: absolute;
   top: 0;
+  clip-path: polygon(0 0, 36% 0, 0 100%, 0 100%);
   right: 0;
   width: 50%;
   height: 50%;
+
   transform-origin: 0% 100%;
   transition: transform 1s;
   color: var(--texto-titl);
@@ -206,13 +283,30 @@
   align-items: center;
   font-size: 1.5rem;
 }
+
 .rueda-container {
   position: relative;
   overflow: hidden;
 }
-.rotating{
+
+.rotating {
   overflow: hidden;
+  animation: rotating 4s ease-in-out forwards;
 }
+/* components.css */
+
+.ruota {
+  /* Otras reglas de estilo que tenías... */
+
+  transition: transform 10s ease; /* Animación de rotación con duración de 3 segundos y transición suave */
+}
+
+.ruota.stopped {
+  /* La ruleta se detiene cuando se aplica esta clase */
+  animation-play-state: paused; /* Pausar cualquier animación CSS */
+  transition: transform 0s; /* Eliminar cualquier transición para detener la rotación suavemente */
+}
+
 
 
 .selected-letter {
@@ -222,10 +316,9 @@
   font-weight: bold;
   color: var(--texto-titl);
 }
-.rotating {
-  animation: girar 2s infinite;
-}
-.StoRulet{
+
+
+.StoRulet {
   background-color: var(--secundario);
   padding: 20px;
   border-radius: 10px;
@@ -233,9 +326,10 @@
   font-weight: bold;
   font-size: 20px;
   text-align: center;
-  border:  none;
+  border: none;
 }
-.RunRulet{
+
+.RunRulet {
   background-color: var(--Esquematico1);
   padding: 20px;
   border-radius: 10px;
@@ -243,16 +337,18 @@
   font-weight: bold;
   font-size: 20px;
   text-align: center;
-  border:  none;
+  border: none;
   display: none;
 }
-.btns{
+
+.btns {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 20px;
 }
+
 /* Animación de giro para la ruleta */
 @keyframes girar {
   from {
@@ -260,24 +356,22 @@
     border-radius: 50%;
 
   }
+
   to {
     transform: rotate(360deg);
     border-radius: 50%;
   }
 }
 
-.ruleta li.girando {
-  animation: girar 1s infinite; 
-  border-radius: 50%;
-  /* Ajusta la duración y las propiedades de la animación según tus necesidades */
-}
-.ruleta-container{
+
+.ruleta-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px; 
+  height: 200px;
   background-color: var(--Esquematico1);
 }
+
 .Contenedor_PrivacyPolicy {
   display: flex;
   flex-direction: column;
@@ -338,6 +432,7 @@
   text-align: center;
   margin-top: 20px;
 }
+
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -369,9 +464,12 @@
   padding: 2px;
   width: 100%;
   opacity: 66%;
-  zoom: 1; /* Deshabilita el zoom en dispositivos móviles */
-  touch-action: manipulation; /* Deshabilita el zoom en dispositivos móviles */
-  -ms-touch-action: manipulation; /* Deshabilita el zoom en dispositivos móviles en Internet Explorer */
+  zoom: 1;
+  /* Deshabilita el zoom en dispositivos móviles */
+  touch-action: manipulation;
+  /* Deshabilita el zoom en dispositivos móviles */
+  -ms-touch-action: manipulation;
+  /* Deshabilita el zoom en dispositivos móviles en Internet Explorer */
 }
 
 .input:focus {
@@ -485,6 +583,7 @@ img.Tematica {
   animation-fill-mode: forwards;
   animation-delay: 0.3s;
 }
+
 @keyframes modalAnimation {
   from {
     transform: translateY(100%);
@@ -635,11 +734,13 @@ img.Tematica {
   .modal-text {
     font-size: 1rem;
   }
+
   .rueda {
     width: 15rem;
     height: 15rem;
   }
-  .rueda div{
+
+  .rueda div {
     font-size: 1rem;
   }
 
@@ -692,22 +793,48 @@ img.Tematica {
     width: 20px;
     height: 20px;
   }
-  .estate{
+
+  .estate {
     font-size: var(--parra-tableta);
     text-align: center;
   }
-  .input{
+
+  .input {
     font-size: 16px;
   }
-  .RunRulet{
+
+  .RunRulet {
     display: flex;
+  }
+  .Spin{
+
+    width: 50px;
+    height: 50px;
+    left: 40%;
+    top: 180px;
+
+
+  }
+  .Spin>h1{
+    font-size: 16px;
   }
 
 }
 
 @media screen and (max-width: 400px) {
 
+  .Spin{
 
+    width: 30px;
+    height: 30px;
+    left: 40%;
+    top: 130px;
+
+
+  }
+  .Spin>h1{
+    font-size: 10px;
+  }
   .modal-text {
     font-size: var(--parra-tableta);
   }
@@ -724,7 +851,8 @@ img.Tematica {
     margin-right: 5px;
     margin-left: 5px;
   }
-  .rueda  {
+
+  .rueda {
     width: 10rem;
     height: 10rem;
   }

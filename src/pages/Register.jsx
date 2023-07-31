@@ -49,7 +49,7 @@ export function Register() {
 
           const loginData = {
             provider: 'facebook',
-           // accessToken: credential.accessToken,
+            // accessToken: credential.accessToken,
             // Include other relevant login data
 
           };
@@ -114,7 +114,7 @@ export function Register() {
             const db = getDatabase();
             set(ref(db, 'users/' + user.uid), userData)
               .then(() => {
-        
+
               })
 
 
@@ -177,6 +177,10 @@ export function Register() {
         </div>
 
       </form>
+  
+   
+  
+
 
       <p className="Text">
         ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>
