@@ -12,9 +12,6 @@ import '../css/components.css'
 import './Register.css'
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
-
-
-
 export function Login() {
 
   const firebaseConfig = {
