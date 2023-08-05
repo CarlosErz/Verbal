@@ -144,9 +144,9 @@ export function Register() {
         <img src={logo} alt="Logo verbal+ " className="logo" />
       </Link>
       <form className="Form" onSubmit={handleRegisterSubmit}>
-        {dataInputs.map((input, index) => (
+        {dataInputs.map((input, caja) => (
           <Inputs
-            key={index}
+            key={caja}
             TituloInput={input.TituloInput}
             TipoInput={input.TipoInput}
             NombreInput={input.NombreInput}
