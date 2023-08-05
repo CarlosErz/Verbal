@@ -43,15 +43,15 @@ function Tematica({ tema, imagenes, alt1, Sala,Click }) {
       <div className="tema-container">
         <p className="temas">{tema}</p>
         <br />
-        <Slider rel="preload" className="img" {...settings}>
+        <Slider className="img" {...settings}>
           {imagenes.map((imagen, imgIndex) => (
             <div key={imgIndex} className="carousel-item">
-              <Link rel="preload" 
+              <Link
                 to={loggedIn ? Sala[imgIndex] : '#'}
                 className="carousel-link"
                 onClick={Click}
               >
-                <img rel="preload"  className="Tematica" src={imagen} alt={alt1} />
+                <img className="Tematica" src={imagen} alt={alt1} />
               </Link>
             </div>
           ))}
