@@ -43,15 +43,15 @@ function Tematica({ tema, imagenes, alt1, Sala,Click }) {
       <div className="tema-container">
         <p className="temas">{tema}</p>
         <br />
-        <Slider className="img" {...settings}>
+        <Slider rel="preload" className="img" {...settings}>
           {imagenes.map((imagen, imgIndex) => (
             <div key={imgIndex} className="carousel-item">
-              <Link
+              <Link rel="preload" 
                 to={loggedIn ? Sala[imgIndex] : '#'}
                 className="carousel-link"
                 onClick={Click}
               >
-                <img className="Tematica" src={imagen} alt={alt1} />
+                <img rel="preload"  className="Tematica" src={imagen} alt={alt1} />
               </Link>
             </div>
           ))}
@@ -72,7 +72,7 @@ Tematica.propTypes = {
 
 export function Tematicas({ alt1,Click }) {
   return (
-    <div className="prueba">
+    <div className="prueba" >
       {dataTemas.map(({ tema, imagenes, Sala, }, temas) => (
         <Tematica
           key={temas}
