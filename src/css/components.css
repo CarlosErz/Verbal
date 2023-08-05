@@ -436,8 +436,6 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -810,7 +808,7 @@ img.Tematica {
 
     width: 50px;
     height: 50px;
-    left: 40%;
+    left: 39%;
     top: 180px;
 
 
@@ -827,8 +825,8 @@ img.Tematica {
 
     width: 30px;
     height: 30px;
-    left: 40%;
-    top: 130px;
+    left: 39%;
+    top: 123px;
 
 
   }
