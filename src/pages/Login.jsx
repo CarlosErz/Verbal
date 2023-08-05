@@ -123,7 +123,7 @@ export function Login() {
           />
         ))}
 
-        <Btn TypeBtn="submit" NameBtn="Registrate" /> <div className="btnfb">
+        <Btn TypeBtn="submit" NameBtn="Iniciar sesion" /> <div className="btnfb">
           <div className="btnfb">
             <button className="red-login-button" onClick={FaceboockLogin}>
               <img src={icon} alt="" className="icon" />
