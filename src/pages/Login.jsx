@@ -10,10 +10,12 @@ import { initializeApp } from "firebase/app";
 import { Modal } from '../components/Modal';
 import '../css/components.css'
 import './Register.css'
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
-export function Login({setLoggedInUser, loggedInUser}) {
+export function Login({ setLoggedInUser, loggedInUser }) {
+  const navigate = useNavigate();
 
   const firebaseConfig = {
     apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -53,6 +55,7 @@ export function Login({setLoggedInUser, loggedInUser}) {
         setShowModal(true);
         const user = result.user;
         setLoggedInUser(user);
+        navigate('/Type')
       })
       .catch((error) => {
         console.log(error);
