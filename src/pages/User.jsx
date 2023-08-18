@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Userstyle.css';
 //import { useHistory } from 'react-router-dom';
@@ -31,6 +31,7 @@ export function User({ loggedInUser }) {
       .then(() => {
         localStorage.removeItem('loggedInUser');
         setShowConfirmModal(false);
+        navigate('/')
         // Lógica adicional si es necesario
       })
       .catch(error => {
@@ -42,8 +43,11 @@ export function User({ loggedInUser }) {
     <div className='User'>
       <h1 className="title">Perfil</h1>
       <div className="user-container">
-        <img className='user-avatar' src={loggedInUser && loggedInUser.photoURL} alt="Avatar" />
-        <p className="user-name">{loggedInUser && loggedInUser.displayName}</p>
+        <img className='user-avatar' src={loggedInUser && loggedInUser.photoURL ? loggedInUser.photoURL : 'https://i.postimg.cc/TPP2gvgV/notFoto.png'}
+          alt="Avatar" />
+        <p className="user-name">{loggedInUser && loggedInUser.displayName
+        ||'No user'
+        }</p>
       </div>
       <div className="user-btns">
         <button className="user-delete" onClick={() => setShowConfirmModal(true)}>Eliminar Cuenta</button>

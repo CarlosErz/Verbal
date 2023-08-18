@@ -5,9 +5,9 @@ import logo from '/src/assets/logo.svg';
 
 
 
-export function Navbar({ Nombre, avatar, avatarOnError}) {
+export function Navbar({ Nombre, avatar}) {
 
-  
+
 
 
   return (
@@ -18,8 +18,12 @@ export function Navbar({ Nombre, avatar, avatarOnError}) {
             <img src={logo} alt="Logo" />
           </Link>
           <Link to='/User' className='navbar-user'>
-            <p className="name">{Nombre || Nombre}</p>
-            <img className="avatar" src={avatar || avatarOnError} alt="Avatar" />
+            <p className="name">{Nombre || 'No user'}</p>
+            <img
+              className="avatar"
+              src={avatar || 'https://i.postimg.cc/TPP2gvgV/notFoto.png'}
+              alt="Avatar"
+            />
           </Link>
         </div>
       </nav>

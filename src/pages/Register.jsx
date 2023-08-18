@@ -12,10 +12,12 @@ import { getDatabase, ref, set } from 'firebase/database';
 import google from '/src/assets/google.svg';
 import { Modal } from '../components/Modal.jsx';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export function Register({ loggedInUser }) {
+  const navigate = useNavigate();
 
   const firebaseConfig = {
     apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -51,6 +53,7 @@ export function Register({ loggedInUser }) {
           const loginData = {
             provider: 'facebook',
             accessToken: '9475164a7a1f3976ea38458027db87df',
+            navigate: navigate('/Type')
 
 
           };
@@ -74,6 +77,7 @@ export function Register({ loggedInUser }) {
       signInWithPopup(auth, provider)
         .then(async () => {
           setShowModal(true);
+          navigate('/Type')
 
           // Verificar si el correo de Google ya está en uso
           const user = auth.currentUser;
@@ -115,6 +119,7 @@ export function Register({ loggedInUser }) {
           .then((userCredential) => {
             const user = userCredential.user;
             setShowModal(true);
+            navigate('/Type')
             const userData = {
               name: user.displayName,
               email: user.email,
