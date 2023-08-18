@@ -1,23 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+//import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import logo from '/src/assets/logo.svg';
 
 
 
-export function Navbar({ Nombre, avatar }) {
-  const [userName, setUserName] = useState('');
-  const [userAvatar, setUserAvatar] = useState('');
+export function Navbar({ Nombre, avatar, avatarOnError}) {
+
   
 
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    if (loggedInUser) {
-      const user = JSON.parse(loggedInUser);
-      setUserName(user.name);
-      setUserAvatar(user.picture);
-    }
-  }, []);
 
   return (
     <>
@@ -27,8 +18,8 @@ export function Navbar({ Nombre, avatar }) {
             <img src={logo} alt="Logo" />
           </Link>
           <Link to='/User' className='navbar-user'>
-            <p className="name">{userName || Nombre}</p>
-            <img className="avatar" src={userAvatar || avatar} alt="Avatar" />
+            <p className="name">{Nombre || Nombre}</p>
+            <img className="avatar" src={avatar || avatarOnError} alt="Avatar" />
           </Link>
         </div>
       </nav>
@@ -39,4 +30,6 @@ export function Navbar({ Nombre, avatar }) {
 Navbar.propTypes = {
   Nombre: PropTypes.string,
   avatar: PropTypes.string,
+  avatarOnError: PropTypes.string,
+
 };

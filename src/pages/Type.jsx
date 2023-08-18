@@ -7,21 +7,22 @@ import { Navbar } from '../components/Navbar.jsx';
 import 'normalize.css';
 import { ModalError } from '../components/ModalError.jsx';
 import { dataModalLog } from '../data/dataModalLog.js';
+import PropTypes from 'prop-types';
 
-export function Type() {
-  const [loggedIn, setLoggedIn] = useState(false);
+
+export function Type({ loggedInUser, setLoggedInUser }) {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
-      setLoggedIn(true);
+      setLoggedInUser(true);
     }
-  }, []);
+  }, [setLoggedInUser]);
 
   const handleTematicaClick = () => {
-    if (!loggedIn) {
-      setLoggedIn(true);
+    if (!loggedInUser) {
+      setLoggedInUser(true);
       setShowModal(true);
     } else {
       // Acción adicional para el caso en que el usuario esté registrado
@@ -31,7 +32,13 @@ export function Type() {
 
   return (
     <>
-      <Navbar Nombre="Nombre del usuario" avatar="URL del avatar" />
+      <Navbar
+
+        Nombre={loggedInUser && loggedInUser.displayName}
+        avatar={loggedInUser && loggedInUser.photoURL}
+        onError={'https://i.postimg.cc/TPP2gvgV/notFoto.png'}
+
+      />
       <div className="contenido">
         <div className='btn_compartir'>
           <div className="bg_compartir">
@@ -47,9 +54,9 @@ export function Type() {
 
 
 
-      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedIn} Click={handleTematicaClick} />
+      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedInUser} Click={handleTematicaClick} />
 
-      {showModal && !loggedIn && (
+      {showModal && !loggedInUser && (
         <ModalError
           Title={dataModalLog[0].Title}
           TipoError={dataModalLog[0].TipoError}
@@ -57,9 +64,13 @@ export function Type() {
           bt2={dataModalLog[0].bt2}
           link1={dataModalLog[0].link1}
           link2={dataModalLog[0].link2}
-        
+
         />
       )}
     </>
   );
+}
+Type.propTypes = {
+  loggedInUser: PropTypes.object,
+  setLoggedInUser: PropTypes.func,
 }

@@ -10,9 +10,10 @@ import { initializeApp } from "firebase/app";
 import { Modal } from '../components/Modal';
 import '../css/components.css'
 import './Register.css'
+import PropTypes from 'prop-types';
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
-export function Login() {
+export function Login({setLoggedInUser, loggedInUser}) {
 
   const firebaseConfig = {
     apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -29,7 +30,6 @@ export function Login() {
   const auth = getAuth(app);
   const [showModal, setShowModal] = useState(false);
   const [Nosepudo, setNosepudo] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -44,7 +44,7 @@ export function Login() {
 
     // Eliminar el observador de cambios al desmontar el componente
     return () => unsubscribe();
-  }, [auth]);
+  }, [auth, setLoggedInUser]);
 
   const GoogleLogin = () => {
     const provider = new GoogleAuthProvider();
@@ -156,5 +156,9 @@ export function Login() {
 
     </div>
   );
+}
+Login.propTypes = {
+  setLoggedInUser: PropTypes.func,
+  loggedInUser: PropTypes.object,
 }
 

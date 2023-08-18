@@ -34,13 +34,11 @@
   position: absolute;
 	width: 50%;
 	height: 90%;
-  margin: 0 auto;
   z-index: 200000;
   display: flex;
 	align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .contenthome {

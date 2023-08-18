@@ -1,19 +1,8 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Userstyle.css'
 
-export function User({ Avatar, Nombre }) {
-  const [userName, setUserName] = useState('');
-  const [userAvatar, setUserAvatar] = useState('');
-
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    if (loggedInUser) {
-      const user = JSON.parse(loggedInUser);
-      setUserName(user.name);
-      setUserAvatar(user.picture);
-    }
-  }, []);
+export function User({ loggedInUser}) {
 
 
   const handleLogout = () => {
@@ -32,8 +21,8 @@ export function User({ Avatar, Nombre }) {
     <div className='User'>
       <h1 className="title">Perfil</h1>
       <div className="user-container">
-        <img className='user-avatar' src={userAvatar || Avatar} />
-        <p className="user-name">{userName || Nombre}</p>
+        <img className='user-avatar' src={loggedInUser && loggedInUser.photoURL} />
+        <p className="user-name">{loggedInUser && loggedInUser.displayName}</p>
       </div>
       <div className="user-btns">
         <button className="user-delete" onClick={handleDeleteAccount}>Eliminar Cuenta</button>
@@ -46,5 +35,9 @@ export function User({ Avatar, Nombre }) {
 User.propTypes = {
   Avatar: PropTypes.string,
   Nombre: PropTypes.string,
+  loggedInUser: PropTypes.object,
+  userName: PropTypes.string,
+  userAvatar: PropTypes.string,
+  setLoggedInUser: PropTypes.func,
 }
 

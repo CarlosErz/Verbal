@@ -5,16 +5,17 @@ import { dataInputs } from '../data/dataInputs.js';
 import { Link } from 'react-router-dom';
 import './Register.css';
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, fetchSignInMethodsForEmail } from "firebase/auth";
 import icon from '/src/assets/fb.svg';
 import logo from '/src/assets/logo.svg';
 import { getDatabase, ref, set } from 'firebase/database';
 import google from '/src/assets/google.svg';
 import { Modal } from '../components/Modal.jsx';
+import PropTypes from 'prop-types';
 
 
 
-export function Register() {
+export function Register({ loggedInUser }) {
 
   const firebaseConfig = {
     apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -49,13 +50,11 @@ export function Register() {
 
           const loginData = {
             provider: 'facebook',
-            // accessToken: credential.accessToken,
-            // Include other relevant login data
+            accessToken: '9475164a7a1f3976ea38458027db87df',
+
 
           };
           localStorage.setItem('loggedInUser', JSON.stringify(loginData));
-
-
         }
         ).catch((error) => {
           console.log(error);
@@ -73,19 +72,29 @@ export function Register() {
     if (acceptedTerms) {
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider)
-        .then(() => {
+        .then(async () => {
           setShowModal(true);
 
+          // Verificar si el correo de Google ya está en uso
+          const user = auth.currentUser;
+          if (user && user.email) {
+            const providers = await fetchSignInMethodsForEmail(auth, user.email);
+            if (providers.length > 0) {
+              setYaregistrado(true);
+              setShowModal(false);
 
-        }).catch((error) => {
+            }
+          }
+        })
+        .catch((error) => {
           console.log(error);
           setShowModal(false);
         });
-    }
-    else {
+    } else {
       setShowTermsModal(true);
     }
-  }
+  };
+
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
@@ -118,17 +127,12 @@ export function Register() {
               })
 
 
-            console.log(user);
-
           })
           .catch(() => {
             setYaregistrado(true);
 
           });
       }
-
-
-
     }
     else {
       setShowTermsModal(true);
@@ -175,16 +179,18 @@ export function Register() {
           </button>
 
         </div>
+      
 
       </form>
-  
-   
-  
 
 
       <p className="Text">
-        ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>
-      </p>
+        ¿Ya tienes una cuenta? <Link to="/Login" className="Link">Inicia sesión</Link>  
+       
+      </p> 
+      {loggedInUser && (
+          <p className='estate'>Usuario actualmente iniciado sesión como: {loggedInUser.email}</p>
+        )}
       {showModal && (
         <Modal Title="Registrado con éxito" onclick={() => setShowModal(false)} />
       )}
@@ -211,4 +217,9 @@ export function Register() {
 
     </div>
   );
+}
+
+Register.propTypes = {
+  loggedInUser: PropTypes.object,
+  setLoggedInUser: PropTypes.func,
 }
