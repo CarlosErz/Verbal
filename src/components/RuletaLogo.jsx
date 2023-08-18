@@ -5,6 +5,7 @@ import '../css/components.css';
 export function Ruleta() {
   return (
     <>
+    
       <div className="ruletaContainer">
         <div className="ruletaWrapper">
           <img className='ruleta' src={rueda} alt="ruleta" />

@@ -32,6 +32,8 @@
 }
 .contenbtn {
   position: absolute;
+	width: 50%;
+	height: 90%;
   margin: 0 auto;
   z-index: 200000;
   display: flex;
@@ -39,6 +41,16 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 20px;
+}
+
+.contenthome {
+  position: absolute;
+	width: auto;
+  z-index: 200000;
+  display: flex;
+	gap: 20px;
+	align-items: center;
+  flex-direction: column;
 }
 .contendis{
   position: absolute;
@@ -578,12 +590,27 @@
   text-align: center;
   text-transform: uppercase;
 }
-
+.title>span{
+ background-color: var(--Esquematico1);
+ padding: 0px 20px 0 20px;
+ border-radius: 20px;
+}	
 .contenido {
   width: 92%;
   height: 100%;
   margin: 0 auto;
 
+}
+.revealing-letter {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0,1s ease, transform 1s ease;
+}
+
+.revealing-letter.visible {
+  opacity: 1;
+  transform: translateY(0);
+	transition: opacity 1s ease, transform 1s ease;
 }
 
 @media screen and (max-width: 650px) {
@@ -714,4 +741,7 @@
     font-size: 0px;
   
   }
+	.contenbtn{
+		width: 100%;
+	}
 }

@@ -9,7 +9,7 @@ export function InicioLog() {
   return (
     <>
       <div className="contendis">
-        <div className="contenbtn">
+        <div className="contenthome">
           <Ruleta />
           <ComBtn NameBtn='INICIAR SESIÓN' link='/login' />
 

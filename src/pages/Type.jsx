@@ -57,6 +57,7 @@ export function Type() {
           bt2={dataModalLog[0].bt2}
           link1={dataModalLog[0].link1}
           link2={dataModalLog[0].link2}
+        
         />
       )}
     </>

@@ -30,7 +30,7 @@
   z-index: 10000000;
   justify-content: center;
   align-items: center;
-  animation: Caja 4s infinite;
+  animation: Caja 3s infinite;
 
 }
 
@@ -283,7 +283,12 @@
   align-items: center;
   font-size: 1.5rem;
 }
+/*rueda ${isStopped ? 'stopped' : ''*/
 
+.stopped{
+  animation-play-state: paused;
+
+}
 .rueda-container {
   position: relative;
   overflow: hidden;
@@ -291,20 +296,18 @@
 
 .rotating {
   overflow: hidden;
-  animation: rotating 4s ease-in-out forwards;
+  animation: 4s ease-in-out forwards;
 }
+
 /* components.css */
 
 .ruota {
-  /* Otras reglas de estilo que tenías... */
 
-  transition: transform 10s ease; /* Animación de rotación con duración de 3 segundos y transición suave */
+  transition: transform 10s ease; 
 }
 
 .ruota.stopped {
-  /* La ruleta se detiene cuando se aplica esta clase */
-  animation-play-state: paused; /* Pausar cualquier animación CSS */
-  transition: transform 0s; /* Eliminar cualquier transición para detener la rotación suavemente */
+  animation-play-state: paused; 
 }
 
 
@@ -353,13 +356,21 @@
 @keyframes girar {
   from {
     transform: rotate(0);
-    border-radius: 50%;
 
   }
 
   to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
     transform: rotate(360deg);
-    border-radius: 50%;
   }
 }
 
