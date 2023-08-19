@@ -15,11 +15,13 @@ export function SalaSolo() {
   //const [ModalCorrecto, setModalCorrecto] = useState(false);
   const [showScore, setShowScore] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
 
   const options = questions[currentQuestionIndex].options;
 
   const handleAnswerSelection = (answer) => {
     setUserAnswer(answer);
+
   };
 
   ///const showCorrectAnswer = userAnswer === questions[currentQuestionIndex].correctAnswer;
@@ -31,21 +33,21 @@ export function SalaSolo() {
 
     if (userAnswer === correctAnswer) {
       setScore(score + 1);
-      console.log(userAnswer);
-     // setModalCorrecto(true);
+      setIsAnswerCorrect(true);
       setShowConfetti(true);
       setTimeout(() => {
         setShowConfetti(false);
         goToNextQuestion();
-        //setModalCorrecto(false);
-      }, 4000);
-    }
-    else {
+        setIsAnswerCorrect(null);
+      }, 2000);
+    } else {
       setScore(score - 1);
-      setTimeout(goToNextQuestion, 1000);
-
+      setIsAnswerCorrect(false);
+      setTimeout(() => {
+        goToNextQuestion();
+        setIsAnswerCorrect(null);
+      }, 1000);
     }
-
   };
   const goToNextQuestion = () => {
     const nextQuestionIndex = currentQuestionIndex + 1;
@@ -74,8 +76,8 @@ export function SalaSolo() {
 
   return (
     <div className="SalaSolo">
-  
-       {showConfetti && <Confetti />}
+
+      {showConfetti && <Confetti />}
       <nav className="SalaNav">
         <h1>Ruleta De Preguntas</h1>
         <p>{showScore}</p>
@@ -99,9 +101,9 @@ export function SalaSolo() {
           </div>
           <div className="SalaAnswersContent">
             {options.slice(0, 2).map((option, index) => (
-              <div className="SalaAnswer" key={index}  onClick={() => handleAnswerSelection(option)}>
+              <div className="SalaAnswer" key={index} onClick={() => handleAnswerSelection(option)}>
                 <span className="SalaInciso">{String.fromCharCode(65 + index)}) </span>
-                <button className='SalaBtn'>
+                <button className={`SalaBtn ${isAnswerCorrect === true ? 'green' : isAnswerCorrect === false ? 'red' : ''}`}>
                   {option}
                 </button>
               </div>
@@ -109,9 +111,9 @@ export function SalaSolo() {
           </div>
           <div className="SalaAnswersContent">
             {options.slice(2, 4).map((option, index) => (
-              <div className="SalaAnswer" key={index + 2}>
+              <div className="SalaAnswer" key={index+2} onClick={() => handleAnswerSelection(option)}>
                 <span className="SalaInciso">{String.fromCharCode(67 + index)}) </span>
-                <button className='SalaBtn' onClick={() => handleAnswerSelection(option)}>
+                <button className={`SalaBtn ${isAnswerCorrect === true ? 'green' : isAnswerCorrect === false ? 'red' : ''}`}>
                   {option}
                 </button>
               </div>

@@ -45,6 +45,7 @@
   height: 20%;
   display: flex;
   flex-direction: row;
+  text-align: center;
   justify-content: space-around;
   align-items: center;
 }
@@ -240,7 +241,13 @@
 }
 
 
+.green{
+  color: var(--Esquematico3);
 
+}
+.red{
+  color: var(--secundario);
+}
 .SalaGameHeader>h2{
   color: var(--texto-titl);
   font-size: 2rem;
