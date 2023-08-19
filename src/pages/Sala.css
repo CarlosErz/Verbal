@@ -18,10 +18,13 @@
   align-items: center;
 }
 
-.SalaNav>h1 {
+.SalaNav>a {
   margin-left: 1rem;
   color: var(--texto-titl);
   font-size: var(--titulo-desk);
+  font-weight: bold;
+  text-decoration: none;
+
 }
 
 .SalaContent {

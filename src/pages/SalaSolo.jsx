@@ -4,6 +4,7 @@ import './Sala.css';
 import enviar from '/src/assets/Subtract.svg';
 import Countdown from 'react-countdown';
 import Confetti from 'react-confetti';
+import { Link } from 'react-router-dom';
 
 export function SalaSolo() {
   const [questions, setQuestions] = useState(dataGameSolo);
@@ -91,7 +92,7 @@ export function SalaSolo() {
     <div className="SalaSolo">
       {showConfetti && <Confetti />}
       <nav className="SalaNav">
-        <h1>Ruleta De Preguntas</h1>
+        <Link to ='/'>Ruleta De Preguntas</Link>
         <p>{showScore}</p>
       </nav>
       <div className="SalaContent">

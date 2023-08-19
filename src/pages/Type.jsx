@@ -48,13 +48,17 @@ export function Type({ loggedInUser, setLoggedInUser }) {
             Con amigos es más divertido!!
           </a>
         </div>
-        <Juegos alt1='juegos' />
+        <Juegos alt1='juegos'
+        
+        
+        />
       </div>
       <p className='title'>ELIGE TU TEMA</p>
 
 
 
-      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedInUser} Click={handleTematicaClick} />
+      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedInUser} Click={handleTematicaClick}
+      />
 
       {showModal && !loggedInUser && (
         <ModalError

@@ -13,7 +13,7 @@ export const dataTemas = [
     ],
     Sala:[
       '/register',
-      '/',
+      '/SalaSolo',
       '/',
       '/',
     ]
