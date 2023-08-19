@@ -10,6 +10,7 @@ import { Privacy } from './components/Privacy.jsx'
 import { User } from './pages/User'
 import { Azar } from './pages/Azar.jsx'
 import { useState , useEffect} from 'react'
+import {SalaSolo} from './pages/SalaSolo'
 
 import { RuleLetras } from './components/RuleLetras'
 import {onAuthStateChanged,getAuth} from "firebase/auth";
@@ -85,6 +86,14 @@ export function App() {
             setSelectedLetter={setSelectedLetter}
           />
         } />
+       <Route path='/SalaSolo' element={<SalaSolo
+       selectedLetter={selectedLetter}
+        setSelectedLetter={setSelectedLetter}
+       />
+      
+      }>
+        
+       </Route>
       </Routes>
     </BrowserRouter>
   )
