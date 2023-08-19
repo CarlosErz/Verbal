@@ -12,7 +12,7 @@ export function SalaSolo() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
-  //const [ModalCorrecto, setModalCorrecto] = useState(false);
+  const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 20000);
   const [showScore, setShowScore] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
@@ -24,8 +24,6 @@ export function SalaSolo() {
 
   };
 
-  ///const showCorrectAnswer = userAnswer === questions[currentQuestionIndex].correctAnswer;
-  //const showWrongAnswer = userAnswer !== questions[currentQuestionIndex].correctAnswer;
 
   const handleAnswerSubmit = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
@@ -53,7 +51,10 @@ export function SalaSolo() {
     const nextQuestionIndex = currentQuestionIndex + 1;
     if (nextQuestionIndex < questions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
+      setCurrentQuestionStartTime(Date.now() + 20000);
       setUserAnswer('');
+  
+  
     } else {
       // Aquí puedes manejar el final del juego
     }
@@ -61,8 +62,11 @@ export function SalaSolo() {
 
   const handleCountdownComplete = () => {
     // Lógica cuando el tiempo se agota
-    // Puedes avanzar a la siguiente pregunta o realizar alguna acción
+    
     goToNextQuestion();
+
+
+
   };
 
   useEffect(() => {
@@ -71,6 +75,7 @@ export function SalaSolo() {
     setUserAnswer('');
     setScore(0);
     setShowScore(false);
+    setCurrentQuestionStartTime(Date.now() + 20000);
   }, []);
 
 
@@ -92,7 +97,7 @@ export function SalaSolo() {
               <h2 className="SalaTitleTime">SEGUNDOS</h2>
               <div className="SalaTimeContent">
                 <Countdown
-                  date={Date.now() + 20000} // 20 segundos en milisegundos
+                  date={currentQuestionStartTime}
                   onComplete={handleCountdownComplete}
                   renderer={({ seconds }) => <p className="SalaTimer">{seconds}</p>}
                 />
@@ -111,7 +116,7 @@ export function SalaSolo() {
           </div>
           <div className="SalaAnswersContent">
             {options.slice(2, 4).map((option, index) => (
-              <div className="SalaAnswer" key={index+2} onClick={() => handleAnswerSelection(option)}>
+              <div className="SalaAnswer" key={index + 2} onClick={() => handleAnswerSelection(option)}>
                 <span className="SalaInciso">{String.fromCharCode(67 + index)}) </span>
                 <button className={`SalaBtn ${isAnswerCorrect === true ? 'green' : isAnswerCorrect === false ? 'red' : ''}`}>
                   {option}
