@@ -64,8 +64,23 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
+  height: 30%;
+  justify-content: center;
   cursor: pointer;
 
+}
+.SalaAnswer:focus{
+  border: 2px solid var(--Esquematico3);
+}
+.SalaAnswer:active{
+  border: 2px solid var(--Esquematico3);
+}
+.SalaAnswer:hover{
+  border: 2px solid var(--Esquematico3);
+}
+.SalaAnswer::backdrop{
+  border: 2px solid var(--Esquematico3);
 }
 
 .SalaBtn {
@@ -113,7 +128,19 @@
   background: var(--background-tono, #333);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border: none;
+  color: #ffff;
   outline: none;
+}
+.SalaInput::placeholder{
+  color: #dcdcdc;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 20px;
+
+
+}
+.SalaInput:focus{
+  border: 2px solid var(--Esquematico3);
 }
 
 .SalaInputAnwswer {
@@ -150,6 +177,69 @@
   gap: 0.5rem;
   cursor: pointer;
 }
+.correct{
+  background-color: var(--Esquematico3);
+  color: var(--texto-titl);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;  
+}
+.incorrect{
+  background-color: var(--secundario);
+  color: var(--texto-titl);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;  
+}
+.ModalCorrecto{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.ModalCorrecto>div{
+  width: 50%;
+  height: 50%;
+  background-color: var(--background-tono);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  animation: modal 2s infinite linear;
+}
+
+@keyframes modal{
+  0%{
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100%{
+   transform: translateX(0);
+   opacity: 1;
+  }
+  120%{
+    transform: translateY(200);
+    opacity: 0;
+  }
+}
+.ModalCorrecto>div>h1{
+  color: var(--texto-titl);
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+
 
 .SalaGameHeader>h2{
   color: var(--texto-titl);

@@ -30,6 +30,7 @@ export function User({ loggedInUser }) {
     deleteUser(auth.currentUser)
       .then(() => {
         localStorage.removeItem('loggedInUser');
+      
         setShowConfirmModal(false);
         navigate('/')
         // Lógica adicional si es necesario

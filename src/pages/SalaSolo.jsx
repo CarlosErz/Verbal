@@ -1,8 +1,10 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { dataGameSolo } from '../data/dataGameSolo';
 import './Sala.css';
 import enviar from '/src/assets/Subtract.svg';
 import Countdown from 'react-countdown';
+import Confetti from 'react-confetti';
+
 
 
 export function SalaSolo() {
@@ -10,7 +12,9 @@ export function SalaSolo() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
+  //const [ModalCorrecto, setModalCorrecto] = useState(false);
   const [showScore, setShowScore] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const options = questions[currentQuestionIndex].options;
 
@@ -18,18 +22,30 @@ export function SalaSolo() {
     setUserAnswer(answer);
   };
 
+  ///const showCorrectAnswer = userAnswer === questions[currentQuestionIndex].correctAnswer;
+  //const showWrongAnswer = userAnswer !== questions[currentQuestionIndex].correctAnswer;
+
   const handleAnswerSubmit = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
     setShowScore(true);
+
     if (userAnswer === correctAnswer) {
       setScore(score + 1);
+      console.log(userAnswer);
+     // setModalCorrecto(true);
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+        goToNextQuestion();
+        //setModalCorrecto(false);
+      }, 4000);
     }
-    // Lógica para pasar a la siguiente pregunta
-    const nextQuestionIndex = currentQuestionIndex + 1;
-    if (nextQuestionIndex < questions.length) {
-      setCurrentQuestionIndex(nextQuestionIndex);
-      setUserAnswer('');
+    else {
+      setScore(score - 1);
+      setTimeout(goToNextQuestion, 1000);
+
     }
+
   };
   const goToNextQuestion = () => {
     const nextQuestionIndex = currentQuestionIndex + 1;
@@ -58,8 +74,10 @@ export function SalaSolo() {
 
   return (
     <div className="SalaSolo">
+  
+       {showConfetti && <Confetti />}
       <nav className="SalaNav">
-        <h1>Ruleta De Preguntas</h1> 
+        <h1>Ruleta De Preguntas</h1>
         <p>{showScore}</p>
       </nav>
       <div className="SalaContent">
@@ -81,9 +99,9 @@ export function SalaSolo() {
           </div>
           <div className="SalaAnswersContent">
             {options.slice(0, 2).map((option, index) => (
-              <div className="SalaAnswer" key={index}>
+              <div className="SalaAnswer" key={index}  onClick={() => handleAnswerSelection(option)}>
                 <span className="SalaInciso">{String.fromCharCode(65 + index)}) </span>
-                <button className='SalaBtn' onClick={() => handleAnswerSelection(option)}>
+                <button className='SalaBtn'>
                   {option}
                 </button>
               </div>
@@ -100,12 +118,21 @@ export function SalaSolo() {
             ))}
           </div>
           <div className="SalaInputAnwswer">
-            <input className="SalaInput" type="text" placeholder="Escribe tu respuesta" onChange={(e) => setUserAnswer(e.target.value)} />
-            <button className="EnviarButton" onClick={handleAnswerSubmit}>
+            <input
+              className="SalaInput"
+              type="text"
+              placeholder="Escribe tu respuesta"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+            />
+            <button
+              className="EnviarButton"
+              onClick={handleAnswerSubmit}
+            >
               <img src={enviar} alt="" />
             </button>
           </div>
-         
+
         </section>
       </div>
     </div>
