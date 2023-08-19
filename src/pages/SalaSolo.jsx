@@ -5,11 +5,10 @@ import enviar from '/src/assets/Subtract.svg';
 import Countdown from 'react-countdown';
 import Confetti from 'react-confetti';
 
-
-
 export function SalaSolo() {
   const [questions, setQuestions] = useState(dataGameSolo);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedQuestionIndexes, setSelectedQuestionIndexes] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
   const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 20000);
@@ -17,13 +16,32 @@ export function SalaSolo() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
 
-  const options = questions[currentQuestionIndex].options;
+  const options = currentQuestionIndex !== null ? questions[currentQuestionIndex].options : [];
+
+  const getRandomQuestionIndex = () => {
+    const availableIndexes = questions.map((_, index) => index).filter(index => !selectedQuestionIndexes.includes(index));
+    if (availableIndexes.length === 0) {
+      return null; // Todas las preguntas han sido respondidas
+    }
+    const randomIndex = Math.floor(Math.random() * availableIndexes.length);
+    return availableIndexes[randomIndex];
+  };
+
+  const goToNextRandomQuestion = () => {
+    const randomIndex = getRandomQuestionIndex();
+    if (randomIndex !== null) {
+      setSelectedQuestionIndexes([...selectedQuestionIndexes, randomIndex]);
+      setCurrentQuestionIndex(randomIndex);
+      setCurrentQuestionStartTime(Date.now() + 20000);
+      setUserAnswer('');
+    } else {
+      // Aquí puedes manejar el final del juego
+    }
+  };
 
   const handleAnswerSelection = (answer) => {
     setUserAnswer(answer);
-
   };
-
 
   const handleAnswerSubmit = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
@@ -35,53 +53,42 @@ export function SalaSolo() {
       setShowConfetti(true);
       setTimeout(() => {
         setShowConfetti(false);
-        goToNextQuestion();
+        goToNextRandomQuestion();
         setIsAnswerCorrect(null);
       }, 2000);
     } else {
       setScore(score - 1);
       setIsAnswerCorrect(false);
       setTimeout(() => {
-        goToNextQuestion();
+        goToNextRandomQuestion();
         setIsAnswerCorrect(null);
       }, 1000);
-    }
-  };
-  const goToNextQuestion = () => {
-    const nextQuestionIndex = currentQuestionIndex + 1;
-    if (nextQuestionIndex < questions.length) {
-      setCurrentQuestionIndex(nextQuestionIndex);
-      setCurrentQuestionStartTime(Date.now() + 20000);
-      setUserAnswer('');
-  
-  
-    } else {
-      // Aquí puedes manejar el final del juego
     }
   };
 
   const handleCountdownComplete = () => {
     // Lógica cuando el tiempo se agota
-    
-    goToNextQuestion();
-
-
-
+    goToNextRandomQuestion();
   };
 
   useEffect(() => {
     setQuestions(dataGameSolo);
-    setCurrentQuestionIndex(0);
+    setSelectedQuestionIndexes([]);
+    setCurrentQuestionIndex(null);
     setUserAnswer('');
     setScore(0);
     setShowScore(false);
     setCurrentQuestionStartTime(Date.now() + 20000);
   }, []);
 
+  useEffect(() => {
+    if (currentQuestionIndex === null && selectedQuestionIndexes.length < questions.length) {
+      goToNextRandomQuestion();
+    }
+  }, [selectedQuestionIndexes, currentQuestionIndex]);
 
   return (
     <div className="SalaSolo">
-
       {showConfetti && <Confetti />}
       <nav className="SalaNav">
         <h1>Ruleta De Preguntas</h1>
@@ -91,7 +98,7 @@ export function SalaSolo() {
         <section className="SalaGame">
           <div className="SalaGameHeader">
             <h2 className="SalaQuestion">
-              {questions[currentQuestionIndex].question}
+              {currentQuestionIndex !== null ? questions[currentQuestionIndex].question : "Cargando pregunta..."}
             </h2>
             <section className="SalaTime">
               <h2 className="SalaTitleTime">SEGUNDOS</h2>
@@ -139,7 +146,6 @@ export function SalaSolo() {
               <img src={enviar} alt="" />
             </button>
           </div>
-
         </section>
       </div>
     </div>
