@@ -567,6 +567,7 @@ span{
   }
   .SalaAnswer{
     gap: 1rem;
+    width: 150px;
 
   }
   .SalaPuntaje span, p{

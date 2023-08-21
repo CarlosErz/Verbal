@@ -90,7 +90,7 @@ export function SalaSolo() {
   const checkAnswer = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
     let newScoreTotal = scoreTotal;
-  
+
     if (userAnswer === correctAnswer) {
       setScore(score + 1);
       newScoreTotal += 1000;
@@ -102,16 +102,16 @@ export function SalaSolo() {
       setScoreerror(scoreerror + 1);
       setIsAnswerCorrect(false);
     }
-  
+
     setScoreTotal(newScoreTotal);
-  
+
     setTimeout(() => {
       setShowConfetti(false);
       goToNextRandomQuestion();
       setIsAnswerCorrect(null);
     }, 1000);
   };
-  
+
   const handleAnswerSelection = (answer) => {
     setUserAnswer(answer);
   };
@@ -169,27 +169,29 @@ export function SalaSolo() {
 
       {showConfetti && <Confetti />}
       <nav className="SalaNav">
-        
+
         <Link to='/'><img className='logo' src={logo} alt="" /></Link>
         <p>Ruleta De Preguntas</p>
-      
+
 
       </nav>
       <div className="SalaContent">
         <section className="SalaGame">
           <div className="SalaGameHeader">
-            <h2 className="SalaQuestion">
-              {currentQuestionIndex !== null ? questions[currentQuestionIndex].question : "Cargando pregunta..."}
-            </h2>
-            <div className="scores">
-          <div className="SalaPuntaje">
-            <p>Puntaje</p>
-            <span>{scoreTotal}</span>
-          </div>
-        </div>
             <div className="progress-container ">
               <div className="progress-bar" id="myBar"></div>
             </div>
+            <h2 className="SalaQuestion">
+
+              {currentQuestionIndex !== null ? questions[currentQuestionIndex].question : "Cargando pregunta..."}
+            </h2>
+            <div className="scores">
+              <div className="SalaPuntaje">
+                <p>Puntaje</p>
+                <span>{scoreTotal}</span>
+              </div>
+            </div>
+
 
 
           </div>
