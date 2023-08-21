@@ -85,7 +85,6 @@ export function Login({ setLoggedInUser, loggedInUser }) {
       .then((userCredential) => {
         // Inicio de sesión exitoso
         const user = userCredential.user;
-        console.log(user);
         setShowModal(true);
         setLoggedInUser(user);
         const loginData = {
