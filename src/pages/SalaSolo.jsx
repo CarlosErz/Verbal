@@ -13,10 +13,7 @@ export function SalaSolo() {
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
   const [scoreerror, setScoreerror] = useState(0);
-  const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 500000);
-  const [, setGameLost] = useState(false);
-  const [, setShowScore] = useState(false);
-  
+  const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 10000);
   const [ShowModalLost, setShowModalLost] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
@@ -39,27 +36,13 @@ export function SalaSolo() {
       setCurrentQuestionIndex(randomIndex);
       setUserAnswer('');
     } else {
-      // Aquí puedes manejar el final del juego
+      setShowModalLost(true);
     }
   };
 
-  const handleAnswerSelection = (answer) => {
-    setUserAnswer(answer);
-  };
-  const restartGame = () => {
-    setGameLost(false);
-    setSelectedQuestionIndexes([]);
-    setCurrentQuestionIndex(null);
-    setUserAnswer('');
-    setScore(0);
-    setScoreerror(0);
-    setShowModalLost(false);
-    setCurrentQuestionStartTime(Date.now() + 10000);
-    location.reload();
-  };
-  const handleAnswerSubmit = () => {
+  const checkAnswer = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-    setShowScore(true);
+
 
     if (userAnswer === correctAnswer) {
       setScore(score + 1);
@@ -71,7 +54,7 @@ export function SalaSolo() {
         goToNextRandomQuestion();
         setIsAnswerCorrect(null);
         setCurrentQuestionStartTime(Date.now() + 10000);
-      }, 2000);
+      }, 1000);
     } else {
       setScoreerror(scoreerror + 1);
       setIsAnswerCorrect(false);
@@ -82,24 +65,30 @@ export function SalaSolo() {
       }, 1000);
     }
   };
-
-  const handleCountdownComplete = () => {
-    goToNextRandomQuestion();
-    setShowModalLost(true);
-    setGameLost(true);
-
-
-
+  const handleAnswerSelection = (answer) => {
+    setUserAnswer(answer);
   };
+  
 
-  useEffect(() => {
-    setQuestions(dataGameSolo);
+  const restartGame = () => {
     setSelectedQuestionIndexes([]);
     setCurrentQuestionIndex(null);
     setUserAnswer('');
     setScore(0);
-    setShowScore(false);
+    setScoreerror(0);
+    setShowModalLost(false);
     setCurrentQuestionStartTime(Date.now() + 10000);
+    location.reload();
+
+  };
+
+  const handleCountdownComplete = () => {
+    goToNextRandomQuestion();
+    setShowModalLost(true);
+  };
+
+  useEffect(() => {
+    setQuestions(dataGameSolo);
   }, []);
 
   useEffect(() => {
@@ -196,7 +185,7 @@ export function SalaSolo() {
             />
             <button
               className="EnviarButton"
-              onClick={handleAnswerSubmit}
+              onClick={checkAnswer}
             >
               <img src={enviar} alt="" />
             </button>
