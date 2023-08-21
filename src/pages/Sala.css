@@ -55,13 +55,12 @@
   width: 10px;
   display: flex;
   height: 10px;
-  color: var(--texto-titl);
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   justify-content: center;
   align-items: center;
-
+  color: var(--texto-base);
   background-color: var(--secundario);
   padding: 10px;
   border-radius: 20px;

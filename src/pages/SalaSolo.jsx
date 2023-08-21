@@ -16,11 +16,10 @@ export function SalaSolo() {
   const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 500000);
   const [, setGameLost] = useState(false);
   const [, setShowScore] = useState(false);
+  
   const [ShowModalLost, setShowModalLost] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
-
-
 
   const options = currentQuestionIndex !== null ? questions[currentQuestionIndex].options : [];
 
