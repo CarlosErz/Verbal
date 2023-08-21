@@ -26,6 +26,86 @@
   text-decoration: none;
 
 }
+.SalaNav>p{
+  margin-right: 3rem;
+  color: var(--texto-titl);
+  font-size: var(--titulo-desk);
+  font-weight: bold;
+  text-decoration: none;
+}
+.scores{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+}
+.score_negative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+  text-align: center;
+  margin-right: 20px;
+  justify-content: center;
+
+}
+.score_negative>p{
+  width: 10px;
+  display: flex;
+  height: 10px;
+  color: var(--texto-titl);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--secundario);
+  padding: 10px;
+  border-radius: 20px;
+}
+.score_negative>span{
+  color: var(--texto-titl);
+  font-size: var(--titulo-desk);
+  font-weight: bold;
+  text-decoration: none;
+  
+}
+.score{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+  text-align: center;
+  margin-right: 20px;
+  justify-content: center;
+
+}
+.score>p{
+  width: 10px;
+  display: flex;
+  height: 10px;
+  color: var(--texto-titl);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--Esquematico3);
+  padding: 10px;
+  border-radius: 20px;
+}
+.score>span{
+  color: var(--texto-titl);
+  font-size: var(--titulo-desk);
+  font-weight: bold;
+  text-decoration: none;
+  
+}
 
 .SalaContent {
   width: 100%;
@@ -250,12 +330,90 @@
 .red{
   color: var(--secundario);
 }
+
 .SalaGameHeader>h2{
   color: var(--texto-titl);
   font-size: 2rem;
   margin-top: 1rem;
   width: 100%;
   text-align: center;
+}
+.lostGame{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.lostGame_puntaje{
+color: var(--texto-titl);
+font-weight: bold;
+}
+.lostGame_content{
+  width: 50%;
+  height: 50%;
+  background-color: var(--background-tono);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.lostGame_content .scores{
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.lostGame_content .scores .score{
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.lostGame_content>a{
+  color: var(--texto-titl);
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: var(--Esquematico3);
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.lostGame_title{
+  color: var(--texto-titl);
+  font-size: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+.lostGame_text{
+  color: var(--texto-titl);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+.lostGame>a{
+  color: var(--texto-titl);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: var(--Esquematico3);
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
 }
 @media screen and  (max-width: 1000px ){
   .SalaGameHeader>h2{
@@ -310,7 +468,32 @@
     height: 25px;
     width: 80%;
   }
+  .scores{
+    gap: 0.5rem;
   }
+  .score{
+    gap: 0.5rem;
+
+  }
+  .score_negative{
+    gap: 0.5rem;
+  }
+  .lostGame_content{
+    width: 80%;
+    height: 80%;
+  }
+  .lostGame_content .scores{
+    width: 100%;
+    height: 100%;
+    flex-direction: row ;
+    align-items: center;
+    justify-content: center;
+  }
+  .SalaAnswersContent{
+    width: 90%;
+    gap: 0.5rem;
+  }
+}
   
     
 

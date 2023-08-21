@@ -7,4 +7,5 @@ export const dataModalLog = [
     link1: '/Login',
     link2: '/Register'
   }
+
 ];

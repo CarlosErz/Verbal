@@ -12,10 +12,15 @@ export function SalaSolo() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
-  const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 20000);
-  const [showScore, setShowScore] = useState(false);
+  const [scoreerror, setScoreerror] = useState(0);
+  const [currentQuestionStartTime, setCurrentQuestionStartTime] = useState(Date.now() + 500000);
+  const [, setGameLost] = useState(false);
+  const [, setShowScore] = useState(false);
+  const [ShowModalLost, setShowModalLost] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+
+
 
   const options = currentQuestionIndex !== null ? questions[currentQuestionIndex].options : [];
 
@@ -33,7 +38,6 @@ export function SalaSolo() {
     if (randomIndex !== null) {
       setSelectedQuestionIndexes([...selectedQuestionIndexes, randomIndex]);
       setCurrentQuestionIndex(randomIndex);
-      setCurrentQuestionStartTime(Date.now() + 20000);
       setUserAnswer('');
     } else {
       // Aquí puedes manejar el final del juego
@@ -43,7 +47,17 @@ export function SalaSolo() {
   const handleAnswerSelection = (answer) => {
     setUserAnswer(answer);
   };
-
+  const restartGame = () => {
+    setGameLost(false);
+    setSelectedQuestionIndexes([]);
+    setCurrentQuestionIndex(null);
+    setUserAnswer('');
+    setScore(0);
+    setScoreerror(0);
+    setShowModalLost(false);
+    setCurrentQuestionStartTime(Date.now() + 10000);
+    location.reload();
+  };
   const handleAnswerSubmit = () => {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
     setShowScore(true);
@@ -52,24 +66,31 @@ export function SalaSolo() {
       setScore(score + 1);
       setIsAnswerCorrect(true);
       setShowConfetti(true);
+
       setTimeout(() => {
         setShowConfetti(false);
         goToNextRandomQuestion();
         setIsAnswerCorrect(null);
+        setCurrentQuestionStartTime(Date.now() + 10000);
       }, 2000);
     } else {
-      setScore(score - 1);
+      setScoreerror(scoreerror + 1);
       setIsAnswerCorrect(false);
       setTimeout(() => {
         goToNextRandomQuestion();
         setIsAnswerCorrect(null);
+        setCurrentQuestionStartTime(Date.now() + 10000);
       }, 1000);
     }
   };
 
   const handleCountdownComplete = () => {
-    // Lógica cuando el tiempo se agota
     goToNextRandomQuestion();
+    setShowModalLost(true);
+    setGameLost(true);
+
+
+
   };
 
   useEffect(() => {
@@ -79,7 +100,7 @@ export function SalaSolo() {
     setUserAnswer('');
     setScore(0);
     setShowScore(false);
-    setCurrentQuestionStartTime(Date.now() + 20000);
+    setCurrentQuestionStartTime(Date.now() + 10000);
   }, []);
 
   useEffect(() => {
@@ -90,10 +111,44 @@ export function SalaSolo() {
 
   return (
     <div className="SalaSolo">
+      {ShowModalLost && 
+        <div className="lostGame">
+        <div className='lostGame_content'>
+        <h1 className='lostGame_title'>Oooops Perdiste</h1>
+        <p className='lostGame_text'>Vuelve a intentarlo</p>
+        <p className='lostGame_puntaje'>Tu puntaje fue de</p>
+        <div className="losGame_score">
+          
+          <div className="scores">
+            <div className="score">
+              <p>✓</p>
+              <span>{score}</span>
+            </div>
+            <div className="score_negative">
+              <p>✖</p>
+              <span>{scoreerror}</span>
+            </div>
+          </div>
+        </div>
+        <Link to='/SalaSolo' onClick={restartGame}>Volver a jugar</Link>
+        </div>
+      </div>
+      }
+      
       {showConfetti && <Confetti />}
       <nav className="SalaNav">
-        <Link to ='/'>Ruleta De Preguntas</Link>
-        <p>{showScore}</p>
+        <Link to='/'>Ruleta De Preguntas</Link>
+        <div className="scores">
+          <div className="score">
+            <p>✓</p>
+            <span>{score}</span>
+          </div>
+          <div className="score_negative">
+            <p>✖</p>
+            <span>{scoreerror}</span>
+          </div>
+        </div>
+
       </nav>
       <div className="SalaContent">
         <section className="SalaGame">

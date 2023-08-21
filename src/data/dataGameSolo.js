@@ -257,6 +257,12 @@ export const dataGameSolo =[
     options: ['2004', '2005', '2006', '2007'],
     correctAnswer: '2004'
   },
+  {
+    id: 44,
+    question: '¿En qué estado de México nació el famoso poeta y escritor "Amado Nervo?',
+    options: ['Colima', 'Tlaxcala', 'Veracruz', 'Nayarit'],
+    correctAnswer: 'Nayarit'
+  },
 
 
 ]
