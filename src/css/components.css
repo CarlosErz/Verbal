@@ -742,6 +742,7 @@ img.Tematica {
   font-weight: 800;
 }
 
+
 @media screen and (max-width: 700px) {
   .modal-text {
     font-size: 1rem;
