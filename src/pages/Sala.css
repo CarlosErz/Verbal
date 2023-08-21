@@ -153,17 +153,13 @@
   cursor: pointer;
 
 }
-.SalaAnswer:focus{
-  border: 2px solid var(--Esquematico3);
+.SalaInciso:hover{
+  border: 5px solid var(--Esquematico3);
+
 }
-.SalaAnswer:active{
-  border: 2px solid var(--Esquematico3);
-}
-.SalaAnswer:hover{
-  border: 2px solid var(--Esquematico3);
-}
-.SalaAnswer::backdrop{
-  border: 2px solid var(--Esquematico3);
+.SalaBtn:hover{
+  border-bottom: 2px solid var(--Esquematico3);
+
 }
 
 .SalaBtn {
@@ -491,8 +487,6 @@ font-weight: bold;
   .SalaAnswersContent{
     width: 90%;
     gap: 0.5rem;
+
   }
 }
-  
-    
-

@@ -181,6 +181,7 @@ export function SalaSolo() {
               type="text"
               placeholder="Escribe tu respuesta"
               value={userAnswer}
+              id='userAnswer'
               onChange={(e) => setUserAnswer(e.target.value)}
             />
             <button
