@@ -96,6 +96,7 @@ export function SalaSolo() {
       newScoreTotal += 1000;
       setIsAnswerCorrect(true);
       setShowConfetti(true);
+      resetTime();
     } else {
       newScoreTotal = Math.max(0, newScoreTotal - 500);
       setScoreerror(scoreerror + 1);
@@ -108,7 +109,6 @@ export function SalaSolo() {
       setShowConfetti(false);
       goToNextRandomQuestion();
       setIsAnswerCorrect(null);
-      resetTime();
     }, 1000);
   };
   
