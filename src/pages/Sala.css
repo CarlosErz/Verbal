@@ -173,7 +173,6 @@
   width: 250px;
   height: 30%;
   gap: 0.5rem;
-  justify-content: center;
   cursor: pointer;
 
 }
@@ -200,6 +199,7 @@
   color: var(--texto-titl);
   font-size: 1.5rem;
   font-weight: 600;
+  text-align: left;
   width: 100%;
 
 }
@@ -566,7 +566,7 @@ span{
 
   }
   .SalaAnswer{
-    gap: 1px;
+    gap: 1rem;
 
   }
   .SalaPuntaje span, p{
@@ -586,6 +586,8 @@ span{
 
   .SalaBtn {
     font-size: var(--secun-celular);
+    text-align: left;
+
   }
 
   .SalaInput {
@@ -624,6 +626,7 @@ span{
   .SalaAnswersContent {
     width: 90%;
     gap: 0.1rem;
+    flex-direction: column;
 
   }
 
