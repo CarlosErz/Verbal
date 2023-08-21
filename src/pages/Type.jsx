@@ -49,7 +49,7 @@ export function Type({ loggedInUser, setLoggedInUser }) {
           </a>
         </div>
         <Juegos alt1='juegos'
-        
+        handleImageClick={handleTematicaClick}
         
         />
       </div>

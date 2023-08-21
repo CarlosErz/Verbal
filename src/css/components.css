@@ -283,12 +283,14 @@
   align-items: center;
   font-size: 1.5rem;
 }
+
 /*rueda ${isStopped ? 'stopped' : ''*/
 
-.stopped{
+.stopped {
   animation-play-state: paused;
 
 }
+
 .rueda-container {
   position: relative;
   overflow: hidden;
@@ -303,11 +305,11 @@
 
 .ruota {
 
-  transition: transform 10s ease; 
+  transition: transform 10s ease;
 }
 
 .ruota.stopped {
-  animation-play-state: paused; 
+  animation-play-state: paused;
 }
 
 
@@ -497,7 +499,6 @@ img.Tematica {
   height: 90%;
   border-radius: 15px;
   object-fit: cover;
-  cursor: pointer;
   align-items: center;
   justify-content: center;
   object-position: center;
@@ -507,6 +508,14 @@ img.Tematica {
 .carousel-item {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.carousel-link {
+  width: 100%;
+  height: 100%;
+
+  margin: 10px;
+  cursor: pointer;
 }
 
 
@@ -809,7 +818,8 @@ img.Tematica {
   .RunRulet {
     display: flex;
   }
-  .Spin{
+
+  .Spin {
 
     width: 50px;
     height: 50px;
@@ -818,7 +828,8 @@ img.Tematica {
 
 
   }
-  .Spin>h1{
+
+  .Spin>h1 {
     font-size: 16px;
   }
 
@@ -826,7 +837,7 @@ img.Tematica {
 
 @media screen and (max-width: 400px) {
 
-  .Spin{
+  .Spin {
 
     width: 30px;
     height: 30px;
@@ -835,9 +846,11 @@ img.Tematica {
 
 
   }
-  .Spin>h1{
+
+  .Spin>h1 {
     font-size: 10px;
   }
+
   .modal-text {
     font-size: var(--parra-tableta);
   }

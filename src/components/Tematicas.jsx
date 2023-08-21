@@ -5,12 +5,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
 import { dataTemas } from '../data/dataTemas.js';
-import { useState } from 'react';
 
 
-function Tematica({ tema, imagenes, alt1, Sala,Click }) {
 
- const [loggedIn] = useState(false);
+function Tematica({ tema, imagenes, alt1, Sala ,Click }) {
+
   const numSlidesToShow = Math.min(3, imagenes.length); // Limitar el número de slides a mostrar
   const settings = {
     dots: false,
@@ -47,9 +46,9 @@ function Tematica({ tema, imagenes, alt1, Sala,Click }) {
           {imagenes.map((imagen, imgIndex) => (
             <article key={imgIndex} className="carousel-item">
               <Link
-                to={loggedIn ? Sala[imgIndex] : '#'}
+                to={Sala[imgIndex]}
                 className="carousel-link"
-                onClick={Click}
+                onClick={() => Click(Sala[imgIndex])}
               >
                 <img className="Tematica" src={imagen} alt={alt1} />
               </Link>
@@ -73,7 +72,7 @@ Tematica.propTypes = {
 export function Tematicas({ alt1,Click }) {
   return (
     <div className="prueba" >
-      {dataTemas.map(({ tema, imagenes, Sala, }, temas) => (
+      {dataTemas.map(({ tema, imagenes, Sala }, temas) => (
         <Tematica
           key={temas}
           tema={tema}
