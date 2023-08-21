@@ -195,8 +195,8 @@ export function SalaSolo() {
 
 
           </div>
-
-          <div className="SalaAnswersContent">
+          <div className="SalAnswerContentR">
+            <div className="SalaAnswersContent">
             {options.slice(0, 2).map((option, index) => (
               <div className="SalaAnswer" key={index} onClick={() => handleAnswerSelection(option)}>
                 <span className="SalaInciso">{String.fromCharCode(65 + index)}</span>
@@ -216,6 +216,8 @@ export function SalaSolo() {
               </div>
             ))}
           </div>
+          </div>
+          
           <div className="SalaInputAnwswer">
             <input
               className="SalaInput"

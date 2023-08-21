@@ -31,7 +31,8 @@
   text-decoration: none;
 
 }
-.SalaNav>a>img{
+
+.SalaNav>a>img {
   width: 30px;
   height: 30px;
   margin: 0;
@@ -140,16 +141,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .SalaAnswersContent {
-  width: 80%;
-  height: 20%;
+  height: 100px;
   display: flex;
   flex-direction: row;
-  text-align: center;
-  justify-content: center;
   align-items: center;
+  gap: 30px;
+}
+
+.SalAnswerContentR {
+  margin: 0 auto;
+  display: flex;
+  flex-direction:column;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .SalaInciso {
@@ -171,8 +182,8 @@
   flex-direction: row;
   align-items: center;
   width: 250px;
-  height: 30%;
-  gap: 0.5rem;
+  height: 100%;
+  gap: 1rem;
   cursor: pointer;
 
 }
@@ -213,11 +224,12 @@
 }
 
 .SalaTimer {
-width: 90%;
-display: flex;
-flex-direction: column
+  width: 90%;
+  display: flex;
+  flex-direction: column
 }
-.SalaTimer >span{
+
+.SalaTimer>span {
   color: var(--texto-titl);
   font-size: 1rem;
   align-items: center;
@@ -264,6 +276,7 @@ flex-direction: column
   justify-content: center;
   display: flex;
 }
+
 .SalaGameHeader {
   margin-top: 200px;
   width: 100%;
@@ -293,6 +306,7 @@ flex-direction: column
   gap: 0.5rem;
   cursor: pointer;
 }
+
 .EnviarButton:hover {
   background-color: var(--background);
 }
@@ -446,6 +460,7 @@ flex-direction: column
   font-weight: bold;
   cursor: pointer;
 }
+
 .lostGame_title {
   color: var(--texto-titl);
   font-size: 2rem;
@@ -472,6 +487,7 @@ flex-direction: column
   border-radius: 20px;
   cursor: pointer;
 }
+
 .progress-container {
   width: 80%;
   height: 20px;
@@ -481,19 +497,22 @@ flex-direction: column
 }
 
 .progress-bar {
-  height: 80%;/* Color inicial de la barra */
+  height: 80%;
+  /* Color inicial de la barra */
   transition: width 1s linear;
   height: 100%;
   background-color: var(--Esquematico3);
 }
 
-.yello{
+.yello {
   color: var(--Esquematico2);
 }
+
 .red {
   color: var(--secundario);
 }
-.SalaPuntaje{
+
+.SalaPuntaje {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -502,9 +521,10 @@ flex-direction: column
 
 
 }
-.SalaPuntaje ,
+
+.SalaPuntaje,
 p,
-span{
+span {
   color: var(--texto-titl);
   font-size: 1.5rem;
   font-weight: bold;
@@ -539,51 +559,54 @@ span{
     font-size: 20px;
     padding: 20px;
   }
-  .lostGame_content{
+
+  .lostGame_content {
     width: 70%;
     height: 80%;
   }
-  .SalaInput{
+
+  .SalaInput {
     width: 80%;
   }
-  
+
 
 }
 
 @media screen and (max-width:750px) {
-  .SalaGame{
+  .SalaGame {
     width: 90%;
     display: flex;
     flex-direction: column;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto  ;
+    margin: 0 auto;
 
   }
+   
   .SalaTime {
     position: inherit;
 
   }
- .SalaNav>p{
-  margin-right: 0.5rem;
-  font-size: var(--parra-celular);
- }
+ 
+  .SalaNav>p {
+    margin-right: 0.5rem;
+    font-size: var(--parra-celular);
+  }
+
   .SalaGameHeader {
     height: 20%;
     margin-top: 100px;
 
 
   }
-  .progress-container{
+
+  .progress-container {
     width: 100%;
   }
-  .SalaAnswer{
-    gap: 0,2rem;
-    width: 50%;
-    flex-direction: row;
 
-  }
-  .SalaPuntaje span, p{
+
+  .SalaPuntaje span,
+  p {
     font-size: 1rem;
   }
 
@@ -591,7 +614,12 @@ span{
     text-align: center;
     font-size: 1.2rem;
   }
+  .SalAnswerContentR{
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
 
+  }
   .SalaInciso {
     font-size: 15px;
     width: 20px;
@@ -644,13 +672,14 @@ span{
     align-items: stretch;
 
   }
-  .EnviarButton{
+
+  .EnviarButton {
     right: 10%;
   }
 
   .EnviarButton img {
     width: 20px;
     height: 20px;
-   
+
   }
 }
