@@ -102,8 +102,8 @@ export function SalaSolo() {
       {ShowModalLost && 
         <div className="lostGame">
         <div className='lostGame_content'>
-        <h1 className='lostGame_title'>Oooops Perdiste</h1>
-        <p className='lostGame_text'>Vuelve a intentarlo</p>
+        <h1 className='lostGame_title'>¡Oops, Tiempo Agotado!</h1>
+        <p className='lostGame_text'>No te desanimes, sigue desafiándote</p>
         <p className='lostGame_puntaje'>Tu puntaje fue de</p>
         <div className="losGame_score">
           
