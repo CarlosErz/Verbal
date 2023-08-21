@@ -29,7 +29,7 @@ const firebaseConfig = {
 export function App() {
   const [selectedLetter, setSelectedLetter] = useState('');
   const [loggedInUser, setLoggedInUser] = useState(null);
-  console.log(loggedInUser);
+
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
