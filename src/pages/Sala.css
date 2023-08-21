@@ -605,6 +605,7 @@ span{
     font-size: var(--secun-celular);
     height: 25px;
     width: 100%;
+    text-align: center;
   }
 
   .scores {
