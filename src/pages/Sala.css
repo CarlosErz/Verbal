@@ -551,6 +551,15 @@ span{
 }
 
 @media screen and (max-width:750px) {
+  .SalaGame{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+    align-items: center;
+    margin: 0 auto  ;
+
+  }
   .SalaTime {
     position: inherit;
 
@@ -631,9 +640,13 @@ span{
     flex-direction: column;
 
   }
+  .EnviarButton{
+    right: 10%;
+  }
 
   .EnviarButton img {
     width: 20px;
     height: 20px;
+   
   }
 }
