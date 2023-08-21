@@ -1,4 +1,4 @@
-export const dataGameSolo =[
+export const dataGameSolo = [
   {
     id: 1,
     question: '¿Cuál es la capital de Francia?',
@@ -263,6 +263,341 @@ export const dataGameSolo =[
     options: ['Colima', 'Tlaxcala', 'Veracruz', 'Nayarit'],
     correctAnswer: 'Nayarit'
   },
-
+  {
+    id: 45,
+    question: '¿Cuál es el país más poblado del mundo?',
+    options: ['China', 'India', 'Estados Unidos', 'Indonesia'],
+    correctAnswer: 'China'
+  },
+  {
+    id: 46,
+    question: '¿Cuál es el país más pequeño del mundo?',
+    options: ['Mónaco', 'Vaticano', 'San Marino', 'Malta'],
+    correctAnswer: 'Vaticano'
+    
+  },{
+    id: 47,
+    question: '¿Quién pintó "La última cena"?',
+    options: ['Leonardo da Vinci', 'Michelangelo', 'Rafael', 'Donatello'],
+    correctAnswer: 'Leonardo da Vinci'
+  },
+  {
+    id: 48,
+    question: '¿Cuál es el proceso por el cual las plantas liberan oxígeno?',
+    options: ['Fotosíntesis', 'Respiración', 'Transpiración', 'Germinación'],
+    correctAnswer: 'Fotosíntesis'
+  },
+  {
+    id: 49,
+    question: '¿En qué año comenzó la Primera Guerra Mundial?',
+    options: ['1914', '1917', '1918', '1920'],
+    correctAnswer: '1914'
+  },
+  {
+    id: 50,
+    question: '¿Cuál es el planeta más cercano a la Tierra?',
+    options: ['Marte', 'Venus', 'Mercurio', 'Júpiter'],
+    correctAnswer: 'Venus'
+  },
+  {
+    id: 51,
+    question: '¿Quién escribió "Orgullo y prejuicio"?',
+    options: ['Emily Brontë', 'Jane Austen', 'Charlotte Brontë', 'Louisa May Alcott'],
+    correctAnswer: 'Jane Austen'
+  },
+  {
+    id: 52,
+    question: '¿Cuál es el órgano encargado de bombear la sangre en el cuerpo humano?',
+    options: ['Pulmón', 'Hígado', 'Cerebro', 'Corazón'],
+    correctAnswer: 'Corazón'
+  },
+  {
+    id: 53,
+    question: '¿En qué año se inauguró el Canal de Panamá?',
+    options: ['1904', '1910', '1914', '1920'],
+    correctAnswer: '1914'
+  },
+  {
+    id: 54,
+    question: '¿Quién escribió "La Odisea"?',
+    options: ['Homero', 'Virgilio', 'Sófocles', 'Eurípides'],
+    correctAnswer: 'Homero'
+  },
+  {
+    id: 55,
+    question: '¿Cuál es el elemento químico con el símbolo "Fe"?',
+    options: ['Hierro', 'Plata', 'Cobre', 'Oro'],
+    correctAnswer: 'Hierro'
+  },
+  {
+    id: 56,
+    question: '¿En qué continente se encuentra el desierto del Sahara?',
+    options: ['África', 'Asia', 'América del Norte', 'Europa'],
+    correctAnswer: 'África'
+  },
+  {
+    id: 57,
+    question: '¿Quién es el autor de la famosa obra "Romeo y Julieta"?',
+    options: ['William Shakespeare', 'Charles Dickens', 'Jane Austen', 'Mark Twain'],
+    correctAnswer: 'William Shakespeare'
+  },
+  {
+    id: 58,
+    question: '¿Cuál es el proceso de cambio de estado de gas a sólido directamente?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Sublimación'
+  },
+  {
+    id: 59,
+    question: '¿En qué año se proclamó la Declaración Universal de Derechos Humanos?',
+    options: ['1945', '1948', '1950', '1952'],
+    correctAnswer: '1948'
+  },
+  {
+    id: 60,
+    question: '¿Cuál es el sistema de escritura utilizado en China?',
+    options: ['Kanji', 'Hangul', 'Hiragana', 'Cirílico'],
+    correctAnswer: 'Kanji'
+  },
+  {
+    id: 61,
+    question: '¿Cuál es el río más largo de África?',
+    options: ['Nilo', 'Amazonas', 'Congo', 'Zambeze'],
+    correctAnswer: 'Nilo'
+  },
+  {
+    id: 62,
+    question: '¿Quién fue el líder político de Sudáfrica que luchó contra el apartheid?',
+    options: ['Nelson Mandela', 'Desmond Tutu', 'Steve Biko', 'Thabo Mbeki'],
+    correctAnswer: 'Nelson Mandela'
+  },
+  {
+    id: 63,
+    question: '¿Cuál es el proceso de cambio de estado de líquido a gas?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Evaporación'
+  },
+  {
+    id: 64,
+    question: '¿En qué año se fundó Apple Inc.?',
+    options: ['1974', '1976', '1980', '1984'],
+    correctAnswer: '1976'
+  },
+  {
+    id: 65,
+    question: '¿Cuál es el metal más utilizado en la fabricación de baterías recargables?',
+    options: ['Litio', 'Plomo', 'Cobre', 'Hierro'],
+    correctAnswer: 'Litio'
+  },
+  {
+    id: 66,
+    question: '¿En qué año se celebró la Revolución Rusa?',
+    options: ['1915', '1917', '1920', '1923'],
+    correctAnswer: '1917'
+  },
+  {
+    id: 67,
+    question: '¿Cuál es el pigmento responsable del color de la piel y el cabello?',
+    options: ['Caroteno', 'Melanina', 'Clorofila', 'Hemoglobina'],
+    correctAnswer: 'Melanina'
+  },
+  {
+    id: 68,
+    question: '¿Cuál es el instrumento musical de viento conocido como "rey de la selva"?',
+    options: ['Flauta', 'Saxofón', 'Trompeta', 'Clarinete'],
+    correctAnswer: 'Saxofón'
+  },
+  {
+    id: 69,
+    question: '¿En qué año se llevó a cabo la primera transmisión de televisión a color?',
+    options: ['1935', '1940', '1953', '1960'],
+    correctAnswer: '1953'
+  },
+  {
+    id: 70,
+    question: '¿Cuál es el símbolo químico del oxígeno?',
+    options: ['O', 'Ox', 'Oi', 'Og'],
+    correctAnswer: 'O'
+  },
+  {
+    id: 71,
+    question: '¿Quién fue el famoso físico teórico conocido por su teoría de la radiactividad?',
+    options: ['Isaac Newton', 'Marie Curie', 'Albert Einstein', 'Niels Bohr'],
+    correctAnswer: 'Marie Curie'
+  },
+  {
+    id: 72,
+    question: '¿En qué año se celebraron los primeros Juegos Olímpicos modernos?',
+    options: ['1886', '1892', '1900', '1896'],
+    correctAnswer: '1896'
+  },
+  {
+    id: 73,
+    question: '¿Cuál es el metal utilizado para la fabricación de latas de bebidas?',
+    options: ['Hierro', 'Cobre', 'Aluminio', 'Plomo'],
+    correctAnswer: 'Aluminio'
+  },
+  {
+    id: 74,
+    question: '¿En qué año se fundó Microsoft Corporation?',
+    options: ['1975', '1980', '1985', '1990'],
+    correctAnswer: '1975'
+  },
+  {
+    id: 75,
+    question: '¿Cuál es el planeta más lejano del sistema solar?',
+    options: ['Urano', 'Neptuno', 'Plutón', 'Saturno'],
+    correctAnswer: 'Neptuno'
+  },
+  {
+    id: 76,
+    question: '¿Quién escribió "Los miserables"?',
+    options: ['Victor Hugo', 'Gustave Flaubert', 'Émile Zola', 'Albert Camus'],
+    correctAnswer: 'Victor Hugo'
+  },
+  {
+    id: 77,
+    question: '¿Cuál es el océano más profundo del mundo?',
+    options: ['Océano Atlántico', 'Océano Índico', 'Océano Pacífico', 'Océano Ártico'],
+    correctAnswer: 'Océano Pacífico'
+  },
+  {
+    id: 78,
+    question: '¿En qué año se promulgó la Declaración de los Derechos del Hombre y del Ciudadano?',
+    options: ['1769', '1789', '1812', '1830'],
+    correctAnswer: '1789'
+  },
+  {
+    id: 79,
+    question: '¿Cuál es el proceso de cambio de estado de sólido a líquido?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Fusión'
+  },
+  {
+    id: 80,
+    question: '¿En qué año se fundó la Cruz Roja Internacional?',
+    options: ['1863', '1872', '1881', '1890'],
+    correctAnswer: '1863'
+  },
+  {
+    id: 81,
+    question: '¿Cuál es el elemento químico más abundante en el universo?',
+    options: ['Hidrógeno', 'Oxígeno', 'Helio', 'Carbono'],
+    correctAnswer: 'Hidrógeno'
+  },
+  {
+    id: 82,
+    question: '¿Quién fue el líder de la Revolución Cubana?',
+    options: ['Fidel Castro', 'Che Guevara', 'Raul Castro', 'Camilo Cienfuegos'],
+    correctAnswer: 'Fidel Castro'
+  },
+  {
+    id: 83,
+    question: '¿Cuál es el proceso de cambio de estado de líquido a gas?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Evaporación'
+  },
+  {
+    id: 84,
+    question: '¿En qué año se llevó a cabo la Revolución Industrial?',
+    options: ['1700s', '1750s', '1800s', '1850s'],
+    correctAnswer: '1750s'
+  },
+  {
+    id: 85,
+    question: '¿Quién escribió "La metamorfosis"?',
+    options: ['Franz Kafka', 'Fyodor Dostoevsky', 'Leo Tolstoy', 'Anton Chekhov'],
+    correctAnswer: 'Franz Kafka'
+  },
+  {
+    id: 86,
+    question: '¿Cuál es el proceso de cambio de estado de gas a líquido?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Condensación'
+  },
+  {
+    id: 87,
+    question: '¿En qué año se fundó la Liga de las Naciones?',
+    options: ['1914', '1919', '1923', '1927'],
+    correctAnswer: '1919'
+  },
+  {
+    id: 88,
+    question: '¿Cuál es el autor de la obra "El retrato de Dorian Gray"?',
+    options: ['Oscar Wilde', 'Edgar Allan Poe', 'Mark Twain', 'Herman Melville'],
+    correctAnswer: 'Oscar Wilde'
+  },
+  {
+    id: 89,
+    question: '¿En qué año se llevó a cabo la Revolución Francesa?',
+    options: ['1776', '1789', '1804', '1848'],
+    correctAnswer: '1789'
+  },
+  {
+    id: 90,
+    question: '¿Quién fue el primer ser humano en el espacio?',
+    options: ['Yuri Gagarin', 'Neil Armstrong', 'Buzz Aldrin', 'Alan Shepard'],
+    correctAnswer: 'Yuri Gagarin'
+  },
+  {
+    id: 91,
+    question: '¿Cuál es el proceso de cambio de estado de líquido a sólido?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Fusión'
+  },
+  {
+    id: 92,
+    question: '¿En qué año se firmó el Tratado de Versalles, poniendo fin a la Primera Guerra Mundial?',
+    options: ['1917', '1919', '1921', '1923'],
+    correctAnswer: '1919'
+  },
+  {
+    id: 93,
+    question: '¿Quién escribió "1984"?',
+    options: ['George Orwell', 'Aldous Huxley', 'Ray Bradbury', 'J.R.R. Tolkien'],
+    correctAnswer: 'George Orwell'
+  },
+  {
+    id: 94,
+    question: '¿Cuál es el proceso de cambio de estado de gas a líquido?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Condensación'
+  },
+  {
+    id: 95,
+    question: '¿En qué año se celebró la caída del Imperio Romano de Occidente?',
+    options: ['410', '476', '532', '589'],
+    correctAnswer: '476'
+  },
+  {
+    id: 96,
+    question: '¿Cuál es el proceso de cambio de estado de líquido a gas?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Evaporación'
+  },
+  {
+    id: 97,
+    question: '¿En qué año se celebró la Revolución Rusa?',
+    options: ['1905', '1910', '1917', '1922'],
+    correctAnswer: '1917'
+  },
+  {
+    id: 98,
+    question: '¿Quién fue el autor de la famosa novela "Moby-Dick"?',
+    options: ['Herman Melville', 'Mark Twain', 'Nathaniel Hawthorne', 'Edgar Allan Poe'],
+    correctAnswer: 'Herman Melville'
+  },
+  {
+    id: 99,
+    question: '¿En qué año se proclamó la independencia de México?',
+    options: ['1808', '1810', '1818', '1820'],
+    correctAnswer: '1810'
+  },
+  {
+    id: 100,
+    question: '¿Cuál es el proceso de cambio de estado de sólido a gas directamente?',
+    options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
+    correctAnswer: 'Sublimación'
+  }
 
 ]
