@@ -627,7 +627,7 @@ span{
 
   .SalaAnswersContent {
     width: 90%;
-    gap: 0.1rem;
+    gap: 2rem;
     flex-direction: column;
 
   }
