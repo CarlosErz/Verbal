@@ -68,7 +68,7 @@ export function App() {
         loggedInUser={loggedInUser}
         />} />
         <Route path="/ruleta" element={<Azar selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
-        <Route path='/SalaSolo' element={<QuickGame selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
+        <Route path='/QuickGame' element={<QuickGame selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
       </Routes>
     </BrowserRouter>
   )

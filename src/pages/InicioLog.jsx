@@ -18,7 +18,7 @@ export function InicioLog() {
 
           <ComBtn className='registrarte' NameBtn='REGISTRATE' link='/register' />
 
-          <ComBtn className='JuegoRapido' NameBtn='JUEGO RAPIDO' link='SalaSolo' />
+          <ComBtn className='JuegoRapido' NameBtn='JUEGO RAPIDO' link='/QuickGame' />
 
         </div>
       </div>
