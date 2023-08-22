@@ -476,26 +476,31 @@
 
 .progress-container {
   width: 80%;
-  height: 20px;
+  height: 40px;
   background-color: #ccc;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .progress-bar {
-  height: 80%;
-  /* Color inicial de la barra */
-  transition: width 1s linear;
   height: 100%;
-  background-color: var(--Esquematico3);
-}
+  width: 100%;
 
+  transition: width 1s linear;
+
+}
+.green{
+  color: var(--Esquematico3);
+  width: 100%;
+}
 .yello {
   color: var(--Esquematico2);
+  width: 100%;
 }
 
 .red {
   color: var(--secundario);
+  width: 100%;
 }
 
 .SalaPuntaje {

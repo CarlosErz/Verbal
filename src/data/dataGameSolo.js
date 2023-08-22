@@ -598,6 +598,117 @@ export const dataGameSolo = [
     question: '¿Cuál es el proceso de cambio de estado de sólido a gas directamente?',
     options: ['Sublimación', 'Evaporación', 'Condensación', 'Fusión'],
     correctAnswer: 'Sublimación'
-  }
+  },
+  
+  {
+    id: 101,
+    question: '¿Cuál es el animal más rápido del mundo?',
+    options: ['Cheetah', 'Aguila', 'Guepardo', 'León'],
+    correctAnswer: 'Guepardo'
+  },
+  {
+    id: 102,
+    question: '¿En qué año se fundó Twitter?',
+    options: ['2004', '2006', '2008', '2010'],
+    correctAnswer: '2006'
+  },
+  {
+    id: 103,
+    question: '¿Cuál es el metal más caro del mundo?',
+    options: ['Oro', 'Plata', 'Paladio', 'Rodio'],
+    correctAnswer: 'Rodio'
+  },
+  {
+    id: 104,
+    question: ' ¿Cuántos litros de sangre tiene una persona adulta?',
+    options: ['2 y 4 litros', '7 litros', '0,5 litros', '4 y 6 litros'],
+    correctAnswer: '4 y 6 litros'
+  },
+  {
+    id: 105,
+    question: '¿Quién es el autor de la frase "Pienso, luego existo"?',
+    options: ['Platón', 'Francis Bacon', 'Descartes', 'Sócrates'],
+    correctAnswer: 'Descartes'
+  },
+  {
+    id: 106,
+    question: '¿Cuál es el libro más vendido en el mundo después de la Biblia?',
+    options: ['El Señor de los Anillos', 'Don Quijote de la Mancha', 'El Principito', 'La Odisea'],
+    correctAnswer: 'Don Quijote de la Mancha'
+  },
+  {
+    id: 107,
+    question: '¿Cuántos decimales tiene el número pi π?',
+    options: ['Infinitos', 'Mil', 'Dos', 'Veinte'],
+    correctAnswer: 'Infinitos'
+  },
+  {
+    id: 108,
+    question: '¿Cuánto tiempo tarda la luz del Sol en llegar a la Tierra?',
+    options: ['12 minutos', '8 minutos', '8 segundos', '1 día'],
+    correctAnswer: '8 minutos'
+  },
+  {
+    id: 109,
+    question: '¿En qué periodo de la prehistoria fue descubierto el fuego?',
+    options: ['Neolítico', 'Edad de piedra', 'Paleolítico', 'Mesolítico'],
+    correctAnswer: 'Paleolítico'
+  },
+  {
+    id: 110,
+    question: '¿A quién se le atribuye la frase "Solo sé que no sé nada"?',
+    options: ['Aristóteles', 'Sófocles', 'Salomón', 'Sócrates'],
+    correctAnswer: 'Sócrates'
+  },
+  {
+    id: 111,
+    question: 'La frase Carpe diem significa:',
+    options: ['Aprovecha el dia', 'Un movimiento telúrico', 'Un movimiento revolucionario', 'Un movimiento científico'],
+    correctAnswer: 'Aprovecha el dia'
+  },
+  {
+    id: 112,
+    question: 'La escultura Gato fue realizada por:',
+    options: ['Fernando Botero', 'Henry Moore', 'Henry Moore', 'Juan Gato'],
+    correctAnswer: 'Fernando Botero'
+  },
+  {
+    id: 113,
+    question: '¿A qué compuesto corresponde la fórmula química H2O2?',
+    options: ['Agua oxigenada', 'Agua contaminada', 'Agua destilada', 'Agua pesada'],
+    correctAnswer: 'Agua oxigenada'
+  },
+  {
+    id: 114,
+    question: '¿Qué película se basa en la vida de un matemático con esquizofrenia?',
+    options: ['La teoría de todo', 'Una mente maravillosa', 'Descifrando enigma', 'El indomable Will Hunting'],
+    correctAnswer: 'Una mente maravillosa'
+  },
+  {
+    id: 115,
+    question: '¿Quién es considerado el padre de la ciencia y la filosofía?',
+    options: ['Tales de Mileto', 'Aristóteles', 'Demócrito', 'Pitágoras'],
+    correctAnswer: 'Tales de Mileto'
+  },
+  {
+    id: 116,
+    question: '¿Qué sustancia es absorbida por las plantas y expirada por los animales?',
+    options: ['Oxígeno', 'Nitrógeno', 'Dióxido de hierro', 'Dióxido de carbono'],
+    correctAnswer: 'dióxido de carbono'
+  },
+  {
+    id: 117,
+    question: '¿Cuántos grados son necesarios para que dos ángulos sean complementarios?',
+    options: ['45', '360', '90', '60'],
+    correctAnswer: '90'
+  },
+  {
+    id: 118,
+    question: '¿Cómo se llaman los vasos que transportan la sangre desde el corazón al resto del cuerpo?',
+    options: ['Arterias', 'Venas', 'Articulaciones', 'Uréteres'],
+    correctAnswer: 'Arterias'
+  },
+
+
 
 ]

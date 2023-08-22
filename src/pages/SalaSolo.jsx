@@ -23,26 +23,26 @@ export function SalaSolo() {
 
   const options = currentQuestionIndex !== null ? questions[currentQuestionIndex].options : [];
 
-  const getInitialTime = () => {
-    if (scoreTotal >= 0 && scoreTotal <= 1000) {
-      return 30;
-    } else if (scoreTotal > 1000 && scoreTotal <= 5000) {
-      return 25;
-    } else if (scoreTotal > 5000 && scoreTotal <= 30000) {
-      return 20;
-    } else if (scoreTotal > 30000 && scoreTotal <= 50000) {
-      return 15;
-    } else if (scoreTotal > 50000 && scoreTotal <= 100000) {
-      return 10;
-    } else if (scoreTotal > 100000 && scoreTotal <= 200000) {
-      return 5;
-    } else if (scoreTotal > 200000 && scoreTotal <= 300000) {
-      return 4;
-    } else if (scoreTotal > 300000 && scoreTotal <= 400000) {
-      return 3;
-    }
-    return 30;
-  };
+ const getInitialTime = () => {
+  if (scoreTotal >= 0 && scoreTotal <= 1000) {
+    return 25;
+  } else if (scoreTotal > 1000 && scoreTotal <= 5000) {
+    return 20;
+  } else if (scoreTotal > 5000 && scoreTotal <= 30000) {
+    return 15;
+  } else if (scoreTotal > 30000 && scoreTotal <= 50000) {
+    return 12;
+  } else if (scoreTotal > 50000 && scoreTotal <= 100000) {
+    return 8;
+  } else if (scoreTotal > 100000 && scoreTotal <= 200000) {
+    return 4;
+  } else if (scoreTotal > 200000 && scoreTotal <= 300000) {
+    return 3;
+  } else if (scoreTotal > 300000 && scoreTotal <= 400000) {
+    return 2;
+  }
+  return 25; // Default time
+};
 
 
   //barra de progreso 
