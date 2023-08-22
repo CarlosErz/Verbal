@@ -55,11 +55,11 @@ export function SalaDisney() {
     if (time > 0) {
       setTime(time - 1);
       const progressBar = document.getElementById('myBar');
-      const progressPercentage = (time / initialTime) * 100;
+      const progressPercentage = ((initialTime - time) / initialTime) * 100;
       progressBar.style.width = `${progressPercentage}%`;
 
       if (time <= 5) {
-        progressBar.style.backgroundColor = '#f54242'; 
+        progressBar.style.backgroundColor = '#f54242';
       } else if (time <= 10) {
         progressBar.style.backgroundColor = 'rgba(255, 196, 0, 1)' // Cambia el color a amarillo cuando queda poco tiempo
       } else {
@@ -120,7 +120,7 @@ export function SalaDisney() {
       setIsAnswerCorrect(true);
       setShowConfetti(true);
       setSelectedOption[null];
-      
+
       resetTime();
     } else {
       newScoreTotal = Math.max(0, newScoreTotal - 500);

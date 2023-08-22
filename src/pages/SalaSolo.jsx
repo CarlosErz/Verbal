@@ -50,7 +50,7 @@ export function SalaSolo() {
   const initialTime = getInitialTime();
 
 
-
+  
   const decreaseTime = () => {
     if (time > 0) {
       setTime(time - 1);
@@ -61,16 +61,16 @@ export function SalaSolo() {
       if (time <= 5) {
         progressBar.style.backgroundColor = '#f54242'; 
       } else if (time <= 10) {
-        progressBar.style.backgroundColor = 'rgba(255, 196, 0, 1)' // Cambia el color a amarillo cuando queda poco tiempo
+        progressBar.style.backgroundColor = 'rgba(255, 196, 0, 1)' 
       } else {
-        progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)'; // Establece el color de la barra en verde
+        progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)'; 
       }
     } else {
       const progressBar = document.getElementById('myBar');
-      progressBar.style.width = '0%'; // Establece la barra en 0% visualmente
-      setTimeout(() => {
+      progressBar.style.width = '0%'; 
+      if ( progressBar.style.width === '0%') {
         setShowModalLost(true);
-      }, 1000);
+      }
     }
   };
 
@@ -84,7 +84,8 @@ export function SalaSolo() {
   const resetTime = () => {
     setTime(initialTime);
     const progressBar = document.getElementById('myBar');
-    progressBar.style.width = '100%';
+    const progressPercentage = (time / initialTime) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
     progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)';
   };
 
@@ -154,7 +155,6 @@ export function SalaSolo() {
     setScoreerror(0);
     setShowModalLost(false);
     resetTime();
-    location.reload();
 
   };
 
