@@ -25,7 +25,7 @@ export function Inputs({ TituloInput, TipoInput, NombreInput, IdInput }) {
   return (
     <>
       <div className="inputContainer">
-        <label className="label" htmlFor={TipoInput}>
+        <label className="label" htmlFor={IdInput}>
           {TituloInput}
         </label>
         <div className="inputWrapper">
