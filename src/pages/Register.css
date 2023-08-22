@@ -25,7 +25,7 @@
   height: 50px;
   display: flex;
 
-  background: var(--secundario);
+  background: var(--Esquematico1);
   border: none;
   cursor: pointer;
   border-radius: 20%;
@@ -64,7 +64,7 @@
 }
 
 .privacy-policy>label>a {
-  color: var(--secundario);
+  color: var(--Esquematico3);
   text-decoration: none;
   font-weight: bold;
   text-decoration: underline;
@@ -97,7 +97,7 @@
 }
 
 .Text>a {
-  color: var(--secundario);
+  color: var(--Esquematico3);
   text-decoration: none;
   font-weight: bold;
   text-decoration: underline;

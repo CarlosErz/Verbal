@@ -67,10 +67,10 @@
 }
 
 .btn {
-  background-color: var(--secundario);
+  background-color: var(--Esquematico1);
   padding: 20px;
   text-transform: uppercase;
-  color: white;
+  color: var(--texto-base);
   border-radius: 20px;
   text-align: center;
   text-decoration: none;
@@ -81,7 +81,7 @@
 }
 
 .btn:hover {
-  background-color: #b42a2a;
+  background-color: rgb(58, 35, 151);
 
   color: #fff;
 }
