@@ -1,4 +1,4 @@
-import { QuestionRoom } from "./QuestionRoom";
+import { QuestionRoom } from "../components/QuestionRoom";
 import { dataGameSolo } from "../data//dataGameSolo";
 
 export function SalaSolo(){

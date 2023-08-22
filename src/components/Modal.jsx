@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
 import tachaIcon from '../assets/tacha.svg';
-import { useState } from 'react';
 
-export function Modal({ Title, onclick }) {
-  const [modalVisible, setModalVisible] = useState(true);
-  const hideModal = () => {
-    setModalVisible(false);
-  };
+export function Modal({ Title, onclick ,hideModal}) {
   return (
     <>
-    {modalVisible && (
+
       <div className="modal">
 
         <div className="modal-container">
@@ -20,7 +15,6 @@ export function Modal({ Title, onclick }) {
           <button className="modal-btn" onClick={onclick}>Aceptar</button>
         </div>
       </div>
-    )}
     </>
   )
 }
@@ -28,5 +22,6 @@ export function Modal({ Title, onclick }) {
 
 Modal.propTypes = {
   Title: PropTypes.string.isRequired,
-  onclick: PropTypes.func
+  onclick: PropTypes.func,
+  hideModal: PropTypes.func.isRequired,
 };

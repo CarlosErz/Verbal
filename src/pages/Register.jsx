@@ -204,6 +204,7 @@ export function Register({ loggedInUser }) {
         <Modal
           Title="Debes aceptar los términos y condiciones"
           onclick={() => setShowTermsModal(false)}
+          hideModal={() => setShowTermsModal(false)}
         />
       )}
       {ContrDif && (

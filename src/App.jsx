@@ -1,21 +1,20 @@
-import '../src/css/app.css'
-import { Register } from './pages/Register'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Login } from './pages/Login'
-import '../src/css/components.css'
-import { InicioLog } from './pages/InicioLog'
+import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { initializeApp } from 'firebase/app';
+import { onAuthStateChanged, getAuth } from 'firebase/auth';
+
+import '../src/css/app.css';
+import '../src/css/components.css';
 import 'normalize.css';
-import { Type } from './pages/Type'
-import { Privacy } from './components/Privacy.jsx'
-import { User } from './pages/User'
-import { Azar } from './pages/Azar.jsx'
-import { useState , useEffect} from 'react'
-import {SalaSolo} from './pages/SalaSolo'
 
-
-import { RuleLetras } from './components/RuleLetras'
-import {onAuthStateChanged,getAuth} from "firebase/auth";
-import { initializeApp } from "firebase/app";
+import { Register } from './pages/Register';
+import { Login } from './pages/Login';
+import { InicioLog } from './pages/InicioLog';
+import { Type } from './pages/Type';
+import { Privacy } from './components/Privacy.jsx';
+import { User } from './pages/User';
+import { Azar } from './pages/Azar.jsx';
+import { SalaSolo } from './pages/SalaSolo';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -26,7 +25,6 @@ const firebaseConfig = {
   appId: "1:1002243186731:web:0ce4b0c53670ca22408a6e",
   measurementId: "G-N228VQJ8ZB"
 };
-
 export function App() {
   const [selectedLetter, setSelectedLetter] = useState('');
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -36,66 +34,44 @@ export function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // El usuario ha iniciado sesión
         setLoggedInUser(user);
       } else {
-        // El usuario no ha iniciado sesión
         setLoggedInUser(null);
       }
     });
 
-    // Eliminar el observador de cambios al desmontar el componente
     return () => unsubscribe();
   }, [auth, setLoggedInUser]);
+
   return (
     <BrowserRouter>
       <Routes>
-        {loggedInUser ? ( // Si el usuario ha iniciado sesión, renderiza la ruta "Type"
-          <Route path="/" element={<Type 
-            loggedInUser={loggedInUser}
-            setLoggedInUser={setLoggedInUser}
-          />} />
-        ) : ( // Si el usuario no ha iniciado sesión, renderiza la ruta "InicioLog"
-          <Route path="/" element={<InicioLog />} />
-        )}
-        <Route path="/Type" element={<Type 
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
-        />} />
+        <Route path="/" element={loggedInUser ? <Type 
+        loggedInUser={loggedInUser}
+        
+        /> : <InicioLog />} />
+        <Route path="/Type" element={loggedInUser ? <Type 
+        loggedInUser={loggedInUser}
+        
+        /> : <InicioLog />} />
         <Route path="/Inicio" element={<InicioLog />} />
-        <Route path="/Register" element={<Register 
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
+        <Route path="/Register" element={<Register
+        setLoggedInUser={setLoggedInUser}
+        loggedInUser={loggedInUser}
         />} />
         <Route path="/Login" element={<Login 
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
+        setLoggedInUser={setLoggedInUser}
+        loggedInUser={loggedInUser}
         />} />
-        <Route path="/Privacy" element={< Privacy />} />
+        <Route path="/Privacy" element={<Privacy />} />
         <Route path="/User" element={<User 
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
+        loggedInUser={loggedInUser}
         />} />
-        <Route path="/ruleta" element={<Azar 
-          selectedLetter={selectedLetter}
-          setSelectedLetter={setSelectedLetter}
-        />} />
-        <Route path="/componenrulet" element={
-          <RuleLetras
-            selectedLetter={selectedLetter}
-            setSelectedLetter={setSelectedLetter}
-          />
-        } />
-       <Route path='/SalaSolo' element={<SalaSolo
-       selectedLetter={selectedLetter}
-        setSelectedLetter={setSelectedLetter}
-       />
-
-      }>
-        
-       </Route>
-
+        <Route path="/ruleta" element={<Azar selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
+        <Route path='/SalaSolo' element={<SalaSolo selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
       </Routes>
     </BrowserRouter>
   )
 }
+
+export default App;
