@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { dataGameDisney } from '../data/dataGameDisney';
 import './Sala.css';
 import enviar from '/src/assets/Subtract.svg';
 import Confetti from 'react-confetti';
 import { Link } from 'react-router-dom';
-import logo from '/src/assets/logo.svg';
+import PropTypes from 'prop-types';
 
-export function SalaDisney() {
-  const [questions, setQuestions] = useState(dataGameDisney);
+
+
+export function QuestionRoom({questionData}) {
+  const [questions, setQuestions] = useState(questionData);
   const [selectedQuestionIndexes, setSelectedQuestionIndexes] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
@@ -23,26 +24,26 @@ export function SalaDisney() {
 
   const options = currentQuestionIndex !== null ? questions[currentQuestionIndex].options : [];
 
-  const getInitialTime = () => {
-    if (scoreTotal >= 0 && scoreTotal <= 1000) {
-      return 30;
-    } else if (scoreTotal > 1000 && scoreTotal <= 5000) {
-      return 25;
-    } else if (scoreTotal > 5000 && scoreTotal <= 30000) {
-      return 20;
-    } else if (scoreTotal > 30000 && scoreTotal <= 50000) {
-      return 15;
-    } else if (scoreTotal > 50000 && scoreTotal <= 100000) {
-      return 10;
-    } else if (scoreTotal > 100000 && scoreTotal <= 200000) {
-      return 5;
-    } else if (scoreTotal > 200000 && scoreTotal <= 300000) {
-      return 4;
-    } else if (scoreTotal > 300000 && scoreTotal <= 400000) {
-      return 3;
-    }
-    return 30;
-  };
+ const getInitialTime = () => {
+  if (scoreTotal >= 0 && scoreTotal <= 1000) {
+    return 25;
+  } else if (scoreTotal > 1000 && scoreTotal <= 5000) {
+    return 20;
+  } else if (scoreTotal > 5000 && scoreTotal <= 30000) {
+    return 15;
+  } else if (scoreTotal > 30000 && scoreTotal <= 50000) {
+    return 12;
+  } else if (scoreTotal > 50000 && scoreTotal <= 100000) {
+    return 8;
+  } else if (scoreTotal > 100000 && scoreTotal <= 200000) {
+    return 4;
+  } else if (scoreTotal > 200000 && scoreTotal <= 300000) {
+    return 3;
+  } else if (scoreTotal > 300000 && scoreTotal <= 400000) {
+    return 2;
+  }
+  return 25; // Default time
+};
 
 
   //barra de progreso 
@@ -50,27 +51,27 @@ export function SalaDisney() {
   const initialTime = getInitialTime();
 
 
-
+  
   const decreaseTime = () => {
     if (time > 0) {
       setTime(time - 1);
       const progressBar = document.getElementById('myBar');
-      const progressPercentage = ((initialTime - time) / initialTime) * 100;
+      const progressPercentage = (time / initialTime) * 100;
       progressBar.style.width = `${progressPercentage}%`;
 
       if (time <= 5) {
-        progressBar.style.backgroundColor = '#f54242';
+        progressBar.style.backgroundColor = '#f54242'; 
       } else if (time <= 10) {
-        progressBar.style.backgroundColor = 'rgba(255, 196, 0, 1)' // Cambia el color a amarillo cuando queda poco tiempo
+        progressBar.style.backgroundColor = 'rgba(255, 196, 0, 1)' 
       } else {
-        progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)'; // Establece el color de la barra en verde
+        progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)'; 
       }
     } else {
       const progressBar = document.getElementById('myBar');
-      progressBar.style.width = '0%'; // Establece la barra en 0% visualmente
-      setTimeout(() => {
+      progressBar.style.width = '0%'; 
+      if ( progressBar.style.width === '0%') {
         setShowModalLost(true);
-      }, 1000);
+      }
     }
   };
 
@@ -84,7 +85,8 @@ export function SalaDisney() {
   const resetTime = () => {
     setTime(initialTime);
     const progressBar = document.getElementById('myBar');
-    progressBar.style.width = '100%';
+    const progressPercentage = (time / initialTime) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
     progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)';
   };
 
@@ -120,7 +122,7 @@ export function SalaDisney() {
       setIsAnswerCorrect(true);
       setShowConfetti(true);
       setSelectedOption[null];
-
+      
       resetTime();
     } else {
       newScoreTotal = Math.max(0, newScoreTotal - 500);
@@ -154,13 +156,12 @@ export function SalaDisney() {
     setScoreerror(0);
     setShowModalLost(false);
     resetTime();
-    location.reload();
 
   };
 
 
   useEffect(() => {
-    setQuestions(dataGameDisney);
+    setQuestions(questionData);
   }, []);
 
   useEffect(() => {
@@ -220,15 +221,7 @@ export function SalaDisney() {
           </div>
         </div>
       }
-
       {showConfetti && <Confetti />}
-      <nav className="SalaNav">
-
-        <Link to='/'><img className='logo' src={logo} alt="" /></Link>
-        <p>Ruleta De Preguntas</p>
-
-
-      </nav>
       <div className="SalaContent">
         <section className="SalaGame">
           <div className="SalaGameHeader">
@@ -245,9 +238,6 @@ export function SalaDisney() {
                 <span>{scoreTotal}</span>
               </div>
             </div>
-
-
-
           </div>
           <div className="SalAnswerContentR">
             <div className="SalaAnswersContent">
@@ -296,4 +286,13 @@ export function SalaDisney() {
       </div>
     </div>
   );
+}
+
+QuestionRoom.propTypes = {
+  questionData: PropTypes.arrayOf(PropTypes.shape({
+    question: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    correctAnswer: PropTypes.string.isRequired,
+  })).isRequired,
+
 }

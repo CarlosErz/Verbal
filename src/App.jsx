@@ -11,7 +11,7 @@ import { User } from './pages/User'
 import { Azar } from './pages/Azar.jsx'
 import { useState , useEffect} from 'react'
 import {SalaSolo} from './pages/SalaSolo'
-import {SalaDisney} from './pages/SalaDisney'
+
 
 import { RuleLetras } from './components/RuleLetras'
 import {onAuthStateChanged,getAuth} from "firebase/auth";
@@ -94,11 +94,7 @@ export function App() {
       }>
         
        </Route>
-       <Route path='/SalaDisney' element={<SalaDisney/>
 
-      }>
-        
-       </Route>
       </Routes>
     </BrowserRouter>
   )
