@@ -14,7 +14,7 @@ import { Type } from './pages/Type';
 import { Privacy } from './components/Privacy.jsx';
 import { User } from './pages/User';
 import { Azar } from './pages/Azar.jsx';
-import { SalaSolo } from './pages/SalaSolo';
+import {QuickGame} from './pages/QuickGame.jsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -68,7 +68,7 @@ export function App() {
         loggedInUser={loggedInUser}
         />} />
         <Route path="/ruleta" element={<Azar selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
-        <Route path='/SalaSolo' element={<SalaSolo selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
+        <Route path='/SalaSolo' element={<QuickGame selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
       </Routes>
     </BrowserRouter>
   )
