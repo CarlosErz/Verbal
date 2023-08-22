@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { dataGameSolo } from '../data/dataGameSolo';
+import { dataGameDisney } from '../data/dataGameDisney';
 import './Sala.css';
 import enviar from '/src/assets/Subtract.svg';
 import Confetti from 'react-confetti';
 import { Link } from 'react-router-dom';
 import logo from '/src/assets/logo.svg';
 
-export function SalaSolo() {
-  const [questions, setQuestions] = useState(dataGameSolo);
+export function SalaDisney() {
+  const [questions, setQuestions] = useState(dataGameDisney);
   const [selectedQuestionIndexes, setSelectedQuestionIndexes] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
@@ -160,7 +160,7 @@ export function SalaSolo() {
 
 
   useEffect(() => {
-    setQuestions(dataGameSolo);
+    setQuestions(dataGameDisney);
   }, []);
 
   useEffect(() => {
