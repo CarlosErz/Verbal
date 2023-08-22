@@ -285,7 +285,7 @@
   align-items: center;
   background: var(--background-tono, #333);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border: none;
+  border: 3px solid var(--texto-base);
   outline: none;
   color: white;
 
