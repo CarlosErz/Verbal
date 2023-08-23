@@ -234,11 +234,12 @@ export function QuestionRoom({ questionData }) {
 
 
       <div className="SalaContent">
-
+        
         <section className="SalaGame">
-          {showConfetti && <Confetti />}
+
           <div className="SalaGameHeader">
             <div className="progress-container ">
+              {showConfetti && <Confetti />}
               <div className="progress-bar" id="myBar"></div>
             </div>
             <h2 className="SalaQuestion">

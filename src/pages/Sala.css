@@ -671,8 +671,8 @@ span {
 
   .SalaInput {
     font-size: var(--secun-celular);
+    position: absolute;
     height: 30px;
-    width: 100%;
   }
 
   .scores {
@@ -715,7 +715,7 @@ span {
   }
 
   .EnviarButton {
-    right: 10%;
+    left: 42%;
   }
  
   .EnviarButton img {
