@@ -517,7 +517,7 @@ export const dataGameDisney = [
   },
   {
     id: 87,
-    question: '',
+    question: '¿Cómo se llama el Genio de Aladdin?',
     options: ['Jafar', 'Aladdin', 'Abu', 'Genie'],
     correctAnswer: 'Genie'
   },
