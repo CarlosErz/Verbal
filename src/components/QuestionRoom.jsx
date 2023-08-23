@@ -1,9 +1,10 @@
-import { useState, useEffect,useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import '../pages/Sala.css';
 import enviar from '/src/assets/Subtract.svg';
 import Confetti from 'react-confetti';
 import PropTypes from 'prop-types';
 import { ModalGame } from '../components/ModalGame';
+import Heard from '/src/assets/HEARD.svg'
 
 
 
@@ -16,6 +17,7 @@ export function QuestionRoom({ questionData }) {
   const [score, setScore] = useState(0);
   const [scoreerror, setScoreerror] = useState(0);
   const [scoreTotal, setScoreTotal] = useState(0);
+  const [lives, setLives] = useState(3);
 
   const [ShowModalLost, setShowModalLost] = useState(false);
   const [ShowModafin, setShowModafin] = useState(false);
@@ -51,10 +53,30 @@ export function QuestionRoom({ questionData }) {
   const initialTime = getInitialTime();
 
   useEffect(() => {
+    const handleTimeExpired = () => {
+      if (lives > 0) {
+        setLives(lives - 1);
+        setTime(initialTime);
+        const hearts = document.querySelectorAll('.SalaHeards > img');
+        hearts[lives - 1].classList.add('death');
+      }
+    };
+    if (lives === 0) {
+      setShowModalLost(true);
+    }
     const decreaseTime = () => {
 
+      let timeDecrementFactor;
+
+      if (lives === 3) {
+        timeDecrementFactor = 1;
+      } else if (lives === 2) {
+        timeDecrementFactor = 1.5;
+      } else {
+        timeDecrementFactor = 2;
+      }
       if (time > 0) {
-        setTime(time - 1);
+        setTime(time - timeDecrementFactor);
         const progressBar = document.getElementById('myBar');
         const progressPercentage = (time / initialTime) * 100;
         progressBar.style.width = `${progressPercentage}%`;
@@ -71,17 +93,20 @@ export function QuestionRoom({ questionData }) {
         const progressBar = document.getElementById('myBar');
         progressBar.style.width = '0%';
         if (progressBar.style.width === '0%') {
-          setShowModalLost(true);
+          handleTimeExpired();
+
         }
       }
     };
 
 
-    const timer = setInterval(decreaseTime, 1000); 
+    const timer = setInterval(decreaseTime, 1000);
     return () => {
       clearInterval(timer); // Limpia el intervalo cuando el componente se desmonta
     };
-  }, [time, initialTime]);
+  }, [time, initialTime, lives]);
+
+
 
   const resetTime = () => {
     setTime(initialTime);
@@ -123,7 +148,7 @@ export function QuestionRoom({ questionData }) {
       newScoreTotal += 1000;
       setIsAnswerCorrect(true);
       setShowConfetti(true);
-      setSelectedOption(null); 
+      setSelectedOption(null);
 
       resetTime();
     } else {
@@ -136,7 +161,7 @@ export function QuestionRoom({ questionData }) {
 
     setTimeout(() => {
       setShowConfetti(false);
-      setSelectedOption(null); 
+      setSelectedOption(null);
       goToNextRandomQuestion();
       setIsAnswerCorrect(null);
     }, 1000);
@@ -155,11 +180,14 @@ export function QuestionRoom({ questionData }) {
     setCurrentQuestionIndex(null);
     setUserAnswer('');
     setScore(0);
-    setScoreTotal(0); 
+    setLives(3);
+    setScoreTotal(0);
     setScoreerror(0);
     setShowModalLost(false);
     setShowModafin(false);
     setShowConfetti(false);
+    const hearts = document.querySelectorAll('.SalaHeards > img');
+    hearts[lives - 1].classList.remove('death');
     resetTime();
   };
 
@@ -177,38 +205,38 @@ export function QuestionRoom({ questionData }) {
 
   return (
     <div className="SalaSolo">
-      
+
       {ShowModalLost && (
         <ModalGame
-        title='¡Perdiste!'
-        subtitle='No te desanimes, inténtalo de nuevo'
-        scoreTotal={scoreTotal}
-        score={score}
-        scoreerror={scoreerror}
-        restartGame={restartGame}
-        btn='Volver a jugar'
+          title='¡Perdiste!'
+          subtitle='No te desanimes, inténtalo de nuevo'
+          scoreTotal={scoreTotal}
+          score={score}
+          scoreerror={scoreerror}
+          restartGame={restartGame}
+          btn='Volver a jugar'
         />
       )}
       {ShowModafin && (
-      <ModalGame
-      title='¡Felicidades!'
-      subtitle='Acabaste con todas las preguntas'
-      scoreTotal={scoreTotal}
-      score={score}
-      scoreerror={scoreerror}
-      restartGame={restartGame}
-      btn='Volver a jugar'
-      />
+        <ModalGame
+          title='¡Felicidades!'
+          subtitle='Acabaste con todas las preguntas'
+          scoreTotal={scoreTotal}
+          score={score}
+          scoreerror={scoreerror}
+          restartGame={restartGame}
+          btn='Volver a jugar'
+        />
       )}
 
-     
+
 
 
 
       <div className="SalaContent">
-        
-        <section className="SalaGame"> 
-        {showConfetti && <Confetti />}
+
+        <section className="SalaGame">
+          {showConfetti && <Confetti />}
           <div className="SalaGameHeader">
             <div className="progress-container ">
               <div className="progress-bar" id="myBar"></div>
@@ -217,6 +245,11 @@ export function QuestionRoom({ questionData }) {
 
               {currentQuestionIndex !== null ? questions[currentQuestionIndex].question : "Cargando pregunta..."}
             </h2>
+            <div className="SalaHeards">
+              <img id='life' src={Heard} alt="" />
+              <img id='life2 ' src={Heard} alt="" />
+              <img id='life3 ' src={Heard} alt="" />
+            </div>
             <div className="scores">
               <div className="SalaPuntaje">
                 <p>Puntaje</p>

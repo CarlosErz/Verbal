@@ -490,6 +490,32 @@
   overflow: hidden;
 
 }
+.SalaHeards{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.SalaHeards>img{
+  width: 50px;
+  height: 50px;
+}
+.death{
+  transition: filter 0.5s ease-in-out;
+  filter: grayscale(100%);
+
+}
+
+@keyframes filter {
+  0%{
+    filter: grayscale(0%);
+  }
+  100%{
+    filter: grayscale(100%);
+  }
+}
+  
 #myBar{
   width: 0%;
 }
@@ -678,6 +704,10 @@ span {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  .SalaHeards>img{
+    width: 35px;
+    height: 35px;
   }
 
   .SalaAnswersContent {
