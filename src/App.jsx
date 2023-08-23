@@ -15,6 +15,7 @@ import { Privacy } from './components/Privacy.jsx';
 import { User } from './pages/User';
 import { Azar } from './pages/Azar.jsx';
 import {QuickGame} from './pages/QuickGame.jsx';
+import { GameDisney } from './pages/GameDisney';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -69,7 +70,9 @@ export function App() {
         />} />
         <Route path="/ruleta" element={<Azar selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
         <Route path='/QuickGame' element={<QuickGame selectedLetter={selectedLetter} setSelectedLetter={setSelectedLetter} />} />
+        <Route   path='QuickDisney' element={<GameDisney/>}/>
       </Routes>
+
     </BrowserRouter>
   )
 }
