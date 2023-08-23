@@ -22,7 +22,7 @@ export function ModalGame({scoreTotal, score, scoreerror, restartGame, title, su
               </div>
             </div>
           </div>
-          <Link to='/SalaSolo' onClick={restartGame}>{btn}</Link>
+          <Link  onClick={restartGame}>{btn}</Link>
         </div>
       </div>
   )

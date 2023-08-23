@@ -38,7 +38,7 @@
 }
 
 .red-login-button:hover {
-  background: var(--Esquematico1);
+background-color: rgb(58, 35, 151);
 }
 
 .btnfb {
