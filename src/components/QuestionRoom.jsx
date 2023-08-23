@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useCallback } from 'react';
 import '../pages/Sala.css';
 import enviar from '/src/assets/Subtract.svg';
 import Confetti from 'react-confetti';
 import PropTypes from 'prop-types';
-import { useCallback } from 'react';
 import { ModalGame } from '../components/ModalGame';
 
 
@@ -59,7 +58,8 @@ export function QuestionRoom({ questionData }) {
         const progressBar = document.getElementById('myBar');
         const progressPercentage = (time / initialTime) * 100;
         progressBar.style.width = `${progressPercentage}%`;
-
+        progressBar.style.overflowX = 'hidden';
+        progressBar.style.maxWidth = '100%';
         if (time <= 5) {
           progressBar.style.backgroundColor = '#f54242';
         } else if (time <= 10) {
@@ -77,7 +77,7 @@ export function QuestionRoom({ questionData }) {
     };
 
 
-    const timer = setInterval(decreaseTime, 1000); // Decrementa el tiempo cada segundo
+    const timer = setInterval(decreaseTime, 1000); 
     return () => {
       clearInterval(timer); // Limpia el intervalo cuando el componente se desmonta
     };
@@ -89,6 +89,7 @@ export function QuestionRoom({ questionData }) {
     const progressPercentage = (time / initialTime) * 100;
     progressBar.style.width = `${progressPercentage}%`;
     progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)';
+    progressBar.style.overflowX = 'hidden';
   };
 
 
@@ -122,7 +123,7 @@ export function QuestionRoom({ questionData }) {
       newScoreTotal += 1000;
       setIsAnswerCorrect(true);
       setShowConfetti(true);
-      setSelectedOption(null); // Corregido
+      setSelectedOption(null); 
 
       resetTime();
     } else {
@@ -135,7 +136,7 @@ export function QuestionRoom({ questionData }) {
 
     setTimeout(() => {
       setShowConfetti(false);
-      setSelectedOption(null); // Corregido
+      setSelectedOption(null); 
       goToNextRandomQuestion();
       setIsAnswerCorrect(null);
     }, 1000);
@@ -154,7 +155,7 @@ export function QuestionRoom({ questionData }) {
     setCurrentQuestionIndex(null);
     setUserAnswer('');
     setScore(0);
-    setScoreTotal(0); // Corregido
+    setScoreTotal(0); 
     setScoreerror(0);
     setShowModalLost(false);
     setShowModafin(false);
@@ -200,12 +201,14 @@ export function QuestionRoom({ questionData }) {
       />
       )}
 
-      {showConfetti && <Confetti />}
+     
 
 
 
       <div className="SalaContent">
-        <section className="SalaGame">
+        
+        <section className="SalaGame"> 
+        {showConfetti && <Confetti />}
           <div className="SalaGameHeader">
             <div className="progress-container ">
               <div className="progress-bar" id="myBar"></div>

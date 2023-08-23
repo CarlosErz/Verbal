@@ -480,12 +480,14 @@
   background-color: #ccc;
   border-radius: 10px;
   overflow: hidden;
+
 }
 
 .progress-bar {
   height: 100%;
   width: 0;
   transition: width 1s linear;
+  overflow: hidden;
 
 }
 #myBar{
