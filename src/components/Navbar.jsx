@@ -7,9 +7,6 @@ import logo from '/src/assets/logo.svg';
 
 export function Navbar({ Nombre, avatar}) {
 
-
-
-
   return (
     <>
       <nav className="navbar">
