@@ -5,9 +5,6 @@ import Confetti from 'react-confetti';
 import PropTypes from 'prop-types';
 import { ModalGame } from '../components/ModalGame';
 import Heard from '/src/assets/HEARD.svg'
-
-
-
 export function QuestionRoom({ questionData }) {
   const [questions, setQuestions] = useState(questionData);
   const [selectedQuestionIndexes, setSelectedQuestionIndexes] = useState([]);
@@ -18,12 +15,10 @@ export function QuestionRoom({ questionData }) {
   const [scoreerror, setScoreerror] = useState(0);
   const [scoreTotal, setScoreTotal] = useState(0);
   const [lives, setLives] = useState(3);
-
   const [ShowModalLost, setShowModalLost] = useState(false);
   const [ShowModafin, setShowModafin] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
-
   const options = currentQuestionIndex !== null ? questions[currentQuestionIndex].options : [];
 
   const getInitialTime = () => {
@@ -47,7 +42,6 @@ export function QuestionRoom({ questionData }) {
     return 25; // Default time
   };
 
-
   //barra de progreso 
   const [time, setTime] = useState(getInitialTime());
   const initialTime = getInitialTime();
@@ -56,7 +50,9 @@ export function QuestionRoom({ questionData }) {
     const handleTimeExpired = () => {
       if (lives > 0) {
         setLives(lives - 1);
-        setTime(initialTime);
+      
+        setTime(initialTime);  
+       //const progressbar = document.getElementById('barContainer');
         const hearts = document.querySelectorAll('.SalaHeards > img');
         hearts[lives - 1].classList.add('death');
       }
@@ -78,16 +74,21 @@ export function QuestionRoom({ questionData }) {
       if (time > 0) {
         setTime(time - timeDecrementFactor);
         const progressBar = document.getElementById('myBar');
+        const progressbar = document.getElementById('barContainer');
+
         const progressPercentage = (time / initialTime) * 100;
         progressBar.style.width = `${progressPercentage}%`;
         progressBar.style.overflowX = 'hidden';
         progressBar.style.maxWidth = '100%';
         if (time <= 5) {
           progressBar.style.backgroundColor = '#f54242';
+          progressbar.classList.add('snake');
         } else if (time <= 10) {
           progressBar.style.backgroundColor = 'rgba(255, 196, 0, 1)'
+          progressbar.classList.remove('snake');
         } else {
           progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)';
+          progressbar.classList.remove('snake');
         }
       } else {
         const progressBar = document.getElementById('myBar');
@@ -98,15 +99,11 @@ export function QuestionRoom({ questionData }) {
         }
       }
     };
-
-
     const timer = setInterval(decreaseTime, 1000);
     return () => {
       clearInterval(timer); // Limpia el intervalo cuando el componente se desmonta
     };
   }, [time, initialTime, lives]);
-
-
 
   const resetTime = () => {
     setTime(initialTime);
@@ -116,8 +113,6 @@ export function QuestionRoom({ questionData }) {
     progressBar.style.backgroundColor = 'rgba(46, 204, 113, 1)';
     progressBar.style.overflowX = 'hidden';
   };
-
-
   const getRandomQuestionIndex = useCallback(() => {
     const availableIndexes = questions.map((_, index) => index).filter(index => !selectedQuestionIndexes.includes(index));
     if (availableIndexes.length === 0) {
@@ -166,15 +161,10 @@ export function QuestionRoom({ questionData }) {
       setIsAnswerCorrect(null);
     }, 1000);
   };
-
-
-
-
   const handleAnswerSelection = (option) => {
     setSelectedOption(option);
     setUserAnswer(option);
   };
-
   const restartGame = () => {
     setSelectedQuestionIndexes([]);
     setCurrentQuestionIndex(null);
@@ -190,8 +180,6 @@ export function QuestionRoom({ questionData }) {
     hearts[lives - 1].classList.remove('death');
     resetTime();
   };
-
-
   useEffect(() => {
     setQuestions(questionData);
   }, [questionData]);
@@ -202,10 +190,8 @@ export function QuestionRoom({ questionData }) {
     }
   }, [selectedQuestionIndexes, currentQuestionIndex, questions.length, goToNextRandomQuestion]);
 
-
   return (
     <div className="SalaSolo">
-
       {ShowModalLost && (
         <ModalGame
           title='¡Perdiste!'
@@ -228,17 +214,10 @@ export function QuestionRoom({ questionData }) {
           btn='Volver a jugar'
         />
       )}
-
-
-
-
-
       <div className="SalaContent">
-        
         <section className="SalaGame">
-
           <div className="SalaGameHeader">
-            <div className="progress-container ">
+            <div className="progress-container " id='barContainer'>
               {showConfetti && <Confetti />}
               <div className="progress-bar" id="myBar"></div>
             </div>
@@ -306,12 +285,10 @@ export function QuestionRoom({ questionData }) {
     </div>
   );
 }
-
 QuestionRoom.propTypes = {
   questionData: PropTypes.arrayOf(PropTypes.shape({
     question: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     correctAnswer: PropTypes.string.isRequired,
   })).isRequired,
-
 }
