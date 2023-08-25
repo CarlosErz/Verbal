@@ -1,34 +1,16 @@
 import { Tematicas } from '../components/Tematicas.jsx';
-import { useEffect, useState } from 'react';
 import './inicio.css';
 import compartir from '../assets/icon-compartir.svg';
 import { Juegos } from '../components/Juegos.jsx';
 import { Navbar } from '../components/Navbar.jsx';
 import 'normalize.css';
-import { ModalError } from '../components/ModalError.jsx';
-import { dataModalLog } from '../data/dataModalLog.js';
 import PropTypes from 'prop-types';
 
 
-export function Type({ loggedInUser, setLoggedInUser }) {
-  const [showModal, setShowModal] = useState(false);
+export function Type({ loggedInUser}) {
 
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    if (loggedInUser) {
-      setLoggedInUser(true);
-    }
-  }, [setLoggedInUser]);
 
-  const handleTematicaClick = () => {
-    if (!loggedInUser) {
-      setLoggedInUser(true);
-      setShowModal(true);
-    } else {
-      // Acción adicional para el caso en que el usuario esté registrado
-      // ...
-    }
-  };
+
 
   return (
     <>
@@ -49,7 +31,7 @@ export function Type({ loggedInUser, setLoggedInUser }) {
           </a>
         </div>
         <Juegos alt1='juegos'
-        handleImageClick={handleTematicaClick}
+
         
         />
       </div>
@@ -57,20 +39,10 @@ export function Type({ loggedInUser, setLoggedInUser }) {
 
 
 
-      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedInUser} Click={handleTematicaClick}
+      <Tematicas alt1='Imagen de Tematica' loggedIn={loggedInUser} 
       />
 
-      {showModal && !loggedInUser && (
-        <ModalError
-          Title={dataModalLog[0].Title}
-          TipoError={dataModalLog[0].TipoError}
-          bt1={dataModalLog[0].bt1}
-          bt2={dataModalLog[0].bt2}
-          link1={dataModalLog[0].link1}
-          link2={dataModalLog[0].link2}
-
-        />
-      )}
+   
     </>
   );
 }

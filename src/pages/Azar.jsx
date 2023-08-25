@@ -18,7 +18,7 @@ export function Azar({ selectedLetter, setSelectedLetter }) {
   
       setTimeout(() => {
         setShowModal(false); // Cerrar el modal después de 2 segundos
-      }, 6000); // 2 segundos después de mostrar el modal
+      }, 6000); 
     }
   }, [selectedLetter]);
   

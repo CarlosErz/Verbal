@@ -669,7 +669,7 @@ export const dataGameSolo = [
   {
     id: 112,
     question: 'La escultura Gato fue realizada por:',
-    options: ['Fernando Botero', 'Henry Moore', 'Henry Moore', 'Juan Gato'],
+    options: ['Fernando Botero', 'Juan Enrique', 'Henry Moore', 'Juan Gato'],
     correctAnswer: 'Fernando Botero'
   },
   {

@@ -6,7 +6,7 @@ export const dataJuegos = [
       'https://i.postimg.cc/SNpqwBHg/image1.png',
       'https://i.postimg.cc/SNpqwBHg/image1.png',
 ], Sala:[
-  '/SalaSolo',
+  '/QuickGame',
   '/',
   '/',
   '/',

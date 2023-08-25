@@ -59,7 +59,7 @@ Juego.propTypes = {
   imagenes: PropTypes.arrayOf(PropTypes.string).isRequired,
   alt1: PropTypes.string.isRequired,
   Sala: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handleImageClick: PropTypes.func.isRequired,
+  handleImageClick: PropTypes.func
 };
 
 export function Juegos({ alt1, handleImageClick }) {
@@ -81,5 +81,5 @@ export function Juegos({ alt1, handleImageClick }) {
 
 Juegos.propTypes = {
   alt1: PropTypes.string.isRequired,
-  handleImageClick: PropTypes.func.isRequired,
+  handleImageClick: PropTypes.func
 };

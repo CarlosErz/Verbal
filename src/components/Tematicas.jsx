@@ -66,7 +66,7 @@ Tematica.propTypes = {
   imagenes: PropTypes.arrayOf(PropTypes.string).isRequired,
   alt1: PropTypes.string.isRequired,
   Sala: PropTypes.arrayOf(PropTypes.string).isRequired,
-  Click: PropTypes.func.isRequired,
+  Click: PropTypes.func
 };
 
 export function Tematicas({ alt1,Click }) {
@@ -88,6 +88,6 @@ export function Tematicas({ alt1,Click }) {
 
 Tematicas.propTypes = {
   alt1: PropTypes.string.isRequired,
-  Click: PropTypes.func.isRequired,
+  Click: PropTypes.func
 
 };

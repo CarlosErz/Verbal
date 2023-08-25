@@ -55,13 +55,23 @@ export function Login({ setLoggedInUser, loggedInUser }) {
         setShowModal(true);
         const user = result.user;
         setLoggedInUser(user);
-        navigate('/Type')
+        navigate('/Type');
+
+        // Guardar datos específicos para inicio de sesión con Google
+        const googleLoginData = {
+          provider: 'google',
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          // Agrega otros datos que quieras almacenar
+        };
+        localStorage.setItem('loggedInUser', JSON.stringify(googleLoginData));
       })
       .catch((error) => {
         console.log(error);
         setShowModal(false);
       });
   }
+
   const FaceboockLogin = () => {
     const provider = new FacebookAuthProvider();
     signInWithPopup(auth, provider)
@@ -89,6 +99,8 @@ export function Login({ setLoggedInUser, loggedInUser }) {
         setLoggedInUser(user);
         const loginData = {
           provider: 'email',
+          name: user.displayName,
+          photoURL: user.photoURL,
         };
         localStorage.setItem('loggedInUser', JSON.stringify(loginData));
       })
