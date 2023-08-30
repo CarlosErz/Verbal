@@ -42,6 +42,7 @@ export function TypeOfGame() {
     
    
     <div className="CardContentCards">
+      <h1 className="title">Escoge  tu modo de juego</h1>
       <section className="CardSection">
         <button className="CardSectionscrollLeft" onClick={scrollLeft}>
           &#10094;

@@ -682,7 +682,7 @@
 	align-items: center;
 	gap: 30px;
 	scroll-behavior: smooth;
-
+	justify-content: center;
 	overflow-x: hidden;
 	overflow-y: hidden;
  

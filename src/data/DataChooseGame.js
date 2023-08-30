@@ -1,14 +1,14 @@
 export const dataChooseGame = [
   {
     Game: '/QuickGame',
-    image: 'https://i.postimg.cc/W3zqC0c8/IMAGEN.jpg',
+    image: 'https://i.postimg.cc/ZY8rWdvf/CULTURA.jpg',
   },
   {
     Game: '/QuickDisney',
-    image: 'https://i.postimg.cc/SNpqwBHg/image1.png',
+    image: 'https://i.postimg.cc/cHYfMK9L/DISNEY.jpg',
   },
   {
     Game: '/QuickEnfermeria',
-    image: 'https://i.postimg.cc/3wJXZQZ3/image2.png',
+    image: 'https://i.postimg.cc/tJNPwKH0/ENFERMERIA.jpg',
   }
 ];
