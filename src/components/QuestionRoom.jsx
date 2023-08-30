@@ -50,9 +50,9 @@ export function QuestionRoom({ questionData }) {
     const handleTimeExpired = () => {
       if (lives > 0) {
         setLives(lives - 1);
-      
-        setTime(initialTime);  
-       //const progressbar = document.getElementById('barContainer');
+
+        setTime(initialTime);
+        //const progressbar = document.getElementById('barContainer');
         const hearts = document.querySelectorAll('.SalaHeards > img');
         hearts[lives - 1].classList.add('death');
       }
@@ -150,6 +150,7 @@ export function QuestionRoom({ questionData }) {
       newScoreTotal = Math.max(0, newScoreTotal - 500);
       setScoreerror(scoreerror + 1);
       setIsAnswerCorrect(false);
+      setUserAnswer(correctAnswer)
     }
 
     setScoreTotal(newScoreTotal);
@@ -159,6 +160,7 @@ export function QuestionRoom({ questionData }) {
       setSelectedOption(null);
       goToNextRandomQuestion();
       setIsAnswerCorrect(null);
+      setUserAnswer('');
     }, 1000);
   };
   const handleAnswerSelection = (option) => {
@@ -240,11 +242,11 @@ export function QuestionRoom({ questionData }) {
           <div className="SalAnswerContentR">
             <div className="SalaAnswersContent">
               {options.slice(0, 2).map((option, index) => (
-                <div className={`SalaAnswer ${selectedOption === option ? 'active' : ''}`}
+                <div className={`SalaAnswer ${selectedOption === option ? 'active' : ''} ${isAnswerCorrect === true && userAnswer === option ? 'correct' : isAnswerCorrect === false && userAnswer === option ? 'incorrect' : ''}`}
                   key={index}
                   onClick={() => handleAnswerSelection(option)}>
                   <span className="SalaInciso">{String.fromCharCode(65 + index)}</span>
-                  <button className={`SalaBtn ${isAnswerCorrect === true ? 'green' : isAnswerCorrect === false ? 'red' : ''}`}>
+                  <button className={`SalaBtn ${isAnswerCorrect === true ? '' : isAnswerCorrect === false ? '' : ''}`}>
                     {option}
                   </button>
                 </div>
@@ -252,15 +254,16 @@ export function QuestionRoom({ questionData }) {
             </div>
             <div className="SalaAnswersContent">
               {options.slice(2, 4).map((option, index) => (
-                <div className={`SalaAnswer ${selectedOption === option ? 'active' : ''}`}
+                <div className={`SalaAnswer ${selectedOption === option ? 'active' : ''} ${isAnswerCorrect === true && userAnswer === option ? 'correct' : isAnswerCorrect === false && userAnswer === option ? 'incorrect' : ''}`}
                   key={index + 2}
                   onClick={() => handleAnswerSelection(option)}>
                   <span className="SalaInciso">{String.fromCharCode(67 + index)}</span>
-                  <button className={`SalaBtn ${isAnswerCorrect === true ? 'green' : isAnswerCorrect === false ? 'red' : ''}`}>
+                  <button className={`SalaBtn ${isAnswerCorrect === true ? '' : isAnswerCorrect === false ? '' : ''}`}>
                     {option}
                   </button>
                 </div>
               ))}
+
             </div>
           </div>
 
