@@ -272,6 +272,7 @@ export function QuestionRoom({ questionData }) {
               value={userAnswer}
               id='userAnswer'
               onChange={(e) => setUserAnswer(e.target.value)}
+              readOnly
             />
             <button
               className="EnviarButton"
