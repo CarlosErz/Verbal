@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { CardSectionGame } from "../components/CardSectionGame";
+import { CardSectionGame } from "./CardSectionGame";
 import { dataChooseGame } from "../data/DataChooseGame.js";
 
 export function TypeOfGame() {
-  const cardWidth = 80; 
+  const cardWidth = 50; 
   
   // Ajusta este valor según el ancho de tus tarjetas
   const maxScrollPosition = (dataChooseGame.length - 1) * cardWidth;
@@ -38,6 +38,9 @@ export function TypeOfGame() {
   }, [scrollPosition]);
 
   return (
+    <>
+    
+   
     <div className="CardContentCards">
       <section className="CardSection">
         <button className="CardSectionscrollLeft" onClick={scrollLeft}>
@@ -60,7 +63,12 @@ export function TypeOfGame() {
         <button className="CardSectionscrollRight" onClick={scrollRight}>
           &#10095;
         </button>
-      </section>
+  
+      </section> 
+      
     </div>
+   
+    
+    </>
   );
 }

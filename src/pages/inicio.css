@@ -667,8 +667,10 @@
 }
 
 .CardContentCards {
+	position: fixed;
 	width: 100%;
 	height: 100vh;
+	z-index: 200000023902020;
 
 }
 
