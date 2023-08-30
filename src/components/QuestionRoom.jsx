@@ -268,7 +268,7 @@ export function QuestionRoom({ questionData }) {
             <input
               className="SalaInput"
               type="text"
-              placeholder="Escribe tu respuesta"
+              placeholder="respuesta"
               value={userAnswer}
               id='userAnswer'
               onChange={(e) => setUserAnswer(e.target.value)}
