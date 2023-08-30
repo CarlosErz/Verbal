@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CardSectionGame } from "./CardSectionGame";
+import { CardSectionGame } from "../components/CardSectionGame";
 import { dataChooseGame } from "../data/DataChooseGame.js";
 
 export function TypeOfGame() {
