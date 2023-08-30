@@ -219,8 +219,9 @@ export function QuestionRoom({ questionData }) {
       <div className="SalaContent">
         <section className="SalaGame">
           <div className="SalaGameHeader">
+            {showConfetti && <Confetti />}
             <div className="progress-container " id='barContainer'>
-              {showConfetti && <Confetti />}
+
               <div className="progress-bar" id="myBar"></div>
             </div>
             <h2 className="SalaQuestion">
