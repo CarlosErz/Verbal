@@ -657,15 +657,15 @@ export const dataEnfermeria = [
     correctAnswer: 'Una terapia para mejorar las habilidades motoras y la independencia'
   },
   {
-    id: 67,
-    question: '¿Cuál es el propósito de la "colocación de sonda nasogástrica"?',
-    options: [
-      'Administrar medicamentos por vía intravenosa',
-      'Administrar alimentos directamente en el estómago',
-      'Administrar medicamentos por vía nasal',
-      'Administrar medicamentos por vía oral'
+    "id": 67,
+    "question": "Propósito de la sonda nasogástrica",
+    "options": [
+      "Administrar IV",
+      "Administrar alimentos al estómago",
+      "Administrar medicamentos nasales",
+      "Administrar medicamentos orales"
     ],
-    correctAnswer: 'Administrar alimentos directamente en el estómago'
+    "correctAnswer": "Administrar alimentos al estómago"
   },
   {
     id: 68,
@@ -745,7 +745,7 @@ export const dataEnfermeria = [
     ],
     correctAnswer: '"Uso de pequeñas incisiones y laparoscopio'
   },
-  
+
   {
     id: 75,
     question: '¿Qué es la "paracentesis"?',
