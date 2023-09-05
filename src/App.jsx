@@ -18,6 +18,7 @@ import { QuickGame } from './pages/QuickGame.jsx';
 import { GameDisney } from './pages/GameDisney';
 import { TypeOfGame } from './pages/TypeOfGame';
 import {GameEnfermeria } from './pages/GameEnfermeria';
+import { QuickAnimals } from './pages/QuickAnimals';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
@@ -83,6 +84,8 @@ export function App() {
         <Route path='/QuickDisney' element={<GameDisney />} />
         <Route path='ChooseGame' element={<TypeOfGame></TypeOfGame>}/>
         <Route path='/QuickEnfermeria' element={<GameEnfermeria />} />
+        <Route path='/QuickAnimals' element={<QuickAnimals/>} />
+
       </Routes>
 
 

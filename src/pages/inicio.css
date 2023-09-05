@@ -691,7 +691,10 @@
 	overflow-x: hidden;
 	width: 200%;
 }
-
+.slick-slider {
+	height: 35%;
+	width: 60%;
+}
 .CardSection {
 	display: flex;
 	width: 100%;
@@ -723,7 +726,11 @@
 	margin: 10px;
 
 }
+.slick-dots>li{
+	color: var(--texto-base);
+	background-color: #fff;
 
+}
 
 .revealing-letter.visible {
 	opacity: 1;
@@ -851,9 +858,11 @@
 	.temas {
 		font-size: var(--secun-movil);
 	}
-	.CardSectionFlex {
-		gap: 40px;
+	.slick-slider {
+		height: 35%;
+		width: 85%;
 	}
+
 
 
 
@@ -874,4 +883,10 @@
 	.contenbtn {
 		width: 100%;
 	}
+	.slick-slider {
+		height: 35%;
+		width: 85%;
+	}
+
+
 }

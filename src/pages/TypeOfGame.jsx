@@ -1,75 +1,51 @@
-import { useState, useEffect } from "react";
+
+import Slider from "react-slick";
 import { CardSectionGame } from "../components/CardSectionGame";
 import { dataChooseGame } from "../data/DataChooseGame.js";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export function TypeOfGame() {
-  const cardWidth = 50; 
-  
-  // Ajusta este valor según el ancho de tus tarjetas
-  const maxScrollPosition = (dataChooseGame.length - 1) * cardWidth;
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [centerIndex, setCenterIndex] = useState(0);
-
-  const scrollLeft = () => {
-    const newPosition = scrollPosition - cardWidth;
-    if (newPosition < 0) {
-      setScrollPosition(maxScrollPosition);
-    } else {
-      setScrollPosition(newPosition);
-    }
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 3, // Mostrar 3 tarjetas en pantallas grandes
+    slidesToScroll: 1,
+    autoplay: true,
+    variableWidth: true,
+    centerMode: true,
+    centerPadding: "20px",
+    prevArrow: <button className="slick-prev">Previous</button>,
+    nextArrow: <button className="slick-next">Next</button>,
+    responsive: [
+      {
+        breakpoint: 1024, // Pantallas medianas y más pequeñas
+        settings: {
+          infinite: true,
+          slidesToShow: 2, // Mostrar 2 tarjetas en pantallas medianas
+        },
+      },
+      {
+        breakpoint: 768, // Pantallas pequeñas
+        settings: {
+          infinite: true,
+          slidesToShow: 1, // Mostrar 1 tarjeta en pantallas pequeñas
+        },
+      },
+    ],
   };
-
-  const scrollRight = () => {
-    const newPosition = scrollPosition + cardWidth;
-    if (newPosition > maxScrollPosition) {
-      setScrollPosition(0);
-    } else {
-      setScrollPosition(newPosition);
-    }
-  };
-
-  useEffect(() => {
-    const centerIndex = Math.round(scrollPosition / cardWidth);
-
-    const clampedCenterIndex = Math.max(0, Math.min(centerIndex, dataChooseGame.length - 1));
-
-    setCenterIndex(clampedCenterIndex);
-  }, [scrollPosition]);
 
   return (
-    <>
-    
-   
     <div className="CardContentCards">
-      <h1 className="title">Escoge  tu modo de juego</h1>
+      <h1 className="title">Escoge tu modo de juego</h1>
       <section className="CardSection">
-        <button className="CardSectionscrollLeft" onClick={scrollLeft}>
-          &#10094;
-        </button>
-        <div className="movedsection">
-          
-        
-        <div className="CardSectionFlex" style={{ marginLeft: -scrollPosition }}>
+        <Slider {...settings}>
           {dataChooseGame.map((item, index) => (
-            <CardSectionGame
-              key={index}
-              Game={item.Game}
-              img={item.image}
-              isCenter={index === centerIndex}
-            />
+            <CardSectionGame key={index} Game={item.Game} img={item.image} />
           ))}
-        </div>
-        </div>
-        <button className="CardSectionscrollRight" onClick={scrollRight}>
-          &#10095;
-        </button>
-  
-      </section> 
-      
+        </Slider>
+      </section>
     </div>
-   
-    
-    </>
   );
 }
