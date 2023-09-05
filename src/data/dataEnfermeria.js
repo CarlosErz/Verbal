@@ -636,14 +636,14 @@ export const dataEnfermeria = [
 
   , {
     id: 65,
-    question: '¿Qué es un "anticoagulante"?',
+    question: "Definición de 'anticoagulante'",
     options: [
-      'Un medicamento para controlar la fiebre',
-      'Un medicamento para aliviar el dolor',
-      'Un medicamento para prevenir la coagulación de la sangre',
-      'Un medicamento para mejorar la función pulmonar'
+      "Controlar fiebre",
+      "Aliviar dolor",
+      "Prevenir coagulación",
+      "Mejorar función pulmonar"
     ],
-    correctAnswer: 'Un medicamento para prevenir la coagulación de la sangre'
+    correctAnswer: "Prevenir coagulación"
   },
   {
     id: 66,
@@ -657,15 +657,15 @@ export const dataEnfermeria = [
     correctAnswer: 'Una terapia para mejorar las habilidades motoras y la independencia'
   },
   {
-    "id": 67,
-    "question": "Propósito de la sonda nasogástrica",
-    "options": [
+    id: 67,
+    question: "Propósito de la sonda nasogástrica",
+    options: [
       "Administrar IV",
       "Administrar alimentos al estómago",
       "Administrar medicamentos nasales",
       "Administrar medicamentos orales"
     ],
-    "correctAnswer": "Administrar alimentos al estómago"
+    correctAnswer: "Administrar alimentos al estómago"
   },
   {
     id: 68,
@@ -878,6 +878,933 @@ export const dataEnfermeria = [
     ],
     correctAnswer: 'Presión arterial alta'
   }
+  ,
+  {
+    id: 87,
+    question: "¿Qué sistema transporta la sangre?",
+    options: [
+      "Sistema cardiovascular",
+      "Sistema nervioso",
+      "Sistema respiratorio",
+      "Sistema digestivo"
+    ],
+    correctAnswer: "Sistema cardiovascular"
+  },
+  {
+    id: 88,
+    question: "Nombre del hueso largo en el brazo superior",
+    options: [
+      "Fémur",
+      "Radio",
+      "Húmero",
+      "Tibia"
+    ],
+    correctAnswer: "Húmero"
+  },
+  {
+    id: 89,
+    question: "¿Dónde se encuentra el músculo bíceps?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Abdomen"
+    ],
+    correctAnswer: "Brazo"
+  },
+  {
+    id: 90,
+    question: "Función principal de las costillas",
+    options: [
+      "Producir hormonas",
+      "Proteger el cerebro",
+      "Ayudar en la digestión",
+      "Proteger los órganos internos"
+    ],
+    correctAnswer: "Proteger los órganos internos"
+  },
+  {
+    id: 91,
+    question: "Órgano que produce la bilis",
+    options: [
+      "Estómago",
+      "Páncreas",
+      "Hígado",
+      "Riñón"
+    ],
+    correctAnswer: "Hígado"
+  },
+  {
+    id: 92,
+    question: "Función principal de las válvulas cardíacas",
+    options: [
+      "Regular el metabolismo",
+      "Controlar la temperatura",
+      "Controlar el flujo sanguíneo",
+      "Facilitar la digestión"
+    ],
+    correctAnswer: "Controlar el flujo sanguíneo"
+  },
+  {
+    id: 93,
+    question: "Proceso de inhalación y exhalación en los pulmones",
+    options: [
+      "Circulación",
+      "Digestión",
+      "Filtración",
+      "Respiración"
+    ],
+    correctAnswer: "Respiración"
+  },
+  {
+    id: 94,
+    question: "Parte del cerebro que controla el equilibrio y la coordinación",
+    options: [
+      "Cerebelo",
+      "Cerebro frontal",
+      "Hipotálamo",
+      "Cerebro medio"
+    ],
+    correctAnswer: "Cerebelo"
+  },
+  {
+    id: 95,
+    question: "Lugar de la mayoría de la absorción de nutrientes en el sistema digestivo",
+    options: [
+      "Estómago",
+      "Intestino delgado",
+      "Intestino grueso",
+      "Hígado"
+    ],
+    correctAnswer: "Intestino delgado"
+  },
+  {
+    id: 96,
+    question: "Función principal de los glóbulos blancos en la sangre",
+    options: [
+      "Transportar oxígeno",
+      "Coagulación sanguínea",
+      "Defensa inmunológica",
+      "Producción de energía"
+    ],
+    correctAnswer: "Defensa inmunológica"
+  },
+  {
+    id: 97,
+    question: "Huesos que conforman la articulación del hombro",
+    options: [
+      "Fémur y tibia",
+      "Húmero y radio",
+      "Fémur y peroné",
+      "Húmero y escápula"
+    ],
+    correctAnswer: "Húmero y escápula"
+  },
+  {
+    id: 98,
+    question: "En una articulación, ¿qué permiten los ligamentos?",
+    options: [
+      "Movimiento muscular",
+      "Fijación a los huesos",
+      "Transporte de nutrientes",
+      "Regulación de la temperatura"
+    ],
+    correctAnswer: "Fijación a los huesos"
+  },
+  {
+    id: 99,
+    question: "¿Cuál es el órgano más grande del cuerpo humano?",
+    options: [
+      "Cerebro",
+      "Hígado",
+      "Pulmón",
+      "Estómago"
+    ],
+    correctAnswer: "Pulmón"
+  },
+  {
+    id: 100,
+    question: "¿Qué parte del sistema nervioso controla las respuestas involuntarias?",
+    options: [
+      "Sistema simpático",
+      "Sistema parasimpático",
+      "Sistema somático",
+      "Sistema motor"
+    ],
+    correctAnswer: "Sistema parasimpático"
+  },
+  {
+    id: 101,
+    question: "¿Cómo se llama la cavidad en la que se encuentran los pulmones?",
+    options: [
+      "Abdomen",
+      "Tórax",
+      "Cráneo",
+      "Pelvis"
+    ],
+    correctAnswer: "Tórax"
+  },
+  {
+    id: 102,
+    question: "¿Cuántas vértebras tiene la columna vertebral humana en total?",
+    options: [
+      "20",
+      "30",
+      "40",
+      "33"
+    ],
+    correctAnswer: "33"
+  },
+  {
+    id: 103,
+    question: "¿Qué tipo de músculos se encuentran en los brazos y las piernas?",
+    options: [
+      "Músculos lisos",
+      "Músculos esqueléticos",
+      "Músculos cardíacos",
+      "Músculos viscerales"
+    ],
+    correctAnswer: "Músculos esqueléticos"
+  },
+  {
+    id: 104,
+    question: "¿Cuál es el nombre del hueso en la parte inferior de la columna vertebral?",
+    options: [
+      "Fémur",
+      "Tibia",
+      "Sacro",
+      "Húmero"
+    ],
+    correctAnswer: "Sacro"
+  },
+  {
+    id: 105,
+    question: "¿Qué parte del sistema digestivo está conectada al estómago?",
+    options: [
+      "Esófago",
+      "Intestino delgado",
+      "Hígado",
+      "Páncreas"
+    ],
+    correctAnswer: "Esófago"
+  },
+  {
+    id: 106,
+    question: "¿Cuál es la función principal de las válvulas venosas?",
+    options: [
+      "Regular el flujo sanguíneo",
+      "Controlar la temperatura corporal",
+      "Facilitar la digestión",
+      "Transportar oxígeno"
+    ],
+    correctAnswer: "Regular el flujo sanguíneo"
+  },
+  {
+    id: 107,
+    question: "¿Qué órgano almacena y concentra la bilis?",
+    options: [
+      "Páncreas",
+      "Hígado",
+      "Vesícula biliar",
+      "Riñón"
+    ],
+    correctAnswer: "Vesícula biliar"
+  },
+  {
+    id: 108,
+    question: "¿Qué estructura conecta los huesos entre sí en una articulación?",
+    options: [
+      "Ligamento",
+      "Tendón",
+      "Músculo",
+      "Cartílago"
+    ],
+    correctAnswer: "Ligamento"
+  },
+  {
+    id: 109,
+    question: "¿Cuál es la función principal de los riñones en el sistema urinario?",
+    options: [
+      "Producir enzimas digestivas",
+      "Filtrar y eliminar desechos",
+      "Producir hormonas sexuales",
+      "Almacenar orina"
+    ],
+    correctAnswer: "Filtrar y eliminar desechos"
+  },
+  {
+    id: 110,
+    question: "¿Cuál es el nombre del hueso en la parte superior de la columna vertebral?",
+    options: [
+      "Cráneo",
+      "Húmero",
+      "Vértebra",
+      "Escápula"
+    ],
+    correctAnswer: "Cráneo"
+  },
+  {
+    id: 111,
+    question: "¿Dónde se encuentra el músculo cuádriceps?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Abdomen",
+      "Espalda"
+    ],
+    correctAnswer: "Pierna"
+  },
+  {
+    id: 112,
+    question: "¿Cuál es la función principal de la médula espinal?",
+    options: [
+      "Producir hormonas",
+      "Controlar el equilibrio",
+      "Transmitir señales nerviosas",
+      "Producir glóbulos rojos"
+    ],
+    correctAnswer: "Transmitir señales nerviosas"
+  },
+  {
+    id: 113,
+    question: "¿Qué parte del sistema nervioso controla las respuestas voluntarias?",
+    options: [
+      "Sistema autónomo",
+      "Sistema central",
+      "Sistema somático",
+      "Sistema endocrino"
+    ],
+    correctAnswer: "Sistema somático"
+  },
+  {
+    id: 114,
+    question: "¿Cuál es el nombre del hueso en la parte superior del brazo?",
+    options: [
+      "Húmero",
+      "Radio",
+      "Cúbito",
+      "Fémur"
+    ],
+    correctAnswer: "Húmero"
+  },
+  {
+    id: 115,
+    question: "¿Cuál es el órgano que produce insulina?",
+    options: [
+      "Hígado",
+      "Páncreas",
+      "Riñón",
+      "Corazón"
+    ],
+    correctAnswer: "Páncreas"
+  },
+  {
+    id: 116,
+    question: "¿Dónde se encuentra el músculo trapecio?",
+    options: [
+      "Cabeza",
+      "Brazo",
+      "Pierna",
+      "Espalda"
+    ],
+    correctAnswer: "Espalda"
+  },
+  {
+    id: 117,
+    question: "¿Qué parte del sistema cardiovascular transporta sangre desoxigenada?",
+    options: [
+      "Venas",
+      "Arterias",
+      "Capilares",
+      "Ventrículos"
+    ],
+    correctAnswer: "Venas"
+  },
+  {
+    id: 118,
+    question: "¿Cómo se llama el proceso de división celular que crea nuevas células sexuales?",
+    options: [
+      "Mitosis",
+      "Meiosis",
+      "Fotosíntesis",
+      "Respiración celular"
+    ],
+    correctAnswer: "Meiosis"
+  },
+  {
+    id: 119,
+    question: "¿Cuál es el órgano principal del sistema circulatorio?",
+    options: [
+      "Pulmón",
+      "Hígado",
+      "Corazón",
+      "Estómago"
+    ],
+    correctAnswer: "Corazón"
+  },
+  {
+    id: 120,
+    question: "¿Qué huesos conforman la columna vertebral?",
+    options: [
+      "Fémur y tibia",
+      "Húmero y radio",
+      "Vértebras",
+      "Fémur y peroné"
+    ],
+    correctAnswer: "Vértebras"
+  },
+  {
+    id: 121,
+    question: "¿Dónde se encuentra el músculo pectoral mayor?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Pecho",
+      "Espalda"
+    ],
+    correctAnswer: "Pecho"
+  },
+  {
+    id: 122,
+    question: "¿Cuál es la función principal de las arterias en el sistema cardiovascular?",
+    options: [
+      "Transportar oxígeno",
+      "Controlar la temperatura corporal",
+      "Filtrar la sangre",
+      "Transportar sangre fuera del corazón"
+    ],
+    correctAnswer: "Transportar sangre fuera del corazón"
+  },
+  {
+    id: 123,
+    question: "¿Qué parte del sistema nervioso controla las respuestas automáticas?",
+    options: [
+      "Sistema central",
+      "Sistema somático",
+      "Sistema simpático",
+      "Sistema parasimpático"
+    ],
+    correctAnswer: "Sistema simpático"
+  },
+  {
+    id: 124,
+    question: "¿Cuál es el hueso en la parte inferior de la pierna?",
+    options: [
+      "Fémur",
+      "Tibia",
+      "Peroné",
+      "Húmero"
+    ],
+    correctAnswer: "Tibia"
+  },
+  {
+    id: 125,
+    question: "¿Dónde se encuentra el músculo deltoides?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Cabeza"
+    ],
+    correctAnswer: "Brazo"
+  },
+  {
+    id: 126,
+    question: "¿Qué órgano filtra y elimina los desechos en la sangre?",
+    options: [
+      "Hígado",
+      "Páncreas",
+      "Riñón",
+      "Pulmón"
+    ],
+    correctAnswer: "Riñón"
+  },
+  {
+    id: 127,
+    question: "¿Cuál es el nombre del hueso en la parte superior de la pierna?",
+    options: [
+      "Fémur",
+      "Tibia",
+      "Peroné",
+      "Radio"
+    ],
+    correctAnswer: "Fémur"
+  },
+  {
+    id: 128,
+    question: "¿Dónde se encuentra el músculo tríceps?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Cuello"
+    ],
+    correctAnswer: "Brazo"
+  },
+  {
+    id: 129,
+    question: "¿Cuál es la función principal del sistema linfático?",
+    options: [
+      "Transportar oxígeno",
+      "Combatir infecciones",
+      "Producir insulina",
+      "Regular la temperatura"
+    ],
+    correctAnswer: "Combatir infecciones"
+  },
+  {
+    id: 130,
+    question: "¿Qué órgano es responsable de la producción de glóbulos rojos?",
+    options: [
+      "Hígado",
+      "Páncreas",
+      "Médula ósea",
+      "Riñón"
+    ],
+    correctAnswer: "Médula ósea"
+  },
+  {
+    id: 131,
+    question: "¿Dónde se encuentra el músculo glúteo mayor?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Cadera"
+    ],
+    correctAnswer: "Cadera"
+  },
+  {
+    id: 132,
+    question: "¿Cuál es la función principal de las venas en el sistema cardiovascular?",
+    options: [
+      "Transportar oxígeno",
+      "Controlar la temperatura corporal",
+      "Filtrar la sangre",
+      "Transportar sangre al corazón"
+    ],
+    correctAnswer: "Transportar sangre al corazón"
+  },
+  {
+    id: 133,
+    question: "¿Qué parte del sistema nervioso controla la memoria y el pensamiento?",
+    options: [
+      "Sistema simpático",
+      "Sistema parasimpático",
+      "Sistema central",
+      "Sistema cerebroespinal"
+    ],
+    correctAnswer: "Sistema central"
+  },
+  {
+    id: 134,
+    question: "¿Cuál es el nombre del hueso en la parte inferior del brazo?",
+    options: [
+      "Húmero",
+      "Radio",
+      "Cúbito",
+      "Fémur"
+    ],
+    correctAnswer: "Cúbito"
+  },
+  {
+    id: 135,
+    question: "¿Dónde se encuentra el músculo gastrocnemio?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Cabeza"
+    ],
+    correctAnswer: "Pierna"
+  },
+  {
+    id: 136,
+    question: "¿Qué órgano regula el metabolismo y produce hormonas?",
+    options: [
+      "Hígado",
+      "Páncreas",
+      "Tiroides",
+      "Riñón"
+    ],
+    correctAnswer: "Tiroides"
+  },
+  {
+    id: 137,
+    question: "¿Qué hueso forma la parte superior de la columna vertebral?",
+    options: [
+      "Fémur",
+      "Tibia",
+      "Vértebra",
+      "Escápula"
+    ],
+    correctAnswer: "Vértebra"
+  },
+  {
+    id: 138,
+    question: "¿Dónde se encuentra el músculo recto abdominal?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Abdomen",
+      "Espalda"
+    ],
+    correctAnswer: "Abdomen"
+  },
+  {
+    id: 139,
+    question: "¿Qué parte del sistema cardiovascular lleva sangre oxigenada al corazón?",
+    options: [
+      "Venas",
+      "Arterias",
+      "Capilares",
+      "Ventrículos"
+    ],
+    correctAnswer: "Arterias"
+  },
+  {
+    id: 140,
+    question: "¿Qué parte del sistema nervioso controla las funciones internas del cuerpo?",
+    options: [
+      "Sistema somático",
+      "Sistema simpático",
+      "Sistema parasimpático",
+      "Sistema central"
+    ],
+    correctAnswer: "Sistema parasimpático"
+  },
+  {
+    id: 141,
+    question: "¿Dónde se encuentra el músculo orbicular de los ojos?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Cabeza",
+      "Abdomen"
+    ],
+     correctAnswer: "Cabeza"
+  },
+  {
+    id: 142,
+    question: "¿Cuál es la función principal de las glándulas sudoríparas?",
+    options: [
+      "Producir insulina",
+      "Regular la temperatura corporal",
+      "Producir hormonas sexuales",
+      "Filtrar la sangre"
+    ],
+     correctAnswer: "Regular la temperatura corporal"
+  },
+  {
+    id: 143,
+    question: "¿Dónde se encuentra el músculo temporal?",
+    options: [
+      "Cabeza",
+      "Brazo",
+      "Pierna",
+      "Abdomen"
+    ],
+     correctAnswer: "Cabeza"
+  },
+  {
+    id: 144,
+    question: "¿Qué órgano produce la insulina?",
+    options: [
+      "Hígado",
+      "Páncreas",
+      "Riñón",
+      "Estómago"
+    ],
+     correctAnswer: "Páncreas"
+  },
+  {
+    id: 145,
+    question: "¿Qué hueso forma el cráneo humano?",
+    options: [
+      "Mandíbula",
+      "Maxilar",
+      "Frontal",
+      "Cervical"
+    ],
+     correctAnswer: "Frontal"
+  },
+  {
+    id: 146,
+    question: "¿Dónde se encuentra el músculo dorsal ancho?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Cuello"
+    ],
+     correctAnswer: "Espalda"
+  },
+  {
+    id: 147,
+    question: "¿Cuál es la función principal de las amígdalas?",
+    options: [
+      "Producir saliva",
+      "Controlar la presión arterial",
+      "Filtrar la sangre",
+      "Luchar contra infecciones"
+    ],
+     correctAnswer: "Luchar contra infecciones"
+  },
+  {
+    id: 148,
+    question: "¿Dónde se encuentra el músculo serrato anterior?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Cabeza"
+    ],
+     correctAnswer: "Brazo"
+  },
+  {
+    id: 149,
+    question: "¿Qué parte del sistema respiratorio contiene las cuerdas vocales?",
+    options: [
+      "Tráquea",
+      "Bronquios",
+      "Laringe",
+      "Faringe"
+    ],
+     correctAnswer: "Laringe"
+  },
+  {
+    id: 150,
+    question: "¿Cuál es la función principal de las células rojas en la sangre?",
+    options: [
+      "Transportar oxígeno",
+      "Coagulación sanguínea",
+      "Defensa inmunológica",
+      "Digestión de nutrientes"
+    ],
+     correctAnswer: "Transportar oxígeno"
+  },
+  {
+    id: 151,
+    question: "¿Dónde se encuentra el músculo flexor carpi ulnaris?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Muñeca"
+    ],
+     correctAnswer: "Muñeca"
+  },
+  {
+    id: 152,
+    question: "¿Cuál es la función principal de la vesícula biliar?",
+    options: [
+      "Producir enzimas digestivas",
+      "Almacenar insulina",
+      "Almacenar bilis",
+      "Producir hormonas"
+    ],
+     correctAnswer: "Almacenar bilis"
+  },
+  {
+    id: 153,
+    question: "¿Qué tipo de articulación permite el movimiento en todas las direcciones?",
+    options: [
+      "Articulación fija",
+      "Articulación de pivote",
+      "Articulación condilar",
+      "Articulación esférica"
+    ],
+     correctAnswer: "Articulación esférica"
+  },
+  {
+    id: 154,
+    question: "¿Dónde se encuentra el músculo gastrocnemio?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Cabeza"
+    ],
+     correctAnswer: "Pierna"
+  },
+  {
+    id: 155,
+    question: "¿Cuál es la función principal de las glándulas sebáceas?",
+    options: [
+      "Producir insulina",
+      "Producir saliva",
+      "Producir aceite",
+      "Filtrar la sangre"
+    ],
+     correctAnswer: "Producir aceite"
+  },
+  {
+    id: 156,
+    question: "¿Dónde se encuentra el músculo iliopsoas?",
+    options: [
+      "Pierna",
+      "Brazo",
+      "Espalda",
+      "Cadera"
+    ],
+     correctAnswer: "Cadera"
+  },
+  {
+    id: 157,
+    question: "¿Cuál es la función principal del timo?",
+    options: [
+      "Producir saliva",
+      "Producir insulina",
+      "Desarrollar glóbulos rojos",
+      "Desarrollar células T"
+    ],
+     correctAnswer: "Desarrollar células T"
+  },
+  {
+    id: 158,
+    question: "¿Dónde se encuentra el músculo tensor de la fascia lata?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Cadera"
+    ],
+     correctAnswer: "Cadera"
+  },
+  {
+    id: 159,
+    question: "¿Qué órgano produce bilis?",
+    options: [
+      "Estómago",
+      "Páncreas",
+      "Hígado",
+      "Intestino delgado"
+    ],
+     correctAnswer: "Hígado"
+  },
+  {
+    id: 160,
+    question: "¿Dónde se encuentra el músculo esternocleidomastoideo?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Cuello",
+      "Espalda"
+    ],
+     correctAnswer: "Cuello"
+  },
+  {
+    id: 161,
+    question: "¿Cuál es la función principal de las papilas gustativas?",
+    options: [
+      "Producir insulina",
+      "Detectar sabores",
+      "Regular la temperatura corporal",
+      "Filtrar la sangre"
+    ],
+     correctAnswer: "Detectar sabores"
+  },
+  {
+    id: 162,
+    question: "¿Dónde se encuentra el músculo trapecio?",
+    options: [
+      "Cabeza",
+      "Brazo",
+      "Pierna",
+      "Espalda"
+    ],
+     correctAnswer: "Espalda"
+  },
+  {
+    id: 163,
+    question: "¿Qué órgano almacena la glucosa en forma de glucógeno?",
+    options: [
+      "Páncreas",
+      "Hígado",
+      "Riñón",
+      "Estómago"
+    ],
+     correctAnswer: "Hígado"
+  },
+  {
+    id: 164,
+    question: "¿Dónde se encuentra el músculo subclavio?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Cuello",
+      "Espalda"
+    ],
+     correctAnswer: "Cuello"
+  },
+  {
+    id: 165,
+    question: "¿Cuál es la función principal de las glándulas paratiroides?",
+    options: [
+      "Regular la temperatura corporal",
+      "Controlar la presión arterial",
+      "Regular el metabolismo",
+      "Regular los niveles de calcio"
+    ],
+     correctAnswer: "Regular los niveles de calcio"
+  },
+  {
+    id: 166,
+    question: "¿Dónde se encuentra el músculo redondo mayor?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Cadera"
+    ],
+     correctAnswer: "Espalda"
+  },
+  {
+    id: 167,
+    question: "¿Qué parte del ojo es sensible a la luz y permite la visión?",
+    options: [
+      "Córnea",
+      "Cristalino",
+      "Retina",
+      "Esclerótica"
+    ],
+     correctAnswer: "Retina"
+  },
+  {
+    id: 168,
+    question: "¿Dónde se encuentra el músculo palmar mayor?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Mano"
+    ],
+     correctAnswer: "Mano"
+  },
+  {
+    id: 169,
+    question: "¿Cuál es la función principal de las glándulas endocrinas?",
+    options: [
+      "Producir saliva",
+      "Producir insulina",
+      "Producir hormonas",
+      "Filtrar la sangre"
+    ],
+     correctAnswer: "Producir hormonas"
+  },
+  {
+    id: 170,
+    question: "¿Dónde se encuentra el músculo flexor digitorum profundus?",
+    options: [
+      "Brazo",
+      "Pierna",
+      "Espalda",
+      "Mano"
+    ],
+     correctAnswer: "Mano"
+  }
 
 ];
+
+
 

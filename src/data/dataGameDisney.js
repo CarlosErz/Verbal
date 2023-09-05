@@ -92,8 +92,8 @@ export const dataGameDisney = [
   {
     id: 16,
     question: '¿Cómo se llama la abuela de Mulan?',
-    options: ['Grandma Fa', 'Grandmother Willow', 'Nonna', 'Nana'],
-    correctAnswer: 'Grandma Fa'
+    options: ['Abuela Fa', 'Grandmother Willow', 'Nonna', 'Nana'],
+    correctAnswer: 'Abuela Fa'
   },
   {
     id: 17,
@@ -229,15 +229,15 @@ export const dataGameDisney = [
   },
   {
     id: 39,
-    question: '¿Cuál es el nombre de la madre de Bambi?',
-    options: ['Faline', 'Thumper', 'Flower', 'Bambi'],
-    correctAnswer: 'Bambi'
+    question: '¿Cuáles son los nombres de las hermanastras de Cenicienta',
+    options: ['Anasta y Driwer', 'Thumper y flower', 'Flower y Drizella', 'Anastasia y Drizella.'],
+    correctAnswer: 'Anastasia y Drizella'
   },
   {
     id: 40,
-    question: '¿Cómo se llama la abuela de Rapunzel en "Enredados"?',
-    options: ['Grandmother Willow', 'Granmama', 'Granmère', 'Gran Momma'],
-    correctAnswer: 'Gran Momma'
+    question: '¿Qué significa Hakuna Matata?',
+    options: ['Vivir y Disfrutar', 'Vivir la vida', 'Amor y sonrisas', 'Sin preocupaciones'],
+    correctAnswer: 'Sin preocupaciones'
   },
   {
     id: 41,
@@ -265,9 +265,9 @@ export const dataGameDisney = [
   },
   {
     id: 45,
-    question: '¿Cuál es el nombre de la hermana menor de Anna en "Frozen"?',
-    options: ['Elsa', 'Olaf', 'Kristoff', 'Sven'],
-    correctAnswer: 'Elsa'
+    question: '¿Cuál es el nombre de la hermana menor de Elsa en "Frozen"?',
+    options: ['Anna', 'Olaf', 'Kristoff', 'Sven'],
+    correctAnswer: 'Anna'
   },
   {
     id: 46,
@@ -361,8 +361,8 @@ export const dataGameDisney = [
   },
   {
     id: 61,
-    question: '¿Cuál es el nombre del hermano mayor de Anna en "Frozen"?',
-    options: ['Olaf', 'Elsa', 'Kristoff', 'Sven'],
+    question: '¿Cuál es el nombre del novio de Anna en "Frozen"?',
+    options: ['Olaf', 'Steven', 'Kristoff', 'Sven'],
     correctAnswer: 'Kristoff'
   },
   {
@@ -379,7 +379,7 @@ export const dataGameDisney = [
   },
   {
     id: 64,
-    question: '¿Cómo se llama el pato en "La Princesa y el Sapo"?',
+    question: '¿Cómo se llama el cocodrilo en "La Princesa y el Sapo"?',
     options: ['Donald', 'Daffy', 'Tiana', 'Louis'],
     correctAnswer: 'Louis'
   },
@@ -391,9 +391,9 @@ export const dataGameDisney = [
   },
   {
     id: 66,
-    question: '¿Cómo se llama el aliado caballo en "La Princesa y el Sapo"?',
-    options: ['Maximus', 'Duke', 'Louis', 'Khan'],
-    correctAnswer: 'Louis'
+    question: '¿Quién es el hijo de Goofy?',
+    options: ['Maximus', 'Maximilian', 'JuanBern', 'Khan'],
+    correctAnswer: 'Maximilian'
   },
   {
     id: 67,
@@ -403,8 +403,8 @@ export const dataGameDisney = [
   },
   {
     id: 68,
-    question: '¿Cómo se llama el villano en "Enredados"?',
-    options: ['Flyn', 'Maximus', 'Gothel', 'Pascal'],
+    question: '¿Cómo se llama la villano en "Enredados"?',
+    options: ['Garden', 'Guanda', 'Gothel', 'Pascal'],
     correctAnswer: 'Gothel'
   },
   {
@@ -427,15 +427,15 @@ export const dataGameDisney = [
   },
   {
     id: 72,
-    question: '¿Cómo se llama el hermano mayor de Andy en "Toy Story"?',
+    question: '¿Cómo se llama el vecino de Andy en "Toy Story"?',
     options: ['Billy', 'Buzz', 'Sid', 'Woody'],
     correctAnswer: 'Sid'
   },
   {
     id: 73,
-    question: '¿Cuál es el nombre de la abuela de Rapunzel en "Enredados"?',
-    options: ['Grandmother Willow', 'Granmama', 'Granmère', 'Gran Momma'],
-    correctAnswer: 'Gran Momma'
+    question: '¿Quién es el ídolo de Miguel en Coco ?',
+    options: ['Ernesto Hernandez', 'Ernesto Colim', 'Ernesto Pascal', 'Ernesto de la Cruz'],
+    correctAnswer: 'Ernesto de la Cruz'
   },
   {
     id: 74,
@@ -481,7 +481,7 @@ export const dataGameDisney = [
   },
   {
     id: 81,
-    question: '¿Cuál es el nombre de la hermana mayor de Anna y Elsa en "Frozen"?',
+    question: '¿Cuál es el nombre de la hermana mayor de Anna en "Frozen"?',
     options: ['Elsa', 'Olaf', 'Kristoff', 'Sven'],
     correctAnswer: 'Elsa'
   },
@@ -505,8 +505,8 @@ export const dataGameDisney = [
   },
   {
     id: 85,
-    question: '¿Cuál es el nombre del amigo marlín de Nemo en "Buscando a Nemo"?',
-    options: ['Bubbles', 'Dory', 'Marlin', 'Squirt'],
+    question: '¿Cuál es el nombre del amigo de dory en "Buscando a Nemo"?',
+    options: ['Bubbles', 'Nemo', 'Marlin', 'Squirt'],
     correctAnswer: 'Marlin'
   },
   {
@@ -523,9 +523,9 @@ export const dataGameDisney = [
   },
   {
     id: 88,
-    question: '¿Cómo se llama el padre de Ariel en "La Sirenita"?',
-    options: ['Rey Triton', 'Sebastian', 'Flounder', 'Scuttle'],
-    correctAnswer: 'Rey Triton'
+    question: '¿Cómo se llama la hija de Simba y Nala?',
+    options: ['Kia', 'Karen', 'Kiara', 'Kovu'],
+    correctAnswer: 'Kiara'
   },
   {
     id: 89,
@@ -535,7 +535,7 @@ export const dataGameDisney = [
   },
   {
     id: 90,
-    question: '¿Cómo se llama el amigo abejorro de Pooh en "Winnie the Pooh"?',
+    question: '¿Cómo se llama el amigo Tigre de Pooh en "Winnie the Pooh"?',
     options: ['Piglet', 'Roo', 'Eeyore', 'Tigger'],
     correctAnswer: 'Tigger'
   }
