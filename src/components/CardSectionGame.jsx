@@ -15,7 +15,7 @@ export function CardSectionGame ({ img, Game, isCenter }) {
 }
 
 CardSectionGame.propTypes = {
-  img: PropTypes.string.isRequired,
-  Game: PropTypes.string.isRequired,
-  isCenter: PropTypes.bool.isRequired, // Asegurarse de que isCenter sea una prop requerida
+  img: PropTypes.string,
+  Game: PropTypes.string,
+  isCenter: PropTypes.bool // Asegurarse de que isCenter sea una prop requerida
 };

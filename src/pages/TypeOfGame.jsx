@@ -16,8 +16,6 @@ export function TypeOfGame() {
     variableWidth: true,
     centerMode: true,
     centerPadding: "20px",
-    prevArrow: <button className="slick-prev">Previous</button>,
-    nextArrow: <button className="slick-next">Next</button>,
     responsive: [
       {
         breakpoint: 1024, // Pantallas medianas y más pequeñas
@@ -35,7 +33,6 @@ export function TypeOfGame() {
       },
     ],
   };
-
   return (
     <div className="CardContentCards">
       <h1 className="title">Escoge tu modo de juego</h1>
