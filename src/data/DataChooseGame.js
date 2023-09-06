@@ -14,6 +14,10 @@ export const dataChooseGame = [
   {
     Game: '/QuickAnimals',
     image: 'https://i.postimg.cc/jjGWbgNw/animal.jpg',
+  },
+  {
+    Game: '/QuickPokemon',
+    image: 'https://i.postimg.cc/3wZQJXZS/MARVEL.jpg',
   }
 
 ];

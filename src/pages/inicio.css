@@ -859,7 +859,6 @@
 		font-size: var(--secun-movil);
 	}
 	.slick-slider {
-		height: 35%;
 		width: 85%;
 	}
 
@@ -884,7 +883,7 @@
 		width: 100%;
 	}
 	.slick-slider {
-		height: 35%;
+
 		width: 85%;
 	}
 
