@@ -649,12 +649,12 @@ export const dataEnfermeria = [
     id: 66,
     question: '¿Qué es la "terapia ocupacional"?',
     options: [
-      'Una terapia para tratar enfermedades infecciosas',
-      'Una terapia para mejorar las habilidades motoras y la independencia',
-      'Una terapia para tratar enfermedades cardíacas',
-      'Una terapia para tratar enfermedades mentales'
+      'terapia para tratar enfermedades infecciosas',
+      'terapia para mejorar habilidades motoras',
+      'terapia para tratar enfermedades cardíacas',
+      'terapia para tratar enfermedades mentales'
     ],
-    correctAnswer: 'Una terapia para mejorar las habilidades motoras y la independencia'
+    correctAnswer: 'terapia para mejorar habilidades motoras'
   },
   {
     id: 67,
