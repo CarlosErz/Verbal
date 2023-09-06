@@ -49,10 +49,10 @@ export const dataAnimals = [
     options: [
       'Serpiente de coral',
       'Araña de tela orbicular',
-      'Escorpión',
+      'Rana dorada',
       'Pez piedra'
     ],
-    correctAnswer: 'Serpiente de coral'
+    correctAnswer: 'Rana dorada'
   },
   {
     id: 6,
