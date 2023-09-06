@@ -342,14 +342,14 @@ export const dataPokemon = [
   },
   {
     id: 32,
-    question: '¿Cuál es el Pokémon que representa el poder de la tierra?',
+    question: '¿Cuál es el Pokémon  legendario que representa el poder de la tierra?',
     options: [
-      'Kyogre',
+      'Groudon',
       'Lugia',
       'Gyarados',
       'Vaporeon'
     ],
-    correctAnswer: 'Gyarados'
+    correctAnswer: 'Groudon'
   },
   {
     id: 33,
