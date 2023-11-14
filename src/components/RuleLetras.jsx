@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Confetti from 'react-confetti';
 import '../css/components.css';
 import PropTypes from 'prop-types';
-import { driver } from "driver.js";
+//import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
 
@@ -40,17 +40,6 @@ const lettersAndAngles = [
 
 export function RuleLetras({ setSelectedLetter }) {
 
-  const driverObj = driver({
-    showProgress: true,
-    steps: [
-      { element: '.rueda', popover: { title: 'Rueda', description: 'En esta etapa, la aplicación te presenta la "Rueda". Esta característica te permite disfrutar de una experiencia de juego individual sin la necesidad de tener una cuenta. Al girar la ruleta, tendrás la oportunidad de obtener una letra que luego podrás utilizar en el juego.' } },
-      { element: '.Spin', popover: { title: 'Girar', description: 'Para activar la ruleta y obtener una letra, simplemente haz clic en el botón "Girar". Después de hacer clic, la rueda girará y se detendrá en una letra. Esta letra será la que utilices para el juego en curso.' } },
-
-
-    ]
-  });
-
-  driverObj.drive();
   const [showConfetti, setShowConfetti] = useState(false);
 
   const getRandomLetter = () => {

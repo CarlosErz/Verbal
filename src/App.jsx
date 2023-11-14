@@ -20,7 +20,7 @@ import { TypeOfGame } from './pages/TypeOfGame';
 import {GameEnfermeria } from './pages/GameEnfermeria';
 import { QuickAnimals } from './pages/QuickAnimals';
 import {GamePockemon} from './pages/GamePockemon'
-
+import {GameEstudio} from './pages/GameEstudio'
 const firebaseConfig = {
   apiKey: "AIzaSyBRsPogiEuE0BPQ_G0ppustO9XKnisbXm4",
   authDomain: "verbal-89593.firebaseapp.com",
@@ -87,6 +87,8 @@ export function App() {
         <Route path='/QuickEnfermeria' element={<GameEnfermeria />} />
         <Route path='/QuickAnimals' element={<QuickAnimals/>} />
         <Route path='/QuickPokemon' element={<GamePockemon/>} />
+        <Route path='/QuickPediatria' element={<GameEstudio/>} />
+
 
       </Routes>
 
