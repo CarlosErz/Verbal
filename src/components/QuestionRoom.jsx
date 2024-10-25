@@ -65,11 +65,11 @@ export function QuestionRoom({ questionData }) {
       let timeDecrementFactor;
 
       if (lives === 3) {
-        timeDecrementFactor = 1;
-      } else if (lives === 2) {
         timeDecrementFactor = 1.5;
-      } else {
+      } else if (lives === 2) {
         timeDecrementFactor = 2;
+      } else {
+        timeDecrementFactor = 3;
       }
       if (time > 0) {
         setTime(time - timeDecrementFactor);
